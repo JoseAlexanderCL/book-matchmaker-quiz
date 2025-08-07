@@ -133,6 +133,12 @@ All colors MUST be HSL.
   .bg-gradient-subtle {
     background-image: var(--gradient-subtle);
   }
+  .bg-gradient-night {
+    background-image: var(--gradient-night);
+  }
+  .bg-gradient-reflection {
+    background-image: var(--gradient-reflection);
+  }
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
