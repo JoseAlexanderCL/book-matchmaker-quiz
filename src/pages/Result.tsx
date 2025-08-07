@@ -5,6 +5,21 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 
+function getCoverPlaceholder(title: string) {
+  const total = 90; // número de portadas de relleno
+  const hash = Array.from(title).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const index = (Math.abs(hash) % total) + 1;
+  return `/covers/placeholder${index}.jpg`;
+}
+
+function removeMbti(text: string) {
+  return text
+    .replace(/\b[EI][SN][TF][JP]\b/gi, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([,;:.!])/g, "$1")
+    .trim();
+}
+
 type QuizResult = ComputedResult & FinalSelection;
 
 interface Stored {
@@ -30,6 +45,16 @@ export default function Result() {
     if (!data) return null;
     return data.res;
   }, [data]);
+
+  const coverSrc = useMemo(() => {
+    if (!resumen) return "";
+    return getCoverPlaceholder(resumen.selected.titulo);
+  }, [resumen]);
+
+  const frase = useMemo(() => {
+    if (!resumen) return "";
+    return removeMbti(resumen.texto);
+  }, [resumen]);
 
   if (!resumen) {
     return (
@@ -67,15 +92,18 @@ export default function Result() {
               <CardTitle className="text-2xl">¡Este eres tú en el club! 📚</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="p-5 rounded-lg border bg-card">
-                <h2 className="text-xl font-semibold mb-2">Libro recomendado</h2>
-                <p className="text-lg">{resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span></p>
-                {resumen.selected.sinopsis && (
-                  <p className="mt-2 text-muted-foreground">{resumen.selected.sinopsis}</p>
-                )}
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <img
+                  src={coverSrc}
+                  alt={`Portada de ${resumen.selected.titulo}`}
+                  className="w-32 h-48 object-cover rounded-md"
+                />
+                <div>
+                  <p className="text-lg font-semibold">{resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span></p>
+                </div>
               </div>
 
-              <p className="text-lg">{resumen.texto}</p>
+              <p className="text-lg">{frase}</p>
 
               <div className="flex flex-wrap gap-3">
                 <Button variant="secondary" onClick={() => navigate("/quiz")}>Volver a responder</Button>
