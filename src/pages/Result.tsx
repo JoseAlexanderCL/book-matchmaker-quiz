@@ -3,11 +3,13 @@ import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import type { FinalSelection } from "@/lib/quiz/scoring";
+import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
+
+type QuizResult = ComputedResult & FinalSelection;
 
 interface Stored {
   answers: Record<number, string>;
-  res: any;
+  res: QuizResult;
 }
 
 export default function Result() {
@@ -17,19 +19,16 @@ export default function Result() {
   useEffect(() => {
     const raw = sessionStorage.getItem("quizResult");
     if (!raw) return;
-    try { setData(JSON.parse(raw) as Stored); } catch {}
+    try {
+      setData(JSON.parse(raw) as Stored);
+    } catch {
+      // ignore parsing errors
+    }
   }, []);
 
   const resumen = useMemo(() => {
     if (!data) return null;
-    const r = data.res as {
-      mbti: string;
-      temporalPreference: "R" | "A";
-      dominantPair: string;
-      selected: { titulo: string; anio: number; portada?: string; sinopsis?: string };
-      texto: string;
-    };
-    return r;
+    return data.res;
   }, [data]);
 
   if (!resumen) {
@@ -44,8 +43,6 @@ export default function Result() {
     );
   }
 
-  const pref = resumen.temporalPreference === "R" ? "Reciente" : "Antiguo";
-
   const bookLd = {
     "@context": "https://schema.org",
     "@type": "Book",
@@ -58,7 +55,7 @@ export default function Result() {
     <main className="min-h-screen bg-gradient-night flex flex-col">
       <Helmet>
         <title>Resultado – {resumen.selected.titulo}</title>
-        <meta name="description" content={`Tu tipo ${resumen.mbti} y tu libro recomendado: ${resumen.selected.titulo}.`} />
+        <meta name="description" content={`Tu libro recomendado: ${resumen.selected.titulo}.`} />
         <link rel="canonical" href="/resultado" />
         <script type="application/ld+json">{JSON.stringify(bookLd)}</script>
       </Helmet>
@@ -70,12 +67,6 @@ export default function Result() {
               <CardTitle className="text-2xl">¡Este eres tú en el club! 📚</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid gap-2">
-                <p className="text-lg"><span className="font-semibold">Tipo MBTI:</span> {resumen.mbti}</p>
-                <p className="text-lg"><span className="font-semibold">Preferencia temporal:</span> {pref}</p>
-                <p className="text-lg"><span className="font-semibold">Dicotomía dominante:</span> {resumen.dominantPair}</p>
-              </div>
-
               <div className="p-5 rounded-lg border bg-card">
                 <h2 className="text-xl font-semibold mb-2">Libro recomendado</h2>
                 <p className="text-lg">{resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span></p>
