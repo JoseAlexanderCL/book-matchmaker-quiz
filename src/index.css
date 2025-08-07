@@ -36,6 +36,11 @@ All colors MUST be HSL.
     --input: 233 14% 49%;
     --ring: 29 70% 52%;
 
+    --sky: 225 18% 38%;
+    --moon: 35 72% 85%;
+    --reflection: 233 14% 49%;
+    --accent-fox: 29 70% 52%;
+
     --radius: 0.75rem;
 
     --sidebar-background: 225 18% 38%;
@@ -117,7 +122,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-cozy;
   }
 }
 

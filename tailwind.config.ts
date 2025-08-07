@@ -18,6 +18,7 @@ export default {
 			}
 		},
                 extend: {
+                        fontFamily: { cozy: ['"Quicksand"', 'sans-serif'] },
                         colors: {
                                 border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
