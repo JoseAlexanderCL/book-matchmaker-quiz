@@ -153,4 +153,26 @@ All colors MUST be HSL.
   .animate-floaty {
     animation: floaty 6s ease-in-out infinite;
   }
+  @keyframes bruma {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .animate-bruma {
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground)) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: bruma 1.5s ease-in-out infinite;
+  }
+  @keyframes abrazo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  .animate-abrazo {
+    animation: abrazo 0.6s ease-in-out;
+  }
 }
