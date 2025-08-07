@@ -1,13 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main>
+      <Helmet>
+        <title>¿Qué libro del club eres? | Test MBTI lector</title>
+        <meta name="description" content="Responde 16 preguntas y descubre qué libro del club coincide con tu personalidad lectora." />
+        <link rel="canonical" href="/" />
+      </Helmet>
+      <header className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-primary opacity-20" aria-hidden="true" />
+        <section className="container min-h-[70vh] flex items-center">
+          <div className="mx-auto text-center max-w-3xl py-16">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6">¿Qué libro del club eres?</h1>
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8">Un test de 16 preguntas inspirado en MBTI para recomendarte el título perfecto según tu estilo lector. Rápido, divertido y pensado para club de lectura.</p>
+            <div className="flex items-center justify-center gap-4">
+              <Link to="/quiz"><Button variant="hero" className="px-8 py-6 text-base animate-floaty">Comenzar</Button></Link>
+              <Link to="/admin"><Button variant="outline">Editar catálogo</Button></Link>
+            </div>
+          </div>
+        </section>
+      </header>
+    </main>
   );
 };
 
