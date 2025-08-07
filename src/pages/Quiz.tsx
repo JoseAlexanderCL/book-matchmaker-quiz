@@ -42,14 +42,14 @@ export default function Quiz() {
   const q = questions[current];
 
   return (
-    <main className="min-h-screen bg-gradient-subtle">
+    <main className="min-h-screen bg-gradient-night flex flex-col">
       <Helmet>
         <title>Test lector – ¿Qué libro del club eres?</title>
         <meta name="description" content="Responde 16 preguntas y descubre tu tipo lector MBTI y tu libro ideal del club." />
         <link rel="canonical" href="/quiz" />
       </Helmet>
 
-      <section className="container py-10 sm:py-16">
+      <section className="container py-10 sm:py-16 flex-1">
         <div className="max-w-3xl mx-auto">
           <Card className="shadow-elegant">
             <CardHeader>
@@ -84,6 +84,7 @@ export default function Quiz() {
           </Card>
         </div>
       </section>
+      <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
     </main>
   );
 }

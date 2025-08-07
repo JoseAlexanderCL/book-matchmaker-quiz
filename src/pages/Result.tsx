@@ -34,9 +34,12 @@ export default function Result() {
 
   if (!resumen) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
-        <p className="text-muted-foreground">No hay resultado. Comienza el test.</p>
-        <Button className="ml-4" onClick={() => navigate("/")}>Inicio</Button>
+      <main className="min-h-screen bg-gradient-night flex flex-col">
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-muted-foreground">No hay resultado. Comienza el test.</p>
+          <Button className="ml-4" onClick={() => navigate("/")}>Inicio</Button>
+        </div>
+        <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
       </main>
     );
   }
@@ -52,7 +55,7 @@ export default function Result() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-subtle">
+    <main className="min-h-screen bg-gradient-night flex flex-col">
       <Helmet>
         <title>Resultado – {resumen.selected.titulo}</title>
         <meta name="description" content={`Tu tipo ${resumen.mbti} y tu libro recomendado: ${resumen.selected.titulo}.`} />
@@ -60,7 +63,7 @@ export default function Result() {
         <script type="application/ld+json">{JSON.stringify(bookLd)}</script>
       </Helmet>
 
-      <section className="container py-10 sm:py-16">
+      <section className="container py-10 sm:py-16 flex-1">
         <div className="max-w-3xl mx-auto">
           <Card className="shadow-elegant">
             <CardHeader>
@@ -91,6 +94,7 @@ export default function Result() {
           </Card>
         </div>
       </section>
+      <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
     </main>
   );
 }
