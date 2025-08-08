@@ -50,7 +50,7 @@ export default function Quiz() {
       </Helmet>
 
       <section className="container py-10 sm:py-16 flex-1">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-full md:max-w-3xl mx-auto">
           <Card className="shadow-elegant">
             <CardHeader>
               <CardTitle className="text-xl sm:text-2xl">Pregunta {current + 1} de {questions.length}</CardTitle>

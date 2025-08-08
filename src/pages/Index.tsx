@@ -13,7 +13,7 @@ const Index = () => {
       </Helmet>
       <CozyScene>
         <section className="container min-h-[70vh] flex items-center">
-          <div className="mx-auto text-center max-w-3xl py-16">
+          <div className="mx-auto text-center max-w-full md:max-w-3xl py-16">
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6">¿Qué libro del club eres?</h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8">Un test de 16 preguntas inspirado en MBTI para recomendarte el título perfecto según tu estilo lector. Rápido, divertido y pensado para club de lectura.</p>
             <div className="flex items-center justify-center">
