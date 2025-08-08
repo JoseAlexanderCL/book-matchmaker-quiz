@@ -50,6 +50,9 @@ const Layout = ({ children, backgroundColor }) => {
           style={{
             backgroundColor,
             gridColumn: `${i + 1} / span 1`,
+            // Give each column visible height and span the full row
+            height: "100%",
+            gridRow: "1 / -1",
           }}
         />
       ))}
