@@ -14,6 +14,62 @@ export type Database = {
   }
   public: {
     Tables: {
+      results: {
+        Row: {
+          created_at: string
+          id: string
+          mbti: string
+          score_details: Json | null
+          selected_book: string
+          session_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          mbti: string
+          score_details?: Json | null
+          selected_book: string
+          session_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          mbti?: string
+          score_details?: Json | null
+          selected_book?: string
+          session_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "results_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sessions: {
+        Row: {
+          ended_at: string | null
+          id: string
+          started_at: string
+          user_identifier: string | null
+        }
+        Insert: {
+          ended_at?: string | null
+          id?: string
+          started_at?: string
+          user_identifier?: string | null
+        }
+        Update: {
+          ended_at?: string | null
+          id?: string
+          started_at?: string
+          user_identifier?: string | null
+        }
+        Relationships: []
+      }
       user_log: {
         Row: {
           category_id: string | null

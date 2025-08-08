@@ -1,9 +1,9 @@
-import { supabase } from './supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 
 export type ResultPayload = {
   mbti: string;
   selected_book: string;
-  score_details: unknown;
+  score_details: any;
 };
 
 export async function insertSession(sessionId: string, user_identifier?: string | null) {
