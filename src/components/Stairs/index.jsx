@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { expand, opacity } from "./anim";
 
 const nbOfColumns = 8;
+const columns = Array.from({ length: nbOfColumns });
 
-const variants = {
+const columnVariants = {
   initial: { ...expand.initial, ...opacity.initial },
   animate: {
     ...expand.animate,
@@ -23,20 +24,35 @@ const variants = {
   },
 };
 
+const containerVariants = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.1 } },
+  exit: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
+};
+
 const Layout = ({ children, backgroundColor }) => {
   return (
     <motion.div
       className="stairs"
       style={{
-        backgroundColor,
         display: "grid",
         gridTemplateColumns: `repeat(${nbOfColumns}, 1fr)`,
       }}
-      variants={variants}
+      variants={containerVariants}
       initial="initial"
       animate="animate"
       exit="exit"
     >
+      {columns.map((_, i) => (
+        <motion.div
+          key={i}
+          variants={columnVariants}
+          style={{
+            backgroundColor,
+            gridColumn: `${i + 1} / span 1`,
+          }}
+        />
+      ))}
       {children}
     </motion.div>
   );
