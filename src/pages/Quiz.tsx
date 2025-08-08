@@ -7,6 +7,7 @@ import { questions, type OptionKey } from "@/lib/quiz/questions";
 import { computeResult } from "@/lib/quiz/scoring";
 import { getCatalog } from "@/hooks/use-catalog";
 import { useNavigate } from "react-router-dom";
+import Layout from "@/components/Stairs";
 
 export default function Quiz() {
   const [current, setCurrent] = useState(0);
@@ -42,49 +43,51 @@ export default function Quiz() {
   const q = questions[current];
 
   return (
-    <main className="min-h-screen bg-gradient-night flex flex-col">
-      <Helmet>
-        <title>Test lector – ¿Qué libro del club eres?</title>
-        <meta name="description" content="Responde 16 preguntas y descubre tu tipo lector MBTI y tu libro ideal del club." />
-        <link rel="canonical" href="/quiz" />
-      </Helmet>
+    <Layout backgroundColor="hsl(var(--background))">
+      <main className="min-h-screen bg-gradient-night flex flex-col">
+        <Helmet>
+          <title>Test lector – ¿Qué libro del club eres?</title>
+          <meta name="description" content="Responde 16 preguntas y descubre tu tipo lector MBTI y tu libro ideal del club." />
+          <link rel="canonical" href="/quiz" />
+        </Helmet>
 
-      <section className="container py-10 sm:py-16 flex-1">
-        <div className="max-w-full md:max-w-3xl mx-auto">
-          <Card className="shadow-elegant">
-            <CardHeader>
-              <CardTitle className="text-xl sm:text-2xl">Pregunta {current + 1} de {questions.length}</CardTitle>
-              <Progress value={progress} />
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-lg sm:text-xl font-medium">{q.text}</p>
-              <div className="grid gap-3">
-                {q.options.map((o) => (
-                  <Button
-                    key={o.key}
-                    variant={answers[q.id] === o.key ? "secondary" : "outline"}
-                    className="justify-start h-auto py-5 text-lg sm:text-xl"
-                    onClick={() => onSelect(o.key)}
-                    aria-pressed={answers[q.id] === o.key}
-                  >
-                    <span className="font-semibold mr-2">{o.key})</span>
-                    {o.label}
-                  </Button>
-                ))}
-              </div>
-              <div className="flex items-center justify-between pt-2">
-                <Button variant="ghost" onClick={goPrev} disabled={!canPrev}>Anterior</Button>
-                {current < questions.length - 1 ? (
-                  <Button onClick={goNext} disabled={!canNext}>Siguiente</Button>
-                ) : (
-                  <Button variant="hero" onClick={finish} disabled={!allAnswered} className="animate-floaty">Finalizar</Button>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-      <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
-    </main>
+        <section className="container py-10 sm:py-16 flex-1">
+          <div className="max-w-full md:max-w-3xl mx-auto">
+            <Card className="shadow-elegant">
+              <CardHeader>
+                <CardTitle className="text-xl sm:text-2xl">Pregunta {current + 1} de {questions.length}</CardTitle>
+                <Progress value={progress} />
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-lg sm:text-xl font-medium">{q.text}</p>
+                <div className="grid gap-3">
+                  {q.options.map((o) => (
+                    <Button
+                      key={o.key}
+                      variant={answers[q.id] === o.key ? "secondary" : "outline"}
+                      className="justify-start h-auto py-5 text-lg sm:text-xl"
+                      onClick={() => onSelect(o.key)}
+                      aria-pressed={answers[q.id] === o.key}
+                    >
+                      <span className="font-semibold mr-2">{o.key})</span>
+                      {o.label}
+                    </Button>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-2">
+                  <Button variant="ghost" onClick={goPrev} disabled={!canPrev}>Anterior</Button>
+                  {current < questions.length - 1 ? (
+                    <Button onClick={goNext} disabled={!canNext}>Siguiente</Button>
+                  ) : (
+                    <Button variant="hero" onClick={finish} disabled={!allAnswered} className="animate-floaty">Finalizar</Button>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+        <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
+      </main>
+    </Layout>
   );
 }

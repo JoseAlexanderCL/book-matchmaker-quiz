@@ -1,12 +1,13 @@
 import { expand, opacity } from "./anim";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, backgroundColor }) => {
   return (
     <div
       style={{
         overflow: "hidden",
         ...expand.animate,
         ...opacity.animate,
+        backgroundColor,
       }}
     >
       {children}
