@@ -19,7 +19,7 @@ const AppRoutes = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Index />} />
-        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/preguntas" element={<Quiz />} />
         <Route path="/resultado" element={<Result />} />
         <Route path="/admin" element={<Admin />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

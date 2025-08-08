@@ -106,7 +106,7 @@ export default function Result() {
               <p className="text-lg">{frase}</p>
 
               <div className="flex flex-wrap gap-3">
-                <Button variant="secondary" onClick={() => navigate("/quiz")}>Volver a responder</Button>
+                <Button variant="secondary" onClick={() => navigate("/preguntas")}>Volver a responder</Button>
                 <Button variant="hero" onClick={() => navigate("/")}>Volver al inicio</Button>
               </div>
             </CardContent>
