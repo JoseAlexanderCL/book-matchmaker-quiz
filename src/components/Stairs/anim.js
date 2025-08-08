@@ -1,6 +1,7 @@
 export const expand = {
   initial: { height: 0 },
-  animate: { height: "auto", transition: { duration: 0.5, delay: 0.2 } },
+  // Use a real height so the columns visibly expand from 0 to full size
+  animate: { height: "100%", transition: { duration: 0.5, delay: 0.2 } },
   exit: { height: 0, transition: { duration: 0.5, delay: 0 } },
 };
 

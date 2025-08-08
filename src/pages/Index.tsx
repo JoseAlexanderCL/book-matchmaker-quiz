@@ -12,7 +12,10 @@ const Index = () => {
   const [closing, setClosing] = useState(false);
 
   return (
-    <AnimatePresence onExitComplete={() => navigate("/preguntas")}> 
+    <AnimatePresence
+      mode="wait" // ensure exit animation completes before navigating
+      onExitComplete={() => navigate("/preguntas")}
+    >
       {!closing && (
         <Layout backgroundColor="hsl(var(--background))">
           <main>
