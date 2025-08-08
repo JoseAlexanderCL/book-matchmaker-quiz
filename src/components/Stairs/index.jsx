@@ -37,6 +37,7 @@ const Layout = ({ children, backgroundColor }) => {
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${nbOfColumns}, 1fr)`,
+        minHeight: "100vh", // ensure container spans full viewport height
       }}
       variants={containerVariants}
       initial="initial"
