@@ -53,7 +53,16 @@ const Layout = ({ children, backgroundColor }) => {
           }}
         />
       ))}
-      {children}
+      <div
+        style={{
+          gridColumn: "1 / -1",
+          gridRow: "1",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {children}
+      </div>
     </motion.div>
   );
 };
