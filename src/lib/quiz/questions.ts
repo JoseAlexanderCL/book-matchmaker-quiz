@@ -184,6 +184,8 @@ export const questions: Question[] = [
     id: 16,
     text: "Cuando tienes que elegir entre un clásico y un lanzamiento reciente…",
     pair: "RA",
+    // Las respuestas B (“me inclino hacia libros recientes, pero los clásicos también me atraen”)
+    // y C (“me suelen llamar más los clásicos que los libros de moda”) se tratan como intermedias.
     options: [
       { key: "A", label: "Siempre prefiero las novedades; me gusta lo nuevo." },
       { key: "B", label: "Me inclino hacia libros recientes, pero los clásicos también me atraen." },
