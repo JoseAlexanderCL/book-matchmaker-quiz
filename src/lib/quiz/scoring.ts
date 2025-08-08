@@ -125,8 +125,8 @@ export interface FinalSelection {
 export function selectBook(
   catalog: Catalog,
   mbti: MBTIType,
-  pair: DichotomyMBTI,
-  temporalPreference: "R" | "A" | "M"
+  temporalPreference: "R" | "A" | "M",
+  pair: DichotomyMBTI
 ): FinalSelection {
   const entry = catalog[mbti]?.[pair];
   if (!entry) {
@@ -137,20 +137,26 @@ export function selectBook(
     };
   }
 
-  const books = [...entry.libros];
+  const books = [...entry.libros].sort((a, b) => a.anio - b.anio);
+
   if (books.length <= 1) {
     const only = books[0] ?? { titulo: "Lectura del club", anio: new Date().getFullYear() };
     return { selected: only, texto: entry.texto.replace("{titulo}", only.titulo) };
   }
 
-  books.sort((a, b) => a.anio - b.anio);
-  const middleIndex = Math.floor(books.length / 2);
+  if (books.length === 2) {
+    const chosen = temporalPreference === "R" ? books[1] : books[0];
+    return { selected: chosen, texto: entry.texto.replace("{titulo}", chosen.titulo) };
+  }
+
+  if (temporalPreference === "M") {
+    const mid = Math.floor(books.length / 2);
+    const chosen = books[mid];
+    return { selected: chosen, texto: entry.texto.replace("{titulo}", chosen.titulo) };
+  }
+
   const chosen =
-    temporalPreference === "R"
-      ? books[books.length - 1]
-      : temporalPreference === "A"
-        ? books[0]
-        : books[middleIndex];
+    temporalPreference === "R" ? books[books.length - 1] : books[0];
   return { selected: chosen, texto: entry.texto.replace("{titulo}", chosen.titulo) };
 }
 
@@ -159,6 +165,11 @@ export function computeResult(
   catalog: Catalog
 ) {
   const computed = scoreAnswers(answers);
-  const sel = selectBook(catalog, computed.mbti, computed.dominantPair, computed.temporalPreference);
+  const sel = selectBook(
+    catalog,
+    computed.mbti,
+    computed.temporalPreference,
+    computed.dominantPair,
+  );
   return { ...computed, ...sel };
 }
