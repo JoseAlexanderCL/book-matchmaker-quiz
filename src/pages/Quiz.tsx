@@ -68,6 +68,7 @@ export default function Quiz() {
                       className="justify-start h-auto py-5 text-lg sm:text-xl"
                       onClick={() => onSelect(o.key)}
                       aria-pressed={answers[q.id] === o.key}
+                      style={{ backgroundColor: "#5c9063" }}
                     >
                       <span className="font-semibold mr-2">{o.key})</span>
                       {o.label}
