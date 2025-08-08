@@ -20,7 +20,7 @@ export type MBTIType =
 export interface ComputedResult {
   mbti: MBTIType;
   dominantPair: DichotomyMBTI;
-  temporalPreference: "R" | "A"; // Reciente / Antiguo
+  temporalPreference: "R" | "A" | "M"; // Reciente / Antiguo / Medio
   scores: Scores;
   diffs: Record<DichotomyMBTI, number>;
 }
@@ -87,7 +87,10 @@ export function scoreAnswers(answers: AnswerMap) {
     }
   }
 
-  const temporalPreference = scores.RA.R >= scores.RA.A ? "R" : "A";
+  let temporalPreference: "R" | "A" | "M";
+  const diff = scores.RA.R - scores.RA.A;
+  if (Math.abs(diff) === 1) temporalPreference = "M";
+  else temporalPreference = diff >= 0 ? "R" : "A";
 
   const computed: ComputedResult = {
     mbti,
@@ -123,7 +126,7 @@ export function selectBook(
   catalog: Catalog,
   mbti: MBTIType,
   pair: DichotomyMBTI,
-  temporalPreference: "R" | "A"
+  temporalPreference: "R" | "A" | "M"
 ): FinalSelection {
   const entry = catalog[mbti]?.[pair];
   if (!entry) {
@@ -141,7 +144,13 @@ export function selectBook(
   }
 
   books.sort((a, b) => a.anio - b.anio);
-  const chosen = temporalPreference === "R" ? books[books.length - 1] : books[0];
+  const middleIndex = Math.floor(books.length / 2);
+  const chosen =
+    temporalPreference === "R"
+      ? books[books.length - 1]
+      : temporalPreference === "A"
+        ? books[0]
+        : books[middleIndex];
   return { selected: chosen, texto: entry.texto.replace("{titulo}", chosen.titulo) };
 }
 
