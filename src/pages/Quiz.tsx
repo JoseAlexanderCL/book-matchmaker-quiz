@@ -63,7 +63,7 @@ export default function Quiz() {
                   <Button
                     key={o.key}
                     variant={answers[q.id] === o.key ? "secondary" : "outline"}
-                    className="justify-start h-auto py-4"
+                    className="justify-start h-auto py-5 text-lg sm:text-xl"
                     onClick={() => onSelect(o.key)}
                     aria-pressed={answers[q.id] === o.key}
                   >
