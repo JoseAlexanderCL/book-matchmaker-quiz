@@ -4,12 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
+import { placeholderMap } from "@/lib/results/coverPlaceholders";
 
 function getCoverPlaceholder(title: string) {
-  const total = 90; // número de portadas de relleno
-  const hash = Array.from(title).reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const index = (Math.abs(hash) % total) + 1;
-  return `/covers/placeholder${index}.jpg`;
+  const index = placeholderMap[title as keyof typeof placeholderMap];
+  if (index) {
+    return `/covers/placeholder${index}.jpg`;
+  }
+  return "/placeholder.svg";
 }
 
 function removeMbti(text: string) {
