@@ -8,11 +8,13 @@ import { computeResult } from "@/lib/quiz/scoring";
 import { getCatalog } from "@/hooks/use-catalog";
 import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Stairs";
+import { useSession } from "@/hooks/use-session";
 
 export default function Quiz() {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<number, OptionKey>>({});
   const navigate = useNavigate();
+  const { endSession } = useSession();
 
   const progress = Math.round(((current + 1) / questions.length) * 100);
 
@@ -36,6 +38,19 @@ export default function Quiz() {
   const finish = () => {
     if (!allAnswered) return;
     const res = computeResult(answers, getCatalog());
+    try {
+      endSession({
+        mbti: res.mbti,
+        selected_book: res.selected.titulo,
+        score_details: {
+          scores: res.scores,
+          diffs: res.diffs,
+          temporalPreference: res.temporalPreference,
+          answers,
+          selected: res.selected,
+        },
+      });
+    } catch {}
     sessionStorage.setItem("quizResult", JSON.stringify({ answers, res }));
     navigate("/resultado");
   };

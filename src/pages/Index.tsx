@@ -5,11 +5,13 @@ import { useParallax } from "@/components/hooks/useParallax";
 import Layout from "@/components/Stairs";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useSession } from "@/hooks/use-session";
 
 const Index = () => {
   useParallax();
   const navigate = useNavigate();
   const [closing, setClosing] = useState(false);
+  const { startSession } = useSession();
 
   return (
     <AnimatePresence
@@ -41,7 +43,7 @@ const Index = () => {
                   <Button
                     variant="hero"
                     className="px-8 py-6 text-base"
-                    onClick={() => setClosing(true)}
+                    onClick={() => { startSession(); setClosing(true); }}
                   >
                     Comenzar
                   </Button>
