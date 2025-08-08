@@ -48,7 +48,7 @@ export default function Quiz() {
         <Helmet>
           <title>Test lector – ¿Qué libro del club eres?</title>
           <meta name="description" content="Responde 16 preguntas y descubre tu tipo lector MBTI y tu libro ideal del club." />
-          <link rel="canonical" href="/quiz" />
+          <link rel="canonical" href="/preguntas" />
         </Helmet>
 
         <section className="container py-10 sm:py-16 flex-1">
