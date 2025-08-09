@@ -108,6 +108,7 @@ export interface BookEntry {
   anio: number;
   portada?: string;
   sinopsis?: string;
+  datoCurioso?: string;
 }
 
 export interface CatalogEntry {

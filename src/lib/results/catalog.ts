@@ -12,7 +12,7 @@ export const defaultCatalog: Catalog = {
     EI: {
       libros: [
         { titulo: "Fahrenheit 451", anio: 1953 },
-        { titulo: "1984", anio: 1949 },
+        { titulo: "1984", anio: 1949, datoCurioso: "Orwell casi titula la novela 'The Last Man in Europe'" },
         { titulo: "El cuento de la criada", anio: 1985 }
       ],
       texto: "Como ENTJ sociable y orientado a grandes cambios, te gusta enfrentarte a sociedades que necesitan despertar. Tu libro ideal es {titulo}: te hará liderar revoluciones desde tu sillón."
@@ -28,7 +28,7 @@ export const defaultCatalog: Catalog = {
     TF: {
       libros: [
         { titulo: "El cuento de la criada", anio: 1985 },
-        { titulo: "1984", anio: 1949 }
+        { titulo: "1984", anio: 1949, datoCurioso: "Orwell casi titula la novela 'The Last Man in Europe'" }
       ],
       texto: "Eres un ENTJ racional: prefieres tramas que cuestionan el poder con fría inteligencia. {titulo} alimentará tu mente ambiciosa."
     },
