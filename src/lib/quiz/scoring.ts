@@ -106,6 +106,7 @@ export function scoreAnswers(answers: AnswerMap) {
 export interface BookEntry {
   titulo: string;
   anio: number;
+  autor: string;
   portada?: string;
   sinopsis?: string;
   datoCurioso?: string;
@@ -133,7 +134,11 @@ export function selectBook(
   if (!entry) {
     // Fallback safe
     return {
-      selected: { titulo: "Lectura sorpresa del club", anio: new Date().getFullYear() },
+      selected: {
+        titulo: "Lectura sorpresa del club",
+        anio: new Date().getFullYear(),
+        autor: "Autor desconocido",
+      },
       texto: `Te va la sorpresa: {titulo}`.replace("{titulo}", "Lectura sorpresa del club"),
     };
   }
@@ -141,7 +146,12 @@ export function selectBook(
   const books = [...entry.libros].sort((a, b) => a.anio - b.anio);
 
   if (books.length <= 1) {
-    const only = books[0] ?? { titulo: "Lectura del club", anio: new Date().getFullYear() };
+    const only =
+      books[0] ?? {
+        titulo: "Lectura del club",
+        anio: new Date().getFullYear(),
+        autor: "Autor desconocido",
+      };
     return { selected: only, texto: entry.texto.replace("{titulo}", only.titulo) };
   }
 

@@ -70,6 +70,7 @@ export default function Result() {
     "@context": "https://schema.org",
     "@type": "Book",
     name: resumen.selected.titulo,
+    author: resumen.selected.autor,
     datePublished: resumen.selected.anio,
     description: resumen.selected.sinopsis ?? resumen.texto,
     ...(resumen.selected.datoCurioso && {
@@ -135,7 +136,10 @@ export default function Result() {
                 className="w-full h-auto object-cover rounded-md shadow"
               />
               <motion.p variants={item} className="text-lg font-semibold">
-                {resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span>
+                {resumen.selected.titulo}
+                <span className="text-muted-foreground">
+                  {` ${resumen.selected.autor} (${resumen.selected.anio})`}
+                </span>
               </motion.p>
             </div>
             <motion.div variants={item}>
