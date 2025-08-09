@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useParallax } from "@/components/hooks/useParallax";
 import Layout from "@/components/Stairs";
 import { AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession } from "@/hooks/use-session";
 
 const Index = () => {
@@ -13,6 +13,14 @@ const Index = () => {
   const [closing, setClosing] = useState(false);
   const { startSession } = useSession();
 
+  // Fallback navigation in case exit animation fails to trigger
+  useEffect(() => {
+    if (closing) {
+      const timer = setTimeout(() => navigate("/preguntas"), 650);
+      return () => clearTimeout(timer);
+    }
+  }, [closing, navigate]);
+
   return (
     <AnimatePresence
       mode="wait" // ensure exit animation completes before navigating
@@ -20,7 +28,7 @@ const Index = () => {
     >
       {!closing && (
         // Use dark blue background color without transparency
-        <Layout backgroundColor="#00008B">
+        <Layout key="layout" backgroundColor="#00008B">
           <main>
             <Helmet>
               <title>¿Qué libro del club de lectura eres? |</title>
