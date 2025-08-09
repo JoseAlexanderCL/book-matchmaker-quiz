@@ -71,3 +71,19 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Pruebas
+
+### Automáticas
+
+Ejecuta las pruebas con:
+
+```bash
+npm test
+```
+
+### Manuales
+
+1. Ejecuta `npm run dev`.
+2. Completa el cuestionario y avanza a la página de resultados.
+3. Verifica que el texto mostrado incluye el código MBTI correspondiente.

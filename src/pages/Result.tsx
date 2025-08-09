@@ -14,14 +14,6 @@ function getCoverPlaceholder(title: string) {
   return "/placeholder.svg";
 }
 
-function removeMbti(text: string) {
-  return text
-    .replace(/\b[EI][SN][TF][JP]\b/gi, "")
-    .replace(/\s{2,}/g, " ")
-    .replace(/\s+([,;:.!])/g, "$1")
-    .trim();
-}
-
 type QuizResult = ComputedResult & FinalSelection;
 
 interface Stored {
@@ -55,7 +47,7 @@ export default function Result() {
 
   const frase = useMemo(() => {
     if (!resumen) return "";
-    return removeMbti(resumen.texto);
+    return resumen.texto;
   }, [resumen]);
 
   if (!resumen) {
