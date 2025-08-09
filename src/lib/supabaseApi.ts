@@ -34,9 +34,6 @@ export async function completeSession(sessionId: string, result: ResultPayload) 
   } catch (error) {
     console.warn('[Supabase] Error insert result', error);
   }
-  try {
-    await supabase.from('sessions').update({ ended_at: now }).eq('id', sessionId);
-  } catch (error) {
-    console.warn('[Supabase] Error updating ended_at', error);
-  }
+  // ended_at is set automatically via DB trigger after inserting into results
+
 }
