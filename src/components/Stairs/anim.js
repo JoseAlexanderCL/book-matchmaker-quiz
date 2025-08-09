@@ -1,12 +1,15 @@
 export const expand = {
   initial: { height: 0 },
-  // Use a real height so the columns visibly expand from 0 to full size
-  animate: { height: "100%", transition: { duration: 0.5, delay: 0.2 } },
-  exit: { height: 0, transition: { duration: 0.5, delay: 0 } },
+  // Keep the columns collapsed until the exit animation is triggered
+  animate: { height: 0 },
+  // Expand to cover the screen when exiting the view
+  exit: { height: "100%", transition: { duration: 0.5, delay: 0 } },
 };
 
 export const opacity = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.5, delay: 0.2 } },
-  exit: { opacity: 0, transition: { duration: 0.5, delay: 0 } },
+  // Hide the columns while the page is visible
+  animate: { opacity: 0 },
+  // Fade in the columns during the exit transition
+  exit: { opacity: 1, transition: { duration: 0.5, delay: 0 } },
 };
