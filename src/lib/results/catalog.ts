@@ -41,7 +41,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "Margaret Atwood se basó en regímenes reales para crear Gilead; escribió la novela en 1984 en Berlín Occidental, afirmando que no incluyó ningún evento que no hubiera sucedido en la historia."
         }
       ],
-      texto: "Como un ENTJ sociable y orientado a los grandes cambios, posees una mezcla de carisma, estrategia y determinación que inspira a quienes te rodean. Te intriga cuestionar la autoridad y planificar revoluciones justas, y disfrutas cuando una historia refleja tu inclinación a transformar el mundo. Por eso {titulo} es tu aliado perfecto: la trama expone sociedades dormidas y te invita a liderar la chispa del cambio desde tu sillón, alimentando tu espíritu inconformista en cada página y recordándote tu vocación de líder visionario."
+      texto: "Como sociable y orientado a los grandes cambios, posees una mezcla de carisma, estrategia y determinación que inspira a quienes te rodean. Te intriga cuestionar la autoridad y planificar revoluciones justas, y disfrutas cuando una historia refleja tu inclinación a transformar el mundo. Por eso {titulo} es tu aliado perfecto: la trama expone sociedades dormidas y te invita a liderar la chispa del cambio desde tu sillón, alimentando tu espíritu inconformista en cada página y recordándote tu vocación de líder visionario."
     },
     SN: {
       libros: [
@@ -67,7 +67,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "N. K. Jemisin se convirtió en la primera autora en ganar tres premios Hugo consecutivos con cada volumen de la trilogía ‘La Tierra Fragmentada’."
         }
       ],
-      texto: "Bajo tu perfil ENTJ, tu mente estratégica no descansa: analizas patrones, observas tendencias y disfrutas trazando rutas hacia objetivos ambiciosos. Las historias de imperios en juego y ciencias ficticias robustas son un espejo de tu capacidad de planificación. Por eso {titulo} te atrapa: su mundo calculado, sus planes a largo plazo y sus dilemas sobre conocimiento y poder resonarán con tu naturaleza racional. Leerlo te hará sentir parte de una conspiración intelectual a la altura de tu genio."
+      texto: "Bajo tu perfil, tu mente estratégica no descansa: analizas patrones, observas tendencias y disfrutas trazando rutas hacia objetivos ambiciosos. Las historias de imperios en juego y ciencias ficticias robustas son un espejo de tu capacidad de planificación. Por eso {titulo} te atrapa: su mundo calculado, sus planes a largo plazo y sus dilemas sobre conocimiento y poder resonarán con tu naturaleza racional. Leerlo te hará sentir parte de una conspiración intelectual a la altura de tu genio."
     },
     TF: {
       libros: [
@@ -86,7 +86,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "George Orwell escribió 1984 mientras convalecía en la isla escocesa de Jura; el título original era ‘The Last Man in Europe’ y la novela popularizó términos como ‘Gran Hermano’ y ‘neolengua’."
         }
       ],
-      texto: "Como ENTJ racional, tu brújula moral se rige por la lógica. Prefieres argumentos sólidos y tramas que desmantelan estructuras de poder con inteligencia y calculada frialdad. Tu energía competitiva se alimenta de desafíos intelectuales que pongan a prueba tu ingenio. {titulo} encaja contigo porque presenta un mundo en el que el pensamiento estratégico derrota la opresión; cada revelación satisfará tu espíritu competitivo y tu deseo de dominar situaciones complejas con claridad y decisión."
+      texto: "Como persona racional, tu brújula moral se rige por la lógica. Prefieres argumentos sólidos y tramas que desmantelan estructuras de poder con inteligencia y calculada frialdad. Tu energía competitiva se alimenta de desafíos intelectuales que pongan a prueba tu ingenio. {titulo} encaja contigo porque presenta un mundo en el que el pensamiento estratégico derrota la opresión; cada revelación satisfará tu espíritu competitivo y tu deseo de dominar situaciones complejas con claridad y decisión."
     },
     JP: {
       libros: [
@@ -98,7 +98,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "N. K. Jemisin se convirtió en la primera autora en ganar tres premios Hugo consecutivos con cada volumen de la trilogía ‘La Tierra Fragmentada’."
         }
       ],
-      texto: "Tu naturaleza ENTJ organizada anhela cerrar ciclos y comprender sistemas completos. Te apasiona descubrir cómo se ordenan los procesos complejos y no descansas hasta ver concluido un plan. Cuando te sumerges en narrativas que equilibran caos y orden, sientes que podrías gobernar esos mundos. {titulo} te encantará porque narra un conflicto de magnitud épica donde entender las reglas y completar un ciclo es crucial. Te verás reflejado en personajes que toman las riendas para restaurar el equilibrio."
+      texto: "Tu naturaleza organizada anhela cerrar ciclos y comprender sistemas completos. Te apasiona descubrir cómo se ordenan los procesos complejos y no descansas hasta ver concluido un plan. Cuando te sumerges en narrativas que equilibran caos y orden, sientes que podrías gobernar esos mundos. {titulo} te encantará porque narra un conflicto de magnitud épica donde entender las reglas y completar un ciclo es crucial. Te verás reflejado en personajes que toman las riendas para restaurar el equilibrio."
     }
   },
   INTJ: {
@@ -112,7 +112,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "La novela ganó el premio Hugo 2017; N. K. Jemisin amplía su exploración de opresión y resiliencia, combinando fantasía y ciencia ficción."
         }
       ],
-      texto: "Aunque eres un INTJ que disfruta de su mundo interior, tu mente no se conforma con la teoría. Posees una combinación de introspección y ambición que te lleva a contemplar soluciones grandiosas y a mover hilos desde la sombra. {titulo} te conquista porque sigue a personajes que, desde la tranquilidad de su reflexión, influyen en acontecimientos globales. Sus intrigas, secretos y descubrimientos científicos harán vibrar tu intelecto y te inspirarán a ser el arquitecto de tu propio destino."
+      texto: "Aunque disfrutas de tu mundo interior, tu mente no se conforma con la teoría. Posees una combinación de introspección y ambición que te lleva a contemplar soluciones grandiosas y a mover hilos desde la sombra. {titulo} te conquista porque sigue a personajes que, desde la tranquilidad de su reflexión, influyen en acontecimientos globales. Sus intrigas, secretos y descubrimientos científicos harán vibrar tu intelecto y te inspirarán a ser el arquitecto de tu propio destino."
     },
     SN: {
       libros: [
@@ -131,7 +131,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "Asimov concibió la Segunda Fundación como un grupo de mentalistas psíquicos; su ubicación secreta es un enigma central de la saga."
         }
       ],
-      texto: "Como INTJ con predilección por la lógica, te entusiasman universos con leyes claras y planes a escala galáctica. Disfrutas de diseccionar sistemas complejos, anticipar consecuencias y comprender la mecánica oculta tras grandes acontecimientos. {titulo} es ideal para ti porque despliega estrategias elaboradas, personajes intelectuales y tensiones históricas que requieren visión a largo plazo. Su lectura te permitirá imaginar cómo ajustarías cada variable del cosmos para alcanzar la perfección que tanto te gusta perseguir."
+      texto: "Con predilección por la lógica, te entusiasman universos con leyes claras y planes a escala galáctica. Disfrutas de diseccionar sistemas complejos, anticipar consecuencias y comprender la mecánica oculta tras grandes acontecimientos. {titulo} es ideal para ti porque despliega estrategias elaboradas, personajes intelectuales y tensiones históricas que requieren visión a largo plazo. Su lectura te permitirá imaginar cómo ajustarías cada variable del cosmos para alcanzar la perfección que tanto te gusta perseguir."
     },
     TF: {
       libros: [
@@ -143,7 +143,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "‘Escuadrón’ es el primer libro de la serie ‘Skyward’; Sanderson, conocido por su disciplina, escribe a un ritmo prolífico y es profesor en la universidad Brigham Young."
         }
       ],
-      texto: "A pesar de tu inclinación intelectual, tu corazón INTJ aprecia la emoción de una epopeya bien construida. Valoras los héroes competentes que aprenden de sus errores y alcanzan sus objetivos mediante disciplina y razonamiento. {titulo} combina tecnología avanzada, batallas aéreas y un protagonista que desafía prejuicios con determinación. Cada página estimula tu mente analítica y te permite vivir el heroísmo a través de personajes que, como tú, piensan antes de actuar pero no temen arriesgar."
+      texto: "A pesar de tu inclinación intelectual, tu corazón aprecia la emoción de una epopeya bien construida. Valoras los héroes competentes que aprenden de sus errores y alcanzan sus objetivos mediante disciplina y razonamiento. {titulo} combina tecnología avanzada, batallas aéreas y un protagonista que desafía prejuicios con determinación. Cada página estimula tu mente analítica y te permite vivir el heroísmo a través de personajes que, como tú, piensan antes de actuar pero no temen arriesgar."
     },
     JP: {
       libros: [
@@ -176,7 +176,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "Agatha Christie se inspiró en el secuestro del bebé de Charles Lindbergh; el tren Orient Express existía y Christie viajó en él."
         }
       ],
-      texto: "Como ESTJ extrovertido, valoras las reglas claras, la justicia y el orden. Disfrutas liderar grupos y encontrar soluciones concretas a problemas prácticos. Los misterios donde cada personaje tiene algo que ocultar despiertan tu instinto organizador, ya que te gusta analizar pruebas y señalar culpables. {titulo} reúne un rompecabezas perfecto con tensiones sociales y un crimen que exige lógica y disciplina, permitiéndote jugar a detective mientras te sientes en el centro de la investigación."
+      texto: "Como extrovertido, valoras las reglas claras, la justicia y el orden. Disfrutas liderar grupos y encontrar soluciones concretas a problemas prácticos. Los misterios donde cada personaje tiene algo que ocultar despiertan tu instinto organizador, ya que te gusta analizar pruebas y señalar culpables. {titulo} reúne un rompecabezas perfecto con tensiones sociales y un crimen que exige lógica y disciplina, permitiéndote jugar a detective mientras te sientes en el centro de la investigación."
     },
     SN: {
       libros: [
