@@ -54,6 +54,8 @@ const Layout = ({ children, backgroundColor }) => {
             // Give each column visible height and span the full row
             height: "100%",
             gridRow: "1 / -1",
+            position: "relative",
+            zIndex: 10,
           }}
         />
       ))}
@@ -62,7 +64,7 @@ const Layout = ({ children, backgroundColor }) => {
           gridColumn: "1 / -1",
           gridRow: "1",
           position: "relative",
-          zIndex: 1,
+          zIndex: 0,
         }}
       >
         {children}
