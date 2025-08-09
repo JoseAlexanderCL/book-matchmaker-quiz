@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Sparkles, RefreshCw, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
@@ -119,22 +120,28 @@ export default function Result() {
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 variants={item} className="text-2xl font-semibold leading-none tracking-tight">
-          Resultado del test: tu libro recomendado 📚
+        <motion.h1
+          variants={item}
+          className="flex items-center gap-2 text-2xl font-semibold leading-none tracking-tight"
+        >
+          <Sparkles className="h-5 w-5 text-amber-500" />
+          Resultado del test: tu libro recomendado
         </motion.h1>
 
         <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50 p-6 space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <motion.img
-                variants={imageItem}
-                src={coverSrc}
-                alt={`Portada de ${resumen.selected.titulo}`}
-                loading="lazy"
-                decoding="async"
-                style={{ willChange: "opacity, transform, filter" }}
-                className="w-full h-auto object-cover rounded-md shadow"
-              />
+              <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
+                <motion.img
+                  variants={imageItem}
+                  src={coverSrc}
+                  alt={`Portada de ${resumen.selected.titulo}`}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ willChange: "opacity, transform, filter" }}
+                  className="w-full h-auto object-cover rounded-md"
+                />
+              </div>
               <motion.p variants={item} className="text-lg font-semibold">
                 {resumen.selected.titulo}
                 <span className="text-muted-foreground">
@@ -155,7 +162,10 @@ export default function Result() {
               className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-4 border-l-4 border-amber-400"
             >
               <p className="text-sm text-muted-foreground">
-                <span className="font-medium">¿Sabías que...?</span> {resumen.selected.datoCurioso}
+                <span className="font-medium inline-flex items-center gap-1">
+                  <Sparkles className="h-4 w-4 text-amber-500" />¿Sabías que...?
+                </span>{" "}
+                {resumen.selected.datoCurioso}
               </p>
             </motion.div>
           )}
@@ -168,15 +178,17 @@ export default function Result() {
 
           <motion.div variants={item} className="flex flex-wrap gap-3">
             <button
-              className="px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-amber-400 text-white border border-amber-300 shadow"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-amber-400 text-white border border-amber-300 shadow"
               onClick={() => navigate("/preguntas")}
             >
+              <RefreshCw className="h-4 w-4" />
               Volver a responder
             </button>
             <button
-              className="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white border border-amber-300 shadow"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white border border-amber-300 shadow"
               onClick={() => navigate("/")}
             >
+              <ArrowLeft className="h-4 w-4" />
               Volver al inicio
             </button>
           </motion.div>
