@@ -22,7 +22,8 @@ const Layout = ({ children, backgroundColor, revealOnEnter = false }) => {
           opacity: 1,
           transition: { duration: 0.65, ease: [0.22, 0.61, 0.36, 1] },
         },
-        exit: {},
+        // Ensure columns expand to full height when exiting
+        exit: { height: "100%" },
       }
     : {
         initial: { ...expand.initial, ...opacity.initial },
@@ -42,7 +43,7 @@ const Layout = ({ children, backgroundColor, revealOnEnter = false }) => {
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${nbOfColumns}, 1fr)`,
-        minHeight: "100vh", // ensure container spans full viewport height
+        height: "100vh", // ensure container spans full viewport height
       }}
       variants={containerVariants}
       initial="initial"
