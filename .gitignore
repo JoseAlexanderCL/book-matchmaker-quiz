@@ -25,3 +25,6 @@ dist-ssr
 
 # Supabase client
 src/integrations/supabase/client.ts
+# Environment variables
+.env
+.env.*
