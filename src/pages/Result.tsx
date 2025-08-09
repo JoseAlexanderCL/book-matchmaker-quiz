@@ -13,6 +13,32 @@ function getCoverPlaceholder(title: string) {
   return "/placeholder.svg";
 }
 
+const mbtiEmojiMap = {
+  // Analistas
+  INTJ: "🥶☕", // Cold brew: estratégico, calculador
+  INTP: "🧪☕", // Café experimental/laboratorio
+  ENTJ: "💼☕", // Espresso doble, directo al grano
+  ENTP: "🤹‍♂️☕", // Latte con espuma artística
+
+  // Diplomáticos
+  INFJ: "🌿☕", // Matcha latte (tranquilo, reflexivo)
+  INFP: "🍫☕", // Mocha dulce y soñador
+  ENFJ: "🌞☕", // Cappuccino brillante y cálido
+  ENFP: "🌈☕", // Latte colorido/creativo
+
+  // Centinelas
+  ISTJ: "📏☕", // Café negro clásico
+  ISFJ: "🧸☕", // Latte con leche tibia (cálido y protector)
+  ESTJ: "📊☕", // Americano fuerte, productivo
+  ESFJ: "🍪☕", // Café con galleta, social y acogedor
+
+  // Exploradores
+  ISTP: "🛠☕", // Espresso rápido para la acción
+  ISFP: "🎨☕", // Latte arte con dibujos
+  ESTP: "🔥☕", // Café con especias (picante y atrevido)
+  ESFP: "🎉☕", // Frappé dulce y llamativo
+};
+
 type QuizResult = ComputedResult & FinalSelection;
 
 interface Stored {
@@ -145,7 +171,9 @@ export default function Result() {
             <div className="mt-5 bg-blue-50 rounded-xl p-4">
               <h3 className="font-semibold text-gray-700 text-sm mb-3 flex items-center gap-2">
                 <div className="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center">
-                  <span className="text-blue-700 font-bold text-xs">{resumen.mbti}</span>
+                  <span className="text-blue-700 font-bold text-xs">
+                    {mbtiEmojiMap[resumen.mbti] || "☕"}
+                  </span>
                 </div>
                 Tu perfil lector
               </h3>
