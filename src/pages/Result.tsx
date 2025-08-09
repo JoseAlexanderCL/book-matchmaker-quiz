@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
 
@@ -53,12 +52,16 @@ export default function Result() {
 
   if (!resumen) {
     return (
-      <main className="min-h-screen bg-gradient-night flex flex-col">
-        <div className="flex-1 flex items-center justify-center">
+      <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 p-4">
+        <div className="flex min-h-screen items-center justify-center">
           <p className="text-muted-foreground">No hay resultado. Comienza el test.</p>
-          <Button className="ml-4" onClick={() => navigate("/")}>Inicio</Button>
+          <button
+            className="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-amber-400 text-white shadow"
+            onClick={() => navigate("/")}
+          >
+            Inicio
+          </button>
         </div>
-        <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
       </main>
     );
   }
@@ -101,7 +104,7 @@ export default function Result() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-night flex flex-col">
+    <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 p-4">
       <Helmet>
         <title>Resultado – {resumen.selected.titulo}</title>
         <meta name="description" content={`Tu libro recomendado: ${resumen.selected.titulo}.`} />
@@ -110,59 +113,71 @@ export default function Result() {
       </Helmet>
 
       <motion.section
-        className="container py-10 sm:py-16 flex-1"
+        className="max-w-3xl mx-auto space-y-6"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        <div className="max-w-3xl mx-auto">
-          <Card className="shadow-elegant">
-            <CardHeader>
-              <motion.h1 variants={item} className="text-2xl font-semibold leading-none tracking-tight">
-                Resultado del test: tu libro recomendado 📚
-              </motion.h1>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex flex-col sm:flex-row items-start gap-6">
-                <motion.img
-                  variants={imageItem}
-                  src={coverSrc}
-                  alt={`Portada de ${resumen.selected.titulo}`}
-                  loading="lazy"
-                  decoding="async"
-                  style={{ willChange: "opacity, transform, filter" }}
-                  className="w-32 h-48 object-cover rounded-md shadow-elegant hover-scale"
-                />
-                <motion.div variants={item}>
-                  <p className="text-lg font-semibold">
-                    {resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span>
-                  </p>
-                  {resumen.selected.sinopsis && (
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {resumen.selected.sinopsis}
-                    </p>
-                  )}
-                  {resumen.selected.datoCurioso && (
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      <span className="font-medium">¿Sabías que…?</span> {resumen.selected.datoCurioso}
-                    </p>
-                  )}
-                </motion.div>
-              </div>
+        <motion.h1 variants={item} className="text-2xl font-semibold leading-none tracking-tight">
+          Resultado del test: tu libro recomendado 📚
+        </motion.h1>
 
-              <motion.p variants={item} className="text-lg">
-                {frase}
+        <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50 p-6 space-y-6">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <motion.img
+                variants={imageItem}
+                src={coverSrc}
+                alt={`Portada de ${resumen.selected.titulo}`}
+                loading="lazy"
+                decoding="async"
+                style={{ willChange: "opacity, transform, filter" }}
+                className="w-full h-auto object-cover rounded-md shadow"
+              />
+              <motion.p variants={item} className="text-lg font-semibold">
+                {resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span>
               </motion.p>
+            </div>
+            <motion.div variants={item}>
+              {resumen.selected.sinopsis && (
+                <p className="text-sm text-muted-foreground">{resumen.selected.sinopsis}</p>
+              )}
+            </motion.div>
+          </div>
 
-              <motion.div variants={item} className="flex flex-wrap gap-3">
-                <Button variant="secondary" onClick={() => navigate("/preguntas")}>Volver a responder</Button>
-                <Button variant="hero" onClick={() => navigate("/")}>Volver al inicio</Button>
-              </motion.div>
-            </CardContent>
-          </Card>
+          {resumen.selected.datoCurioso && (
+            <motion.div
+              variants={item}
+              className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-4 border-l-4 border-amber-400"
+            >
+              <p className="text-sm text-muted-foreground">
+                <span className="font-medium">¿Sabías que...?</span> {resumen.selected.datoCurioso}
+              </p>
+            </motion.div>
+          )}
+
+          <motion.div variants={item} className="bg-blue-50 rounded-xl p-4 space-y-2">
+            <h2 className="text-lg font-medium">Tu perfil lector</h2>
+            <Badge>{resumen.mbti}</Badge>
+            <p>{frase}</p>
+          </motion.div>
+
+          <motion.div variants={item} className="flex flex-wrap gap-3">
+            <button
+              className="px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-amber-400 text-white border border-amber-300 shadow"
+              onClick={() => navigate("/preguntas")}
+            >
+              Volver a responder
+            </button>
+            <button
+              className="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white border border-amber-300 shadow"
+              onClick={() => navigate("/")}
+            >
+              Volver al inicio
+            </button>
+          </motion.div>
         </div>
       </motion.section>
-      <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
     </main>
   );
 }
