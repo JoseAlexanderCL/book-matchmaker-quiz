@@ -76,6 +76,12 @@ export default function Result() {
     name: resumen.selected.titulo,
     datePublished: resumen.selected.anio,
     description: resumen.selected.sinopsis ?? resumen.texto,
+    ...(resumen.selected.datoCurioso && {
+      comment: {
+        "@type": "Comment",
+        text: resumen.selected.datoCurioso,
+      },
+    }),
   };
 
   return (
@@ -102,9 +108,14 @@ export default function Result() {
                 />
                 <div>
                   <p className="text-lg font-semibold">{resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span></p>
+                  {resumen.selected.sinopsis && (
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {resumen.selected.sinopsis}
+                    </p>
+                  )}
                   {resumen.selected.datoCurioso && (
                     <p className="mt-2 text-sm text-muted-foreground">
-                      Dato curioso: {resumen.selected.datoCurioso}
+                      <span className="font-medium">¿Sabías que…?</span> {resumen.selected.datoCurioso}
                     </p>
                   )}
                 </div>
