@@ -36,6 +36,10 @@ npm i
 npm run dev
 ```
 
+## Variables de entorno
+
+Copia el archivo `.env.example` a `.env` y completa `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY` con los valores reales de tu proyecto en Supabase.
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).

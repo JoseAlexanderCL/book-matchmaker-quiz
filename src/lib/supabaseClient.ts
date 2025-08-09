@@ -16,22 +16,24 @@
  *   - score_details jsonb
  *   - created_at timestamp not null
  */
-import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-let supabase: SupabaseClient | null = null;
-
-if (supabaseUrl && supabaseAnonKey) {
-  supabase = createClient(supabaseUrl, supabaseAnonKey, {
-    auth: { persistSession: false },
-    global: { headers: { 'x-client-info': 'reading-club-quiz' } },
-  });
-} else if (typeof window !== 'undefined') {
-  console.warn(
-    '[Supabase] VITE_SUPABASE_URL o VITE_SUPABASE_ANON_KEY no están definidos. Las métricas no se guardarán hasta configurarlos.'
+if (!supabaseUrl) {
+  throw new Error(
+    '[Supabase] VITE_SUPABASE_URL no está definido. Copia .env.example a .env y configura la URL de tu proyecto.'
   );
 }
 
-export { supabase };
+if (!supabaseAnonKey) {
+  throw new Error(
+    '[Supabase] VITE_SUPABASE_ANON_KEY no está definido. Copia .env.example a .env y configura la clave anónima.'
+  );
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: { persistSession: false },
+  global: { headers: { 'x-client-info': 'reading-club-quiz' } },
+});
