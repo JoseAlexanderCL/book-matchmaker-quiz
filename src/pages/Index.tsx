@@ -19,8 +19,8 @@ const Index = () => {
       onExitComplete={() => navigate("/preguntas")}
     >
       {!closing && (
-        // Use primary color with transparency for contrast against the page background
-        <Layout backgroundColor="hsl(var(--primary) / 0.6)">
+        // Use dark blue background color without transparency
+        <Layout backgroundColor="#00008B">
           <main>
             <Helmet>
               <title>¿Qué libro del club de lectura eres? |</title>
