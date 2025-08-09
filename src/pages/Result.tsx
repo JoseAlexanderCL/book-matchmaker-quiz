@@ -102,6 +102,11 @@ export default function Result() {
                 />
                 <div>
                   <p className="text-lg font-semibold">{resumen.selected.titulo} <span className="text-muted-foreground">({resumen.selected.anio})</span></p>
+                  {resumen.selected.datoCurioso && (
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Dato curioso: {resumen.selected.datoCurioso}
+                    </p>
+                  )}
                 </div>
               </div>
 
