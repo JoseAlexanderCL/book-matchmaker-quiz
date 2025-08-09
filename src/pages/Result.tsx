@@ -77,14 +77,27 @@ export default function Result() {
     }),
   };
 
-  // Animations
+  // Animaciones (fade-in más lento y blur-in en la portada)
   const container = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.15, delayChildren: 0.05 } },
+    visible: { transition: { staggerChildren: 0.28, delayChildren: 0.12 } },
   };
   const item = {
     hidden: { opacity: 0, y: 12 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 0.61, 0.36, 1] } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.95, ease: [0.22, 0.61, 0.36, 1] },
+    },
+  };
+  const imageItem = {
+    hidden: { opacity: 0, y: 12, filter: "blur(8px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 1.05, ease: [0.22, 0.61, 0.36, 1] },
+    },
   };
 
   return (
@@ -112,11 +125,12 @@ export default function Result() {
             <CardContent className="space-y-6">
               <div className="flex flex-col sm:flex-row items-start gap-6">
                 <motion.img
-                  variants={item}
+                  variants={imageItem}
                   src={coverSrc}
                   alt={`Portada de ${resumen.selected.titulo}`}
                   loading="lazy"
                   decoding="async"
+                  style={{ willChange: "opacity, transform, filter" }}
                   className="w-32 h-48 object-cover rounded-md shadow-elegant hover-scale"
                 />
                 <motion.div variants={item}>
