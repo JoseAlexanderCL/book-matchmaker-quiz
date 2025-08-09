@@ -50,7 +50,9 @@ export default function Quiz() {
           selected: res.selected,
         },
       });
-    } catch {}
+    } catch {
+      // ignore errors ending session
+    }
     sessionStorage.setItem("quizResult", JSON.stringify({ answers, res }));
     navigate("/resultado");
   };
@@ -58,7 +60,7 @@ export default function Quiz() {
   const q = questions[current];
 
   return (
-    <Layout backgroundColor="hsl(var(--primary) / 0.6)" revealOnEnter>
+    <Layout backgroundColor="#00008B" revealOnEnter>
       <main className="min-h-screen bg-gradient-night flex flex-col">
         <Helmet>
           <title>Test lector – ¿Qué libro del club eres?</title>
