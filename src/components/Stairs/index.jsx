@@ -6,14 +6,9 @@ const columns = Array.from({ length: nbOfColumns });
 
 const columnVariants = {
   initial: { ...expand.initial, ...opacity.initial },
-  animate: {
-    ...expand.animate,
-    ...opacity.animate,
-    transition: {
-      ...expand.animate.transition,
-      ...opacity.animate.transition,
-    },
-  },
+  // Keep columns invisible while the page is displayed
+  animate: { ...expand.animate, ...opacity.animate },
+  // Reveal the columns only when leaving the page
   exit: {
     ...expand.exit,
     ...opacity.exit,
@@ -56,6 +51,7 @@ const Layout = ({ children, backgroundColor }) => {
             gridRow: "1 / -1",
             position: "relative",
             zIndex: 10,
+            pointerEvents: "none",
           }}
         />
       ))}
