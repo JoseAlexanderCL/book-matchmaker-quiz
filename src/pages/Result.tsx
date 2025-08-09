@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Sparkles, RefreshCw, ArrowLeft } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
 
@@ -82,29 +80,6 @@ export default function Result() {
     }),
   };
 
-  // Animaciones (fade-in más lento y blur-in en la portada)
-  const container = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.28, delayChildren: 0.12 } },
-  };
-  const item = {
-    hidden: { opacity: 0, y: 12 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.95, ease: [0.22, 0.61, 0.36, 1] },
-    },
-  };
-  const imageItem = {
-    hidden: { opacity: 0, y: 12, filter: "blur(8px)" },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 1.05, ease: [0.22, 0.61, 0.36, 1] },
-    },
-  };
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 p-4">
       <Helmet>
@@ -114,86 +89,89 @@ export default function Result() {
         <script type="application/ld+json">{JSON.stringify(bookLd)}</script>
       </Helmet>
 
-      <motion.section
-        className="max-w-3xl mx-auto space-y-6"
-        variants={container}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.h1
-          variants={item}
-          className="flex items-center gap-2 text-2xl font-semibold leading-none tracking-tight"
-        >
-          <Sparkles className="h-5 w-5 text-amber-500" />
-          Resultado del test: tu libro recomendado
-        </motion.h1>
-
-        <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50 p-6 space-y-6">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-4">
-              <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
-                <motion.img
-                  variants={imageItem}
-                  src={coverSrc}
-                  alt={`Portada de ${resumen.selected.titulo}`}
-                  loading="lazy"
-                  decoding="async"
-                  style={{ willChange: "opacity, transform, filter" }}
-                  className="w-full h-auto object-cover rounded-md"
-                />
-              </div>
-              <motion.p variants={item} className="text-lg font-semibold">
-                {resumen.selected.titulo}
-                <span className="text-muted-foreground">
-                  {` ${resumen.selected.autor} (${resumen.selected.anio})`}
-                </span>
-              </motion.p>
-            </div>
-            <motion.div variants={item}>
-              {resumen.selected.sinopsis && (
-                <p className="text-sm text-muted-foreground">{resumen.selected.sinopsis}</p>
-              )}
-            </motion.div>
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center gap-2 bg-amber-100/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
+            <Sparkles className="w-5 h-5 text-amber-700" />
+            <h1 className="text-xl font-bold text-amber-800">Tu libro recomendado</h1>
           </div>
-
-          {resumen.selected.datoCurioso && (
-            <motion.div
-              variants={item}
-              className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-4 border-l-4 border-amber-400"
-            >
-              <p className="text-sm text-muted-foreground">
-                <span className="font-medium inline-flex items-center gap-1">
-                  <Sparkles className="h-4 w-4 text-amber-500" />¿Sabías que...?
-                </span>{" "}
-                {resumen.selected.datoCurioso}
-              </p>
-            </motion.div>
-          )}
-
-          <motion.div variants={item} className="bg-blue-50 rounded-xl p-4 space-y-2">
-            <h2 className="text-lg font-medium">Tu perfil lector</h2>
-            <Badge>{resumen.mbti}</Badge>
-            <p>{frase}</p>
-          </motion.div>
-
-          <motion.div variants={item} className="flex flex-wrap gap-3">
-            <button
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-amber-400 text-white border border-amber-300 shadow"
-              onClick={() => navigate("/preguntas")}
-            >
-              <RefreshCw className="h-4 w-4" />
-              Volver a responder
-            </button>
-            <button
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white border border-amber-300 shadow"
-              onClick={() => navigate("/")}
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Volver al inicio
-            </button>
-          </motion.div>
         </div>
-      </motion.section>
+
+        <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
+          <div className="p-5">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
+                  <h2 className="text-lg font-bold text-amber-50">{resumen.selected.titulo}</h2>
+                </div>
+
+                <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
+                  <span className="text-amber-50 font-medium">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
+                </div>
+
+                <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center flex-1">
+                  <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
+                    <img
+                      src={coverSrc}
+                      alt={`Portada de ${resumen.selected.titulo}`}
+                      className="w-32 h-48 object-cover rounded-md"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
+                <div className="h-full flex flex-col">
+                  <h3 className="text-amber-50 font-semibold text-center mb-4">Sinopsis</h3>
+                  {resumen.selected.sinopsis && (
+                    <p className="text-amber-50/90 text-sm leading-relaxed text-center flex-1 flex items-center">
+                      {resumen.selected.sinopsis}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {resumen.selected.datoCurioso && (
+              <div className="mt-5 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-4 border-l-4 border-amber-400">
+                <h3 className="font-semibold text-gray-700 text-sm mb-2 flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-amber-600" />
+                  ¿Sabías que...?
+                </h3>
+                <p className="text-gray-600 text-sm italic">{resumen.selected.datoCurioso}</p>
+              </div>
+            )}
+
+            <div className="mt-5 bg-blue-50 rounded-xl p-4">
+              <h3 className="font-semibold text-gray-700 text-sm mb-3 flex items-center gap-2">
+                <div className="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center">
+                  <span className="text-blue-700 font-bold text-xs">{resumen.mbti}</span>
+                </div>
+                Tu perfil lector
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed">{frase}</p>
+            </div>
+
+            <div className="flex gap-3 mt-6">
+              <button
+                className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
+                onClick={() => navigate("/preguntas")}
+              >
+                <RefreshCw className="w-4 h-4" />
+                Volver a responder
+              </button>
+
+              <button
+                className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-4 rounded-xl shadow-md border border-amber-200 transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
+                onClick={() => navigate("/")}
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Volver al inicio
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
