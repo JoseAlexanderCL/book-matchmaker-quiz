@@ -22,21 +22,21 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Fahrenheit 451",
           anio: 1953,
-          autor: "Autor desconocido",
+          autor: "Ray Bradbury",
           sinopsis: "En un futuro distópico donde los libros están prohibidos, Guy Montag trabaja como bombero encargado de quemarlos. Su encuentro con una joven inconformista despierta su curiosidad y lo lleva a cuestionar la sociedad y a leer en secreto, convirtiéndose en fugitivo para preservar el conocimiento.",
           datoCurioso: "Ray Bradbury escribió la novela en solo nueve días usando máquinas de escribir de alquiler en el sótano de la Biblioteca Powell; la obra se inspiró en la censura y la quema de libros."
         },
         {
           titulo: "1984",
           anio: 1949,
-          autor: "Autor desconocido",
+          autor: "George Orwell",
           sinopsis: "Esta novela relata la vida de Winston Smith en una sociedad totalitaria vigilada por el Gran Hermano. El Partido controla la información y el pensamiento mediante la neolengua y la vigilancia constante, mientras Winston se atreve a escribir un diario y a amar libremente, despertando su conciencia y rebelión.",
           datoCurioso: "George Orwell escribió 1984 mientras convalecía en la isla escocesa de Jura; el título original era ‘The Last Man in Europe’ y la novela popularizó términos como ‘Gran Hermano’ y ‘neolengua’."
         },
         {
           titulo: "El cuento de la criada",
           anio: 1985,
-          autor: "Autor desconocido",
+          autor: "Margaret Atwood",
           sinopsis: "Ambientada en la teocracia totalitaria de Gilead, donde las mujeres fértiles son forzadas a servir como criadas, la narradora Offred cuenta su experiencia de opresión y su lucha por la libertad mientras recuerda su vida anterior y sueña con escapar.",
           datoCurioso: "Margaret Atwood se basó en regímenes reales para crear Gilead; escribió la novela en 1984 en Berlín Occidental, afirmando que no incluyó ningún evento que no hubiera sucedido en la historia."
         }
@@ -48,21 +48,21 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Fundación",
           anio: 1951,
-          autor: "Autor desconocido",
+          autor: "Isaac Asimov",
           sinopsis: "Primera entrega de la saga de Isaac Asimov donde Hari Seldon, matemático del Imperio Galáctico, desarrolla la psicohistoria, una ciencia capaz de prever el futuro colectivo. Para reducir los años de barbarie que seguirán a la caída del imperio, crea la Fundación, una colonia de científicos que recopilan y preservan el conocimiento.",
           datoCurioso: "Asimov se inspiró en ‘La historia de la decadencia y caída del Imperio romano’ de Gibbon para estructurar la saga; la trilogía original ganó el premio Hugo a la mejor serie de ciencia ficción de todos los tiempos en 1966."
         },
         {
           titulo: "La mano izquierda en la oscuridad",
           anio: 1969,
-          autor: "Autor desconocido",
+          autor: "Ursula K. Le Guin",
           sinopsis: "La novela sigue al enviado Genly Ai en el planeta invernal de Gueden, cuyos habitantes son andróginos y adoptan género solo durante breves periodos. Genly debe negociar la entrada de Gueden en una alianza interplanetaria, aprendiendo sobre la cultura y forjando una amistad con el político Estraven.",
           datoCurioso: "Ursula K. Le Guin empleó temas de antropología y feminismo; la obra ganó los premios Hugo y Nebula en 1970 y es considerada un hito en la ciencia ficción literaria."
         },
         {
           titulo: "La Quinta Estación",
           anio: 2015,
-          autor: "Autor desconocido",
+          autor: "N. K. Jemisin",
           sinopsis: "En un mundo asolado por cataclismos, la Tierra ha sido dividida en “quintas estaciones” de caos. Una orogén llamada Essun intenta rescatar a su hija mientras se desatan terremotos y erupciones volcánicas, y se revelan conspiraciones sobre el origen del poder de los orogénes.",
           datoCurioso: "N. K. Jemisin se convirtió en la primera autora en ganar tres premios Hugo consecutivos con cada volumen de la trilogía ‘La Tierra Fragmentada’."
         }
@@ -74,14 +74,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El cuento de la criada",
           anio: 1985,
-          autor: "Autor desconocido",
+          autor: "Margaret Atwood",
           sinopsis: "Ambientada en la teocracia totalitaria de Gilead, donde las mujeres fértiles son forzadas a servir como criadas, la narradora Offred cuenta su experiencia de opresión y su lucha por la libertad mientras recuerda su vida anterior y sueña con escapar.",
           datoCurioso: "Margaret Atwood se basó en regímenes reales para crear Gilead; escribió la novela en 1984 en Berlín Occidental, afirmando que no incluyó ningún evento que no hubiera sucedido en la historia."
         },
         {
           titulo: "1984",
           anio: 1949,
-          autor: "Autor desconocido",
+          autor: "George Orwell",
           sinopsis: "Esta novela relata la vida de Winston Smith en una sociedad totalitaria vigilada por el Gran Hermano. El Partido controla la información y el pensamiento mediante la neolengua y la vigilancia constante, mientras Winston se atreve a escribir un diario y a amar libremente, despertando su conciencia y rebelión.",
           datoCurioso: "George Orwell escribió 1984 mientras convalecía en la isla escocesa de Jura; el título original era ‘The Last Man in Europe’ y la novela popularizó términos como ‘Gran Hermano’ y ‘neolengua’."
         }
@@ -93,7 +93,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La Quinta Estación",
           anio: 2015,
-          autor: "Autor desconocido",
+          autor: "N. K. Jemisin",
           sinopsis: "En un mundo asolado por cataclismos, la Tierra ha sido dividida en “quintas estaciones” de caos. Una orogén llamada Essun intenta rescatar a su hija mientras se desatan terremotos y erupciones volcánicas, y se revelan conspiraciones sobre el origen del poder de los orogénes.",
           datoCurioso: "N. K. Jemisin se convirtió en la primera autora en ganar tres premios Hugo consecutivos con cada volumen de la trilogía ‘La Tierra Fragmentada’."
         }
@@ -107,7 +107,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El portal de los obeliscos",
           anio: 2016,
-          autor: "Autor desconocido",
+          autor: "N. K. Jemisin",
           sinopsis: "Segundo libro de la trilogía ‘La Tierra Fragmentada’, continúa la historia de Essun y su hija Nassun en un mundo destruido. Mientras Essun aprende a controlar antiguos obeliscos para detener la Quinta Estación, Nassun desarrolla sus propios poderes en una comunidad peligrosa.",
           datoCurioso: "La novela ganó el premio Hugo 2017; N. K. Jemisin amplía su exploración de opresión y resiliencia, combinando fantasía y ciencia ficción."
         }
@@ -119,14 +119,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Fundación e imperio",
           anio: 1952,
-          autor: "Autor desconocido",
+          autor: "Isaac Asimov",
           sinopsis: "Continuación de la saga ‘Fundación’, este volumen narra la expansión y desafíos de la Fundación ante el surgimiento del general Bel Riose y la aparición del Mulo, un mutante capaz de alterar emociones que amenaza el plan de Hari Seldon.",
           datoCurioso: "El personaje del Mulo fue inspirado en figuras carismáticas capaces de alterar el curso de la historia; Asimov reeditó la serie años después para unirla con sus novelas de robots."
         },
         {
           titulo: "La Segunda Fundación",
           anio: 1953,
-          autor: "Autor desconocido",
+          autor: "Isaac Asimov",
           sinopsis: "Tercer libro de la trilogía original, relata la búsqueda de la mítica Segunda Fundación, guardiana secreta del Plan Seldon, mientras el Mulo intenta encontrarla y controlar la galaxia, y los primeros colonos luchan por su autonomía.",
           datoCurioso: "Asimov concibió la Segunda Fundación como un grupo de mentalistas psíquicos; su ubicación secreta es un enigma central de la saga."
         }
@@ -138,7 +138,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Escuadrón",
           anio: 2018,
-          autor: "Autor desconocido",
+          autor: "Brandon Sanderson",
           sinopsis: "Novela juvenil de Brandon Sanderson donde Spensa, una joven piloto, sueña con unirse a la fuerza de defensa humana contra misteriosos alienígenas. Luchando contra la reputación de su padre, que fue acusado de cobarde, descubre secretos sobre la guerra y sobre sí misma.",
           datoCurioso: "‘Escuadrón’ es el primer libro de la serie ‘Skyward’; Sanderson, conocido por su disciplina, escribe a un ritmo prolífico y es profesor en la universidad Brigham Young."
         }
@@ -150,7 +150,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El cielo de piedra",
           anio: 2017,
-          autor: "Autor desconocido",
+          autor: "N. K. Jemisin",
           sinopsis: "Conclusión de la trilogía ‘La Tierra Fragmentada’. Essun debe decidir si sacrificar su humanidad para detener la Quinta Estación de manera definitiva, mientras Nassun considera destruir el mundo para crear uno nuevo. Ambas perspectivas chocan en un final épico.",
           datoCurioso: "El libro completó la hazaña de N. K. Jemisin de ganar el premio Hugo tres años consecutivos; la autora es geóloga de formación."
         }
@@ -164,14 +164,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Diez negritos",
           anio: 1939,
-          autor: "Autor desconocido",
+          autor: "Agatha Christie",
           sinopsis: "Un grupo de diez desconocidos son invitados a una isla aislada, donde una voz acusadora revela sus crímenes pasados. Uno por uno son asesinados según la letra de una macabra canción infantil, y los supervivientes intentan descubrir al asesino antes de que sea demasiado tarde.",
           datoCurioso: "Es la novela más vendida de Agatha Christie; originalmente llevaba un título ofensivo que fue cambiado en ediciones posteriores."
         },
         {
           titulo: "Asesinato en el Expreso Oriente",
           anio: 1934,
-          autor: "Autor desconocido",
+          autor: "Agatha Christie",
           sinopsis: "El detective belga Hércules Poirot investiga un asesinato durante un viaje en el lujoso Orient Express cuando el tren queda atrapado por la nieve. Descubre que cada pasajero alberga un secreto y que el crimen está relacionado con un secuestro infantil ocurrido años atrás.",
           datoCurioso: "Agatha Christie se inspiró en el secuestro del bebé de Charles Lindbergh; el tren Orient Express existía y Christie viajó en él."
         }
@@ -183,14 +183,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Cianuro Espumoso",
           anio: 1945,
-          autor: "Autor desconocido",
+          autor: "Agatha Christie",
           sinopsis: "En esta novela de Christie, seis invitados son convocados a una cena para conmemorar el aniversario de la muerte de Rosemary, una mujer que se suicidó tras beber una copa de champán con cianuro. Su esposo sospecha de asesinato y planea desenmascarar al culpable con otra fiesta.",
           datoCurioso: "‘Cianuro Espumoso’ se publicó originalmente en 1945 con el título ‘Remembered Death’ en los Estados Unidos."
         },
         {
           titulo: "La pareja de al lado",
           anio: 2016,
-          autor: "Autor desconocido",
+          autor: "Shari Lapena",
           sinopsis: "Thriller de Shari Lapena en el que un bebé desaparece de su casa mientras sus padres cenan en la casa de al lado. La investigación revela secretos oscuros en la pareja y en sus vecinos, con múltiples giros hasta el sorprendente desenlace.",
           datoCurioso: "La autora canadiense Shari Lapena trabajó como abogada antes de dedicarse a escribir; ‘La pareja de al lado’ fue su debut en el género de suspense."
         }
@@ -202,7 +202,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El psicoanalista",
           anio: 2002,
-          autor: "Autor desconocido",
+          autor: "John Katzenbach",
           sinopsis: "Un thriller de John Katzenbach donde el doctor Frederick Starks recibe una carta anónima que le ordena descubrir la identidad del remitente en 15 días o enfrentarse al asesinato de sus seres queridos. El juego psicológico lo obliga a desatar su ingenio y cuestionar su propia identidad.",
           datoCurioso: "Katzenbach, periodista de tribunales, se inspiró en su experiencia reportando crímenes para crear sus novelas; ‘El psicoanalista’ es uno de sus mayores éxitos."
         }
@@ -214,7 +214,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Los hombres que no amaban a las mujeres",
           anio: 2005,
-          autor: "Autor desconocido",
+          autor: "Stieg Larsson",
           sinopsis: "Primera entrega de la trilogía ‘Millennium’ de Stieg Larsson. El periodista Mikael Blomkvist y la hacker Lisbeth Salander investigan la desaparición de una heredera de 40 años atrás, destapando secretos familiares, corrupción y abusos de poder en Suecia.",
           datoCurioso: "Larsson escribió los tres libros de la trilogía antes de su muerte súbita en 2004; la serie fue publicada póstumamente y se convirtió en un fenómeno global."
         }
@@ -228,7 +228,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Voces de Chernóbil",
           anio: 1997,
-          autor: "Autor desconocido",
+          autor: "Svetlana Aleksiévich",
           sinopsis: "Obra de la periodista bielorrusa Svetlana Alexiévich que recopila testimonios de los supervivientes del desastre nuclear de Chernóbil. Mediante entrevistas, presenta una polifonía de voces que revelan el sufrimiento, valentía y negligencia detrás del accidente.",
           datoCurioso: "El libro contribuyó a que Alexiévich recibiera el Premio Nobel de Literatura en 2015 por su escritura polifónica que retrata el sufrimiento en la era soviética."
         }
@@ -240,14 +240,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Salisbury",
           anio: 2020,
-          autor: "Autor desconocido",
-          sinopsis: "Retrato novelado de una comunidad británica a través del tiempo; el libro revisa la historia y las vidas de los habitantes de Salisbury con un tono íntimo e histórico.",
-          datoCurioso: "La ciudad de Salisbury es conocida por su catedral de aguja más alta de Gran Bretaña y por su cercanía al monumento megalítico de Stonehenge."
+          autor: "Francisco Ortega",
+          sinopsis: "Tras dieciséis años en la capital, donde alcanzó cierta fama como actor de teleseries, Martín Martinic regresa a su pueblo natal para asistir al funeral de Juan José Birchmayer, su mejor amigo. Allí se reencontrará con Emilia, ahora viuda de Juanjo, y Perci Guidotti, profesor de castellano y novelista inédito; pero también con los terroríficos fantasmas de Salisbury.",
+          datoCurioso: "Ortega construyó buena parte de Salisbury a partir de sus recuerdos de infancia: proviene de una familia evangelista y escribió la novela ambientada en una comunidad evangélica del sur de Chile, lo que refleja su experiencia personal."
         },
         {
           titulo: "Fundación",
           anio: 1951,
-          autor: "Autor desconocido",
+          autor: "Isaac Asimov",
           sinopsis: "Primera entrega de la saga de Isaac Asimov donde Hari Seldon, matemático del Imperio Galáctico, desarrolla la psicohistoria, una ciencia capaz de prever el futuro colectivo. Para reducir los años de barbarie que seguirán a la caída del imperio, crea la Fundación, una colonia de científicos que recopilan y preservan el conocimiento.",
           datoCurioso: "Asimov se inspiró en ‘La historia de la decadencia y caída del Imperio romano’ de Gibbon para estructurar la saga; la trilogía original ganó el premio Hugo a la mejor serie de ciencia ficción de todos los tiempos en 1966."
         }
@@ -259,7 +259,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Crimen y Castigo",
           anio: 1866,
-          autor: "Autor desconocido",
+          autor: "Fiódor Dostoyevski",
           sinopsis: "La novela de Fyodor Dostoyevski sigue a Rodion Raskólnikov, un estudiante pobre en San Petersburgo que asesina a una anciana usurera. Consumido por la culpa y la paranoia, explora temas de moralidad, redención y justicia a través de sus interacciones con otros personajes.",
           datoCurioso: "Dostoyevski concibió inicialmente la obra como una novela policíaca; la escribió bajo presión económica después de haber sido exiliado a Siberia."
         }
@@ -271,7 +271,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La guerra no tiene rostro de mujer",
           anio: 1985,
-          autor: "Autor desconocido",
+          autor: "Svetlana Aleksiévich",
           sinopsis: "Ensayo de Svetlana Alexiévich que recopila testimonios de mujeres soviéticas que lucharon en la Segunda Guerra Mundial. Ofrece una perspectiva íntima y emotiva del conflicto desde quienes sirvieron como enfermeras, francotiradoras y pilotos.",
           datoCurioso: "Publicado en 1985, el libro provocó controversia en la URSS por mostrar la guerra desde una óptica femenina no heroica; es parte del ciclo ‘Voces de la Utopía’."
         }
@@ -285,7 +285,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El tiempo entre costuras",
           anio: 2009,
-          autor: "Autor desconocido",
+          autor: "María Dueñas",
           sinopsis: "Novela histórica de María Dueñas que narra la vida de Sira Quiroga, una joven modista madrileña cuya vida da un giro al estallar la Guerra Civil española. Exiliada en Tánger, se convierte en una espía al servicio de los aliados, bordando trajes para mujeres cercanas al régimen franquista.",
           datoCurioso: "La novela fue un éxito de ventas en España y dio lugar a una serie de televisión protagonizada por Adriana Ugarte emitida en 2013."
         }
@@ -297,14 +297,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Emma",
           anio: 1815,
-          autor: "Autor desconocido",
+          autor: "Jane Austen",
           sinopsis: "Clásico de Jane Austen que sigue a Emma Woodhouse, una joven rica y traviesa que se deleita en hacer de casamentera en su comunidad inglesa. Sus buenas intenciones generan enredos románticos, obligándola a madurar y a reconocer sus propios sentimientos.",
           datoCurioso: "Austen declaró que Emma era un personaje que ‘a nadie más que a mí le gustará mucho’; la novela ha inspirado numerosas adaptaciones cinematográficas y modernas."
         },
         {
           titulo: "Orgullo y Prejuicio",
           anio: 1813,
-          autor: "Autor desconocido",
+          autor: "Jane Austen",
           sinopsis: "Ambientada a principios del siglo XIX, la novela retrata las peripecias de las hermanas Bennet y la evolución de la relación entre Elizabeth Bennet y el orgulloso señor Darcy. A través de diálogos ingeniosos, critica las normas sociales y de clase de la época.",
           datoCurioso: "Publicada en 1813, la obra originalmente se tituló ‘First Impressions’; es uno de los libros más amados de la literatura inglesa."
         }
@@ -316,14 +316,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Sensatez y sentimiento",
           anio: 1811,
-          autor: "Autor desconocido",
+          autor: "Jane Austen",
           sinopsis: "Novela de Jane Austen que contrasta las personalidades de las hermanas Dashwood: Elinor, racional y contenida, y Marianne, apasionada y emotiva. Tras quedar en la indigencia, ambas buscan el amor y la seguridad en una sociedad rígida.",
           datoCurioso: "Fue la primera novela publicada de Austen (1811); originalmente se atribuyó a ‘una dama’ para ocultar su autoría."
         },
         {
           titulo: "Jane Eyre",
           anio: 1847,
-          autor: "Autor desconocido",
+          autor: "Charlotte Bronte",
           sinopsis: "Es la autobiografía ficticia de Jane Eyre, una huérfana que sufre maltratos en su niñez y trabaja como institutriz en la mansión Thornfield. Allí se enamora del señor Rochester, cuya mansión guarda un secreto oscuro en el ático.",
           datoCurioso: "La autora Charlotte Bronte publicó la novela en 1847 bajo el pseudónimo ‘Currer Bell’ para evitar prejuicios de género."
         }
@@ -335,7 +335,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Ana de las Tejas Verdes",
           anio: 1908,
-          autor: "Autor desconocido",
+          autor: "L. M. Montgomery",
           sinopsis: "Cuenta la vida de Anne Shirley, una huérfana imaginativa que es adoptada por accidente por los hermanos Cuthbert en la isla del Príncipe Eduardo. Con su imaginación y carácter vivaz, transforma la vida de quienes la rodean.",
           datoCurioso: "Escrita por L. M. Montgomery en 1908, la novela ha sido traducida a decenas de idiomas y adaptada a series de televisión y películas en varias ocasiones."
         }
@@ -349,7 +349,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La señora Dalloway",
           anio: 1925,
-          autor: "Autor desconocido",
+          autor: "Virginia Woolf",
           sinopsis: "La novela de Virginia Woolf sigue un día en la vida de Clarissa Dalloway, una mujer de la alta sociedad londinense que organiza una fiesta. Mientras pasea por Londres, reflexiona sobre su pasado, sus decisiones y la fugacidad del tiempo; en paralelo se narra la historia de un veterano traumatizado.",
           datoCurioso: "La obra es conocida por su uso del flujo de conciencia y por transcurrir en un solo día; Woolf se inspiró en la técnica de James Joyce en ‘Ulises’."
         }
@@ -361,14 +361,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Persépolis",
           anio: 2000,
-          autor: "Autor desconocido",
+          autor: "Marjane Satrapi",
           sinopsis: "Novela gráfica autobiográfica de Marjane Satrapi que narra su infancia en Irán durante la Revolución Islámica y la guerra con Irak. A través de dibujos en blanco y negro, muestra su lucha por mantener su identidad y libertad en medio de la represión.",
           datoCurioso: "Satrapi dirigió la adaptación cinematográfica de ‘Persépolis’ que ganó el Premio del Jurado en Cannes 2007 y fue nominada al Oscar."
         },
         {
           titulo: "Hierba",
           anio: 2017,
-          autor: "Autor desconocido",
+          autor: "Keum Suk Gendry-Kim",
           sinopsis: "Novela gráfica surcoreana de Keum Suk Gendry-Kim basada en testimonios de mujeres coreanas que fueron esclavizadas sexualmente por el ejército japonés durante la Segunda Guerra Mundial. Sigue la vida de la superviviente Lee Ok‑sun desde su infancia hasta su vejez, exponiendo la memoria y el trauma.",
           datoCurioso: "El libro ganó el Premio Harvey a la mejor obra internacional; su autora se inspiró en entrevistas reales para crear la narrativa."
         }
@@ -380,7 +380,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La última Niebla",
           anio: 1934,
-          autor: "Autor desconocido",
+          autor: "María Luisa Bombal",
           sinopsis: "Novela corta de María Luisa Bombal que explora la vida de una mujer que se siente atrapada en un matrimonio sin amor. A través de recuerdos y fantasías, la protagonista se adentra en un mundo nebuloso donde se confunden sueño y realidad.",
           datoCurioso: "Publicada en 1934, la obra es un clásico del modernismo chileno y destaca por su atmósfera onírica y sensual."
         }
@@ -392,14 +392,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Pollo con ciruelas",
           anio: 2004,
-          autor: "Autor desconocido",
+          autor: "Marjane Satrapi",
           sinopsis: "Novela gráfica de Marjane Satrapi ambientada en Irán en 1958. Narra la historia del virtuoso tar Nasser Ali Khan, que decide dejarse morir tras romperse su instrumento favorito. Durante ocho días, rememora su vida, amores y arrepentimientos.",
           datoCurioso: "La novela fue adaptada al cine en 2011 por la propia Satrapi y Vincent Paronnaud; mezcla animación y acción real."
         },
         {
           titulo: "El buzón de las impuras",
           anio: 2021,
-          autor: "Autor desconocido",
+          autor: "Francisca Solar",
           sinopsis: "Obra contemporánea que aborda la correspondencia de mujeres marginadas y sus historias íntimas, explorando temas de género, tradición y emancipación.",
           datoCurioso: "Es una contribución reciente del cómic chileno que muestra el talento de autoras emergentes y su compromiso con temáticas de género."
         }
@@ -413,14 +413,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Los hombres que no amaban a las mujeres",
           anio: 2005,
-          autor: "Autor desconocido",
+          autor: "Stieg Larsson",
           sinopsis: "Primera entrega de la trilogía ‘Millennium’ de Stieg Larsson. El periodista Mikael Blomkvist y la hacker Lisbeth Salander investigan la desaparición de una heredera de 40 años atrás, destapando secretos familiares, corrupción y abusos de poder en Suecia.",
           datoCurioso: "Larsson escribió los tres libros de la trilogía antes de su muerte súbita en 2004; la serie fue publicada póstumamente y se convirtió en un fenómeno global."
         },
         {
           titulo: "La pareja de al lado",
           anio: 2016,
-          autor: "Autor desconocido",
+          autor: "Shari Lapena",
           sinopsis: "Thriller de Shari Lapena en el que un bebé desaparece de su casa mientras sus padres cenan en la casa de al lado. La investigación revela secretos oscuros en la pareja y en sus vecinos, con múltiples giros hasta el sorprendente desenlace.",
           datoCurioso: "La autora canadiense Shari Lapena trabajó como abogada antes de dedicarse a escribir; ‘La pareja de al lado’ fue su debut en el género de suspense."
         }
@@ -432,9 +432,9 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El silencio de los malditos",
           anio: 2020,
-          autor: "Autor desconocido",
-          sinopsis: "Thriller del escritor español Carlos Portela ambientado en Galicia, donde la detective Sonia Ruiz investiga una serie de asesinatos que imitan antiguas leyendas. A medida que avanza, descubre secretos oscuros vinculados a rituales y a su propio pasado.",
-          datoCurioso: "El autor combinó el suspense con elementos del folclore gallego; la novela ha sido elogiada por su atmósfera y ritmo vertiginoso."
+          autor: "Carlos Pinto",
+          sinopsis: "Un periodista consigue acceder a un peligroso delincuente al que nadie ha podido entrevistar. Solos, en una pequeña habitación dentro de la cárcel, se inicia un relato que, más que una confesión, es un viaje en profundo a los inescrutables dominios de una mente criminal. Es la historia de un hombre que ha cometido un horrendo asesinato sin justificación alguna, pero que devela una vida de privaciones, dolor y venganza. Una impactante primera novela de quien Alberto Fuguet ha dicho: “Su nombre es un género. Carlos Pinto es nuestro Hitchcock”. Ahora traslada esa maestría al plano literario para descender a los infiernos de la condición humana.",
+          datoCurioso: "se trata del debut literario de Carlos Pinto, publicado en 2018 bajo el sello Suma del grupo Penguin Random House, tras una larga y exitosa trayectoria en televisión. En esta primera novela, aborda un caso real que lo obsesionó durante años, uno que nunca logró llevar al formato televisivo pero que finalmente rescató en forma literaria."
         },
         {
           titulo: "Monster",
@@ -451,35 +451,35 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Drácula/cuentos macabros",
           anio: 1897,
-          autor: "Autor desconocido",
+          autor: "Bram Stoker",
           sinopsis: "‘Drácula’ de Bram Stoker sigue al abogado Jonathan Harker, quien viaja al castillo del conde Drácula en Transilvania, desatando una lucha contra el vampiro en Inglaterra. La edición ‘Cuentos macabros’ suele incluir relatos góticos de terror victoriano que exploran lo sobrenatural.",
           datoCurioso: "La forma epistolar de ‘Drácula’ contribuyó a su atmósfera realista; Stoker se inspiró en el príncipe Vlad el Empalador al crear al conde."
         },
         {
           titulo: "Uzumaki/Macabros",
           anio: 1998,
-          autor: "Autor desconocido",
+          autor: "Junji Ito",
           sinopsis: "Manga de horror de Junji Ito centrado en la ciudad costera de Kurôzu‑cho, donde los habitantes se obsesionan con espirales que los llevan a deformaciones y locura. Las historias ‘Macabros’ recopilan relatos inquietantes de Ito sobre maldiciones y monstruos.",
           datoCurioso: "Junji Ito es considerado maestro del manga de terror; sus obras influyeron en el cine japonés y en creadores como Guillermo del Toro."
         },
         {
           titulo: "Cuentos de amor, locura y muerte",
           anio: 1917,
-          autor: "Autor desconocido",
+          autor: "Horacio Quiroga",
           sinopsis: "Colección de relatos de Horacio Quiroga publicada en 1917 que explora pasiones extremas y situaciones trágicas. Ambientados en la selva misionera y en ambientes urbanos, los cuentos muestran los límites entre la cordura y la demencia.",
           datoCurioso: "Quiroga, considerado el Edgar Allan Poe de la literatura hispanoamericana, sufrió múltiples tragedias personales que influyeron en su obra."
         },
         {
           titulo: "Kaiki. Cuentos de terror y locura",
           anio: 2000,
-          autor: "Autor desconocido",
+          autor: "Diferentes autores",
           sinopsis: "Antología de relatos japoneses de terror compilada por diversos autores que presenta historias de espíritus, maldiciones y obsesiones en la tradición kaidan. Introduce al lector a la riqueza del folclore sobrenatural japonés.",
           datoCurioso: "El término ‘kaiki’ se refiere a lo extraño o misterioso en japonés; la colección incluye autores clásicos como Lafcadio Hearn."
         },
         {
           titulo: "El Monje",
           anio: 1796,
-          autor: "Autor desconocido",
+          autor: "Matthew Lewis",
           sinopsis: "Novela gótica de 1796 escrita por Matthew Lewis que sigue al monje Ambrosio, quien sucumbe a la tentación y comete crímenes impíos guiado por una mujer demoníaca. La historia combina horror, erotismo y crítica a la hipocresía religiosa.",
           datoCurioso: "La novela causó escándalo en su época por su contenido sexual y satánico; su autor tenía solo 19 años cuando la escribió."
         }
@@ -491,7 +491,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "En el bosque, bajo los cerezos en flor",
           anio: 1950,
-          autor: "Autor desconocido",
+          autor: "Ango Sakaguchi",
           sinopsis: "Novela corta del escritor japonés Ango Sakaguchi que mezcla folclore y surrealismo. Cuenta la historia de un bandolero que secuestra a una mujer en un bosque embrujado, solo para descubrir que ella es más cruel y despiadada que cualquier demonio.",
           datoCurioso: "Sakaguchi perteneció al movimiento literario buraiha que exploraba el nihilismo en el Japón de la posguerra; la obra inspiró una película de 1975."
         }
@@ -505,7 +505,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Muerte en el Nilo",
           anio: 1937,
-          autor: "Autor desconocido",
+          autor: "Hércules Poirot",
           sinopsis: "Otra aventura de Hércules Poirot, donde el detective belga se encuentra de vacaciones en un crucero por el Nilo. El asesinato de una joven millonaria recién casada desencadena una investigación entre un elenco de pasajeros con motivos ocultos.",
           datoCurioso: "Christie viajó a Egipto de niña y de adulta, lo que inspiró la ambientación; la novela ha sido adaptada a cine y televisión varias veces."
         }
@@ -517,7 +517,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El silencio en la ciudad blanca",
           anio: 2016,
-          autor: "Autor desconocido",
+          autor: "Eva García Sáenz de Urturi",
           sinopsis: "Primer libro de la trilogía de Eva García Sáenz de Urturi ambientado en Vitoria. El inspector Unai López de Ayala investiga unos asesinatos rituales que replican crímenes ocurridos veinte años antes, mientras lucha con traumas personales.",
           datoCurioso: "La autora documentó meticulosamente la historia de Álava; la trilogía impulsó el turismo literario en Vitoria."
         }
@@ -529,7 +529,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Frankenstein",
           anio: 1818,
-          autor: "Autor desconocido",
+          autor: "Mary Shelley",
           sinopsis: "Novela de Mary Shelley en la que el joven Victor Frankenstein crea un ser humano a partir de restos cadavéricos. Horrorizado por su criatura, la abandona y desencadena una cadena de tragedias cuando ésta busca venganza por su soledad.",
           datoCurioso: "Shelley concibió la historia durante una noche tormentosa de 1816 en Ginebra, en un reto de cuentos de terror con Lord Byron y Percy Shelley."
         }
@@ -541,21 +541,21 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La Sombra del viento",
           anio: 2001,
-          autor: "Autor desconocido",
+          autor: "Carlos Ruiz Zafón",
           sinopsis: "Primera entrega de la saga ‘El Cementerio de los Libros Olvidados’ de Carlos Ruiz Zafón. Daniel Sempere descubre un misterioso libro y se obsesiona por conocer la historia de su autor Julián Carax, lo que lo llevará a desenterrar secretos en la Barcelona de posguerra.",
           datoCurioso: "Ruiz Zafón fue compositor y llegó a escribir música para bandas sonoras; la saga ha vendido millones de ejemplares en todo el mundo."
         },
         {
           titulo: "El juego del Ángel",
           anio: 2008,
-          autor: "Autor desconocido",
+          autor: "Carlos Ruiz Zafón",
           sinopsis: "Ambientada en la misma Barcelona gótica que ‘La Sombra del viento’, sigue al joven escritor David Martín, quien recibe la oferta de escribir una obra misteriosa a cambio de una fortuna, mientras lidia con amores imposibles y enigmas literarios.",
           datoCurioso: "Es la segunda novela de la tetralogía y funciona como precuela; Ruiz Zafón dedicó la obra a su editor, quien falleció antes de verla publicada."
         },
         {
           titulo: "El prisionero del cielo",
           anio: 2011,
-          autor: "Autor desconocido",
+          autor: "Carlos Ruiz Zafón",
           sinopsis: "Tercera entrega de la saga, en la que Daniel Sempere y Fermín Romero de Torres descubren pistas sobre el pasado de Fermín que los llevan al siniestro castillo de Montjuïc durante el franquismo.",
           datoCurioso: "La novela conecta las tramas de las dos entregas anteriores y rinde homenaje a ‘El conde de Montecristo’, uno de los libros favoritos del autor."
         }
@@ -569,7 +569,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Mort",
           anio: 1987,
-          autor: "Autor desconocido",
+          autor: "Terry Pratchett",
           sinopsis: "Cuarta novela del ‘Mundodisco’ de Terry Pratchett. Mort, un joven tímido, se convierte en aprendiz de la Muerte. Al asumir sus deberes, se enamora de una princesa destinada a morir y altera el equilibrio, generando caos entre los vivos y los muertos.",
           datoCurioso: "La Muerte es uno de los personajes más queridos de la serie; Pratchett combinaba humor y fantasía para satirizar la vida cotidiana."
         }
@@ -581,7 +581,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La guía del autoestopista galáctico",
           anio: 1979,
-          autor: "Autor desconocido",
+          autor: "Douglas Adams",
           sinopsis: "Comedia de ciencia ficción de Douglas Adams que comienza con la destrucción de la Tierra para construir una autopista espacial. Arthur Dent es rescatado por su amigo Ford Prefect y viaja por el universo con una toalla y una enciclopedia electrónica.",
           datoCurioso: "Originó como una serie de radio de la BBC en 1978 antes de convertirse en novela; la respuesta ‘42’ como sentido de la vida se convirtió en un icono cultural."
         }
@@ -593,7 +593,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Buenos presagios",
           anio: 1990,
-          autor: "Autor desconocido",
+          autor: "Neil Gaiman y Terry Pratchett",
           sinopsis: "Una comedia apocalíptica escrita por Neil Gaiman y Terry Pratchett. Un ángel y un demonio unen fuerzas para evitar el fin del mundo tras perder al Anticristo, navegando profecías erróneas y personajes excéntricos.",
           datoCurioso: "La novela tardó cuatro años en completarse debido a las agendas de los autores; fue adaptada a una serie de Amazon Prime protagonizada por David Tennant y Michael Sheen."
         }
@@ -605,14 +605,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El restaurante del fin del mundo",
           anio: 1980,
-          autor: "Autor desconocido",
+          autor: "Douglas Adams",
           sinopsis: "Secuela de ‘La guía del autoestopista galáctico’, sigue las aventuras de Arthur Dent y sus amigos mientras visitan un restaurante situado literal y temporalmente al fin del universo. Allí presencian el Big Crunch y se enfrentan a paradojas temporales.",
           datoCurioso: "Douglas Adams continuó la serie con cinco libros en total; el restaurante se llama Milliways y sirve platos preparados con animales dispuestos a ser comidos."
         },
         {
           titulo: "La vida, el universo y todo lo demás",
           anio: 1982,
-          autor: "Autor desconocido",
+          autor: "Douglas Adams",
           sinopsis: "Tercer libro de la ‘trilogía en cinco partes’ de Adams. Arthur Dent y Ford Prefect se unen a un robot deprimido y a un alienígena para detener a unos habitantes xenófobos de Krikkit que planean destruir el universo.",
           datoCurioso: "El título es un guiño a la famosa respuesta ‘42’; Adams combinaba humor británico con ciencia ficción absurda."
         }
@@ -626,7 +626,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Tengo miedo torero",
           anio: 2001,
-          autor: "Autor desconocido",
+          autor: "Pedro Lemebel",
           sinopsis: "Novela del escritor chileno Pedro Lemebel ambientada en Santiago durante la dictadura de Pinochet. La Loca del Frente, una travesti de clase baja, se enamora de un joven guerrillero mientras lo ayuda a preparar un atentado contra el dictador.",
           datoCurioso: "La obra fue la única novela de Lemebel; mezcla política, marginalidad y amor queer, convirtiéndose en un libro de culto en Chile."
         }
@@ -638,14 +638,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Hierba",
           anio: 2017,
-          autor: "Autor desconocido",
+          autor: "Keum Suk Gendry-Kim",
           sinopsis: "Novela gráfica surcoreana de Keum Suk Gendry-Kim basada en testimonios de mujeres coreanas que fueron esclavizadas sexualmente por el ejército japonés durante la Segunda Guerra Mundial. Sigue la vida de la superviviente Lee Ok‑sun desde su infancia hasta su vejez, exponiendo la memoria y el trauma.",
           datoCurioso: "El libro ganó el Premio Harvey a la mejor obra internacional; su autora se inspiró en entrevistas reales para crear la narrativa."
         },
         {
           titulo: "Bluebells",
           anio: 2024,
-          autor: "Autor desconocido",
+          autor: "Francisca Solar",
           sinopsis: "Novela contemporánea que describe el duelo y la esperanza a través de personajes que encuentran consuelo en un jardín de campanillas azules.",
           datoCurioso: "El título hace alusión a la flor silvestre del Reino Unido; el libro presenta sensibilidad ecológica y emocional."
         }
@@ -657,7 +657,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El jardín Secreto",
           anio: 1911,
-          autor: "Autor desconocido",
+          autor: "Frances Hodgson Burnett",
           sinopsis: "Clásico infantil de Frances Hodgson Burnett sobre Mary Lennox, una niña huérfana que se muda a la mansión Misselthwaite en Yorkshire. Allí descubre un jardín abandonado que, al revivirlo, transforma las vidas de ella y de sus nuevos amigos.",
           datoCurioso: "Publicada en 1911, la novela destaca el poder curativo de la naturaleza; Burnett también escribió ‘La princesita’."
         }
@@ -669,7 +669,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La última Niebla",
           anio: 1934,
-          autor: "Autor desconocido",
+          autor: "María Luisa Bombal",
           sinopsis: "Novela corta de María Luisa Bombal que explora la vida de una mujer que se siente atrapada en un matrimonio sin amor. A través de recuerdos y fantasías, la protagonista se adentra en un mundo nebuloso donde se confunden sueño y realidad.",
           datoCurioso: "Publicada en 1934, la obra es un clásico del modernismo chileno y destaca por su atmósfera onírica y sensual."
         }
@@ -683,7 +683,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "American Gods",
           anio: 2001,
-          autor: "Autor desconocido",
+          autor: "Neil Gaiman",
           sinopsis: "La novela de Neil Gaiman mezcla mitología antigua con la América contemporánea. Shadow Moon, recién salido de prisión, acompaña al misterioso señor Wednesday en un viaje por Estados Unidos mientras los dioses tradicionales se enfrentan a nuevas deidades modernas.",
           datoCurioso: "La obra ganó los premios Hugo, Nebula y Bram Stoker; Gaiman se inspiró en sus viajes por carreteras estadounidenses."
         }
@@ -695,7 +695,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La Tierra Errante",
           anio: 2008,
-          autor: "Autor desconocido",
+          autor: "Cixin Liu",
           sinopsis: "Colección de relatos del escritor chino Liu Cixin, destacando la historia que da nombre al libro en la que la humanidad instala motores gigantes para mover la Tierra fuera del sistema solar y escapar del Sol moribundo.",
           datoCurioso: "Liu Cixin es el primer escritor asiático en ganar el Premio Hugo a la mejor novela por ‘El problema de los tres cuerpos’; ‘La Tierra Errante’ fue adaptada a una película de gran éxito en China."
         }
@@ -707,7 +707,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Rayuela",
           anio: 1963,
-          autor: "Autor desconocido",
+          autor: "Julio Cortázar",
           sinopsis: "Novela experimental de Julio Cortázar que puede leerse de múltiples maneras. Sigue a Horacio Oliveira y sus amigos bohemios en París y Buenos Aires mientras buscan el sentido de la existencia y el amor de la Maga.",
           datoCurioso: "Publicada en 1963, es considerada una de las obras cumbre del boom latinoamericano; Cortázar invitó al lector a escoger el orden de los capítulos."
         }
@@ -719,14 +719,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El Ciclo onírico de Randolph Carter",
           anio: 1995,
-          autor: "Autor desconocido",
+          autor: "H. P. Lovecraft",
           sinopsis: "Selección de relatos de H. P. Lovecraft que siguen las aventuras del soñador Randolph Carter en mundos oníricos como la Tierra del Sueño. Viaja entre ciudades extraordinarias, enfrenta dioses arquetípicos y experimenta horrores cósmicos.",
           datoCurioso: "Randolph Carter está inspirado en el propio Lovecraft; estas historias establecen la mitología de Cthulhu y el Dream Cycle."
         },
         {
           titulo: "El hombre en el castillo",
           anio: 1962,
-          autor: "Autor desconocido",
+          autor: "Philip K. Dick",
           sinopsis: "Novela de historia alternativa de Philip K. Dick ambientada en un mundo donde las Potencias del Eje ganaron la Segunda Guerra Mundial. La Costa Oeste de Estados Unidos está controlada por Japón y la Costa Este por Alemania; varios personajes buscan sentido en una realidad opresiva.",
           datoCurioso: "La novela ganó el Premio Hugo en 1963 y popularizó la ucronía en la ciencia ficción; Dick introduce un libro dentro del libro que describe una historia alternativa donde los Aliados ganan."
         }
@@ -740,7 +740,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Crónicas Marcianas",
           anio: 1950,
-          autor: "Autor desconocido",
+          autor: "Ray Bradbury",
           sinopsis: "Colección de relatos de Ray Bradbury que retrata la colonización de Marte por humanos que huyen de una Tierra en crisis. Las historias muestran el encuentro con civilizaciones marcianas y la repetición de errores humanos.",
           datoCurioso: "Aunque es un fix‑up de relatos, Bradbury le dio estructura de novela; algunas ediciones excluyen historias para mantener coherencia temática."
         }
@@ -752,7 +752,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El nombre de la rosa",
           anio: 1980,
-          autor: "Autor desconocido",
+          autor: "Umberto Eco",
           sinopsis: "Thriller histórico de Umberto Eco ambientado en una abadía benedictina del siglo XIV donde el monje Guillermo de Baskerville y su novicio Adso investigan una serie de asesinatos relacionados con un libro prohibido.",
           datoCurioso: "Eco, semiólogo italiano, combinó novela policial con erudición medieval; la obra ganó el premio Strega y fue adaptada al cine en 1986."
         }
@@ -764,7 +764,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "22/11/63",
           anio: 2011,
-          autor: "Autor desconocido",
+          autor: "Stephen King",
           sinopsis: "Novela de Stephen King en la que un profesor de inglés viaja a 1958 a través de un portal temporal y decide impedir el asesinato de John F. Kennedy. Viviendo en el pasado, se enfrenta a las consecuencias imprevistas de alterar la historia.",
           datoCurioso: "King investigó exhaustivamente la teoría del asesinato de Kennedy; la novela fue adaptada a una miniserie protagonizada por James Franco."
         }
@@ -776,7 +776,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El portal de los obeliscos",
           anio: 2016,
-          autor: "Autor desconocido",
+          autor: "N. K. Jemisin",
           sinopsis: "Segundo libro de la trilogía ‘La Tierra Fragmentada’, continúa la historia de Essun y su hija Nassun en un mundo destruido. Mientras Essun aprende a controlar antiguos obeliscos para detener la Quinta Estación, Nassun desarrolla sus propios poderes en una comunidad peligrosa.",
           datoCurioso: "La novela ganó el premio Hugo 2017; N. K. Jemisin amplía su exploración de opresión y resiliencia, combinando fantasía y ciencia ficción."
         }
@@ -790,7 +790,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El nombre del viento",
           anio: 2007,
-          autor: "Autor desconocido",
+          autor: "Patrick Rothfuss",
           sinopsis: "Primera novela de la serie ‘Crónica del asesino de reyes’ de Patrick Rothfuss. Cuenta la historia de Kvothe, un músico prodigioso que relata su juventud, su ingreso a la Universidad y su búsqueda de conocimiento y venganza.",
           datoCurioso: "Rothfuss tardó más de una década en escribir la novela; el autor ha prometido una tercera entrega que los fans llevan años esperando."
         }
@@ -802,7 +802,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La historia interminable",
           anio: 1979,
-          autor: "Autor desconocido",
+          autor: "Michael Ende",
           sinopsis: "Novela fantástica de Michael Ende que sigue a Bastian Balthazar Bux, un niño que se sumerge en el libro ‘La historia interminable’ y se adentra en el mundo de Fantasía. Allí conoce al guerrero Atreyu y a la Emperatriz Infantil, descubriendo que su imaginación es la clave para salvar ambos mundos.",
           datoCurioso: "Ende criticó la adaptación cinematográfica de 1984 por no ser fiel al espíritu de su obra; el libro se divide físicamente en dos colores de tinta (roja y verde) para diferenciar los mundos."
         }
@@ -814,7 +814,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El jardín Secreto",
           anio: 1911,
-          autor: "Autor desconocido",
+          autor: "Frances Hodgson Burnett",
           sinopsis: "Clásico infantil de Frances Hodgson Burnett sobre Mary Lennox, una niña huérfana que se muda a la mansión Misselthwaite en Yorkshire. Allí descubre un jardín abandonado que, al revivirlo, transforma las vidas de ella y de sus nuevos amigos.",
           datoCurioso: "Publicada en 1911, la novela destaca el poder curativo de la naturaleza; Burnett también escribió ‘La princesita’."
         }
@@ -826,7 +826,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Buenos presagios",
           anio: 1990,
-          autor: "Autor desconocido",
+          autor: "Neil Gaiman y Terry Pratchett",
           sinopsis: "Una comedia apocalíptica escrita por Neil Gaiman y Terry Pratchett. Un ángel y un demonio unen fuerzas para evitar el fin del mundo tras perder al Anticristo, navegando profecías erróneas y personajes excéntricos.",
           datoCurioso: "La novela tardó cuatro años en completarse debido a las agendas de los autores; fue adaptada a una serie de Amazon Prime protagonizada por David Tennant y Michael Sheen."
         }
@@ -840,7 +840,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El cuento de la criada",
           anio: 1985,
-          autor: "Autor desconocido",
+          autor: "Margaret Atwood",
           sinopsis: "Ambientada en la teocracia totalitaria de Gilead, donde las mujeres fértiles son forzadas a servir como criadas, la narradora Offred cuenta su experiencia de opresión y su lucha por la libertad mientras recuerda su vida anterior y sueña con escapar.",
           datoCurioso: "Margaret Atwood se basó en regímenes reales para crear Gilead; escribió la novela en 1984 en Berlín Occidental, afirmando que no incluyó ningún evento que no hubiera sucedido en la historia."
         }
@@ -852,14 +852,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Un mago de Terramar",
           anio: 1968,
-          autor: "Autor desconocido",
+          autor: "Ursula K. Le Guin",
           sinopsis: "Primera novela del ciclo de Terramar de Ursula K. Le Guin. El joven mago Ged, impetuoso y orgulloso, desata una sombra que lo persigue. Para restaurar el equilibrio, emprende un viaje por archipiélagos y enfrenta sus propios demonios.",
           datoCurioso: "Le Guin se inspiró en mitologías asiáticas y en el taoísmo para crear el equilibrio mágico de Terramar; el libro influyó en generaciones de escritores de fantasía."
         },
         {
           titulo: "La vida invisible de Addie LaRue",
           anio: 2020,
-          autor: "Autor desconocido",
+          autor: "V. E. Schwab",
           sinopsis: "Novela de V. E. Schwab donde Adeline LaRue, en la Francia del siglo XVIII, hace un pacto con un dios oscuro para vivir libre y eternamente, a cambio de ser olvidada por todos. A lo largo de tres siglos, lucha por dejar huella hasta que conoce a un joven que puede recordarla.",
           datoCurioso: "Schwab tardó diez años en desarrollar la novela; la protagonista está inspirada en personajes de arte y folklore que desafiaron al olvido."
         }
@@ -871,7 +871,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La ladrona de libros",
           anio: 2005,
-          autor: "Autor desconocido",
+          autor: "Markus Zusak",
           sinopsis: "Narrada por la Muerte, la novela de Markus Zusak se ambienta en la Alemania nazi y sigue a Liesel Meminger, una niña que encuentra consuelo robando libros y compartiéndolos con su familia adoptiva y un joven judío escondido en su sótano.",
           datoCurioso: "El libro fue rechazado por varios editores antes de convertirse en un éxito internacional; ha sido traducido a más de 40 idiomas y adaptado a una película en 2013."
         }
@@ -883,7 +883,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La Vegetariana",
           anio: 2007,
-          autor: "Autor desconocido",
+          autor: "Han Kang",
           sinopsis: "Novela surcoreana de Han Kang sobre una mujer que decide dejar de comer carne tras una pesadilla sangrienta. Su decisión desencadena la incomprensión de su familia y una transformación física y psicológica que la aleja de la humanidad.",
           datoCurioso: "El libro ganó el Man Booker International Prize 2016; Han Kang estudió filosofía occidental antes de dedicarse a la literatura."
         }
@@ -897,7 +897,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El hobbit",
           anio: 1937,
-          autor: "Autor desconocido",
+          autor: "J. R. R. Tolkien",
           sinopsis: "Precuela de ‘El Señor de los Anillos’ de J. R. R. Tolkien. Sigue al hobbit Bilbo Bolsón en una aventura con trece enanos y el mago Gandalf para recuperar el tesoro guardado por el dragón Smaug en la Montaña Solitaria.",
           datoCurioso: "Tolkien escribió el libro para sus hijos; el manuscrito fue inicialmente rechazado por varias editoriales antes de su publicación en 1937."
         }
@@ -909,14 +909,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Las tumbas de Atuan",
           anio: 1971,
-          autor: "Autor desconocido",
+          autor: "Ursula K. Le Guin",
           sinopsis: "Segunda novela de la saga Terramar. Cuenta la historia de Tenar, una joven consagrada como sacerdotisa de las Tumbas de Atuan, que descubre un intruso: el mago Ged en busca de un anillo mágico. Juntos desafían a las sombras y buscan libertad.",
           datoCurioso: "La novela explora el poder femenino y la identidad; Le Guin muestra la cooperación entre culturas para lograr equilibrio."
         },
         {
           titulo: "La costa más lejana/Tehanu",
           anio: 1972,
-          autor: "Autor desconocido",
+          autor: "Ursula K. Le Guin",
           sinopsis: "Este volumen combina la tercera y cuarta novelas del ciclo Terramar. En ‘La costa más lejana’, el mago Ged viaja con el príncipe Arren para restaurar la magia desaparecida del mundo. En ‘Tehanu’, años después, una mujer llamada Tenar cría a una niña quemada y se encuentra con un Ged cambiado y despojado de poder.",
           datoCurioso: "Le Guin revisó su mundo con una mirada feminista en ‘Tehanu’, publicada casi 20 años después de la trilogía original."
         }
@@ -928,7 +928,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Buenos presagios",
           anio: 1990,
-          autor: "Autor desconocido",
+          autor: "Neil Gaiman y Terry Pratchett",
           sinopsis: "Una comedia apocalíptica escrita por Neil Gaiman y Terry Pratchett. Un ángel y un demonio unen fuerzas para evitar el fin del mundo tras perder al Anticristo, navegando profecías erróneas y personajes excéntricos.",
           datoCurioso: "La novela tardó cuatro años en completarse debido a las agendas de los autores; fue adaptada a una serie de Amazon Prime protagonizada por David Tennant y Michael Sheen."
         }
@@ -940,14 +940,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Mort",
           anio: 1987,
-          autor: "Autor desconocido",
+          autor: "Terry Pratchett",
           sinopsis: "Cuarta novela del ‘Mundodisco’ de Terry Pratchett. Mort, un joven tímido, se convierte en aprendiz de la Muerte. Al asumir sus deberes, se enamora de una princesa destinada a morir y altera el equilibrio, generando caos entre los vivos y los muertos.",
           datoCurioso: "La Muerte es uno de los personajes más queridos de la serie; Pratchett combinaba humor y fantasía para satirizar la vida cotidiana."
         },
         {
           titulo: "La guía del autoestopista galáctico",
           anio: 1979,
-          autor: "Autor desconocido",
+          autor: "Douglas Adams",
           sinopsis: "Comedia de ciencia ficción de Douglas Adams que comienza con la destrucción de la Tierra para construir una autopista espacial. Arthur Dent es rescatado por su amigo Ford Prefect y viaja por el universo con una toalla y una enciclopedia electrónica.",
           datoCurioso: "Originó como una serie de radio de la BBC en 1978 antes de convertirse en novela; la respuesta ‘42’ como sentido de la vida se convirtió en un icono cultural."
         }
@@ -961,7 +961,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "El nombre del viento",
           anio: 2007,
-          autor: "Autor desconocido",
+          autor: "Patrick Rothfuss",
           sinopsis: "Primera novela de la serie ‘Crónica del asesino de reyes’ de Patrick Rothfuss. Cuenta la historia de Kvothe, un músico prodigioso que relata su juventud, su ingreso a la Universidad y su búsqueda de conocimiento y venganza.",
           datoCurioso: "Rothfuss tardó más de una década en escribir la novela; el autor ha prometido una tercera entrega que los fans llevan años esperando."
         }
@@ -973,21 +973,21 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Un mago de Terramar",
           anio: 1968,
-          autor: "Autor desconocido",
+          autor: "Ursula K. Le Guin",
           sinopsis: "Primera novela del ciclo de Terramar de Ursula K. Le Guin. El joven mago Ged, impetuoso y orgulloso, desata una sombra que lo persigue. Para restaurar el equilibrio, emprende un viaje por archipiélagos y enfrenta sus propios demonios.",
           datoCurioso: "Le Guin se inspiró en mitologías asiáticas y en el taoísmo para crear el equilibrio mágico de Terramar; el libro influyó en generaciones de escritores de fantasía."
         },
         {
           titulo: "Las tumbas de Atuan",
           anio: 1971,
-          autor: "Autor desconocido",
+          autor: "Ursula K. Le Guin",
           sinopsis: "Segunda novela de la saga Terramar. Cuenta la historia de Tenar, una joven consagrada como sacerdotisa de las Tumbas de Atuan, que descubre un intruso: el mago Ged en busca de un anillo mágico. Juntos desafían a las sombras y buscan libertad.",
           datoCurioso: "La novela explora el poder femenino y la identidad; Le Guin muestra la cooperación entre culturas para lograr equilibrio."
         },
         {
           titulo: "La historia interminable",
           anio: 1979,
-          autor: "Autor desconocido",
+          autor: "Michael Ende",
           sinopsis: "Novela fantástica de Michael Ende que sigue a Bastian Balthazar Bux, un niño que se sumerge en el libro ‘La historia interminable’ y se adentra en el mundo de Fantasía. Allí conoce al guerrero Atreyu y a la Emperatriz Infantil, descubriendo que su imaginación es la clave para salvar ambos mundos.",
           datoCurioso: "Ende criticó la adaptación cinematográfica de 1984 por no ser fiel al espíritu de su obra; el libro se divide físicamente en dos colores de tinta (roja y verde) para diferenciar los mundos."
         }
@@ -999,7 +999,7 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "Las cosas que perdimos en el fuego",
           anio: 2016,
-          autor: "Autor desconocido",
+          autor: "Mariana Enríquez",
           sinopsis: "Colección de cuentos de la escritora argentina Mariana Enríquez que mezcla realismo sucio con horror urbano en la Buenos Aires contemporánea. Sus relatos abordan temas como la violencia de género, la crisis económica y lo sobrenatural.",
           datoCurioso: "Enríquez es parte del movimiento de ‘nueva narrativa argentina’; el libro ha recibido reconocimiento internacional y traducciones a múltiples idiomas."
         }
@@ -1011,14 +1011,14 @@ export const defaultCatalog: Catalog = {
         {
           titulo: "La vida invisible de Addie LaRue",
           anio: 2020,
-          autor: "Autor desconocido",
+          autor: "V. E. Schwab",
           sinopsis: "Novela de V. E. Schwab donde Adeline LaRue, en la Francia del siglo XVIII, hace un pacto con un dios oscuro para vivir libre y eternamente, a cambio de ser olvidada por todos. A lo largo de tres siglos, lucha por dejar huella hasta que conoce a un joven que puede recordarla.",
           datoCurioso: "Schwab tardó diez años en desarrollar la novela; la protagonista está inspirada en personajes de arte y folklore que desafiaron al olvido."
         },
         {
           titulo: "La Vegetariana",
           anio: 2007,
-          autor: "Autor desconocido",
+          autor: "Han Kang",
           sinopsis: "Novela surcoreana de Han Kang sobre una mujer que decide dejar de comer carne tras una pesadilla sangrienta. Su decisión desencadena la incomprensión de su familia y una transformación física y psicológica que la aleja de la humanidad.",
           datoCurioso: "El libro ganó el Man Booker International Prize 2016; Han Kang estudió filosofía occidental antes de dedicarse a la literatura."
         }
