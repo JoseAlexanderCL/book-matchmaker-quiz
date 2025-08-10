@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Sparkles, RefreshCw, ArrowLeft } from "lucide-react";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
+import { ShareButton } from "@/components/ShareButton";
 
 function getCoverPlaceholder(title: string) {
   const index = placeholderMap[title as keyof typeof placeholderMap];
@@ -180,22 +181,25 @@ export default function Result() {
               <p className="text-gray-700 text-sm leading-relaxed">{frase}</p>
             </div>
 
-            <div className="flex gap-3 mt-6">
-              <button
-                className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
-                onClick={() => navigate("/preguntas")}
-              >
-                <RefreshCw className="w-4 h-4" />
-                Volver a responder
-              </button>
+            <div className="flex flex-col gap-3 mt-6">
+              <ShareButton bookTitle={resumen.selected.titulo} />
+              <div className="flex gap-3">
+                <button
+                  className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
+                  onClick={() => navigate("/preguntas")}
+                >
+                  <RefreshCw className="w-4 h-4" />
+                  Volver a responder
+                </button>
 
-              <button
-                className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-4 rounded-xl shadow-md border border-amber-200 transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
-                onClick={() => navigate("/")}
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Volver al inicio
-              </button>
+                <button
+                  className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-4 rounded-xl shadow-md border border-amber-200 transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
+                  onClick={() => navigate("/")}
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Volver al inicio
+                </button>
+              </div>
             </div>
           </div>
         </div>
