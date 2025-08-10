@@ -60,7 +60,7 @@ export default function Quiz() {
   const q = questions[current];
 
   return (
-    <Layout backgroundColor="4f5872" revealOnEnter>
+    <Layout backgroundColor="#4F5872" revealOnEnter>
       <main className="min-h-screen bg-gradient-night flex flex-col">
         <Helmet>
           <title>Test lector – ¿Qué libro del club eres?</title>
