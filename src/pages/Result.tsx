@@ -15,28 +15,28 @@ function getCoverPlaceholder(title: string) {
 
 const mbtiEmojiMap = {
   // Analistas
-  INTJ: "🥶☕", // Cold brew: estratégico, calculador
-  INTP: "🧪☕", // Café experimental/laboratorio
-  ENTJ: "💼☕", // Espresso doble, directo al grano
-  ENTP: "🤹‍♂️☕", // Latte con espuma artística
+  INTJ: "🥶", // Cold brew: estratégico, calculador
+  INTP: "🧪", // Café experimental/laboratorio
+  ENTJ: "💼", // Espresso doble, directo al grano
+  ENTP: "🤹‍♂️", // Latte con espuma artística
 
   // Diplomáticos
-  INFJ: "🌿☕", // Matcha latte (tranquilo, reflexivo)
-  INFP: "🍫☕", // Mocha dulce y soñador
-  ENFJ: "🌞☕", // Cappuccino brillante y cálido
-  ENFP: "🌈☕", // Latte colorido/creativo
+  INFJ: "🌿", // Matcha latte (tranquilo, reflexivo)
+  INFP: "🍫", // Mocha dulce y soñador
+  ENFJ: "🌞", // Cappuccino brillante y cálido
+  ENFP: "🌈", // Latte colorido/creativo
 
   // Centinelas
-  ISTJ: "📏☕", // Café negro clásico
-  ISFJ: "🧸☕", // Latte con leche tibia (cálido y protector)
-  ESTJ: "📊☕", // Americano fuerte, productivo
-  ESFJ: "🍪☕", // Café con galleta, social y acogedor
+  ISTJ: "📏", // Café negro clásico
+  ISFJ: "🧸", // Latte con leche tibia (cálido y protector)
+  ESTJ: "📊", // Americano fuerte, productivo
+  ESFJ: "🍪", // Café con galleta, social y acogedor
 
   // Exploradores
-  ISTP: "🛠☕", // Espresso rápido para la acción
-  ISFP: "🎨☕", // Latte arte con dibujos
-  ESTP: "🔥☕", // Café con especias (picante y atrevido)
-  ESFP: "🎉☕", // Frappé dulce y llamativo
+  ISTP: "🛠", // Espresso rápido para la acción
+  ISFP: "🎨", // Latte arte con dibujos
+  ESTP: "🔥", // Café con especias (picante y atrevido)
+  ESFP: "🎉", // Frappé dulce y llamativo
 };
 
 type QuizResult = ComputedResult & FinalSelection;
