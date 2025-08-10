@@ -1,10 +1,13 @@
 import { Share2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 interface ShareButtonProps {
   bookTitle: string;
 }
 
 export function ShareButton({ bookTitle }: ShareButtonProps) {
+  const { toast } = useToast();
+
   const handleShare = async () => {
     const url = window.location.href;
     const data = {
@@ -24,6 +27,7 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
 
     try {
       await navigator.clipboard.writeText(url);
+      toast({ description: "¡Texto copiado al portapapeles!" });
     } catch {
       // ignore
     }
