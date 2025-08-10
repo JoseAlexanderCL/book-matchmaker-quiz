@@ -159,9 +159,9 @@ export default function Result() {
             </div>
 
             {resumen.selected.datoCurioso && (
-              <div className="mt-5 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-4 border-l-4 border-amber-400">
+              <div className="mt-5 bg-gradient-to-r from-stone-200 to-amber-100 rounded-xl p-4 border-l-4 border-stone-500">
                 <h3 className="font-semibold text-gray-700 text-sm mb-2 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-amber-600" />
+                  <Sparkles className="w-4 h-4 text-stone-600" />
                   ¿Sabías que...?
                 </h3>
                 <p className="text-gray-600 text-sm italic">{resumen.selected.datoCurioso}</p>
