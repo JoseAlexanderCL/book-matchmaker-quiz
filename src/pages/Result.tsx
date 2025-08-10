@@ -120,7 +120,7 @@ export default function Result() {
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 bg-amber-100/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
             <Sparkles className="w-5 h-5 text-amber-700" />
-            <h1 className="text-xl font-bold text-amber-800">Tu libro recomendado</h1>
+            <h1 className="text-xl font-bold text-amber-800">Tu libro del Club de Lectura es:</h1>
           </div>
         </div>
 
