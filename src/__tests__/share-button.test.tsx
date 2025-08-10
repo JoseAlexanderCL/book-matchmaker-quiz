@@ -37,7 +37,7 @@ describe("ShareButton", () => {
       button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     });
 
-    expect(writeText).toHaveBeenCalledWith(window.location.href);
+    expect(writeText).toHaveBeenCalledWith(window.location.origin);
     expect(mockToast).toHaveBeenCalledWith({
       description: "¡Texto copiado al portapapeles!",
     });

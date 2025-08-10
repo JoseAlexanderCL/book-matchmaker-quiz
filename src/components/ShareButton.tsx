@@ -9,10 +9,10 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
   const { toast } = useToast();
 
   const handleShare = async () => {
-    const url = window.location.href;
+    const url = window.location.origin;
     const data = {
       title: "Book Matchmaker",
-      text: `Me recomendaron "${bookTitle}"`,
+      text: `Hice el Quiz de Libros y me salió "${bookTitle}". Revisa qué libro te sale en quelibrodel.club`,
       url,
     };
 
