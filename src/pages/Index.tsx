@@ -28,7 +28,7 @@ const Index = () => {
     >
       {!closing && (
         // Use dark blue background color without transparency
-        <Layout key="layout" backgroundColor="#00008B">
+        <Layout key="layout" backgroundColor="4f5872">
           <main>
             <Helmet>
               <title>¿Qué libro del club de lectura eres? |</title>
