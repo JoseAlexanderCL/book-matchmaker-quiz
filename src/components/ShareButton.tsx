@@ -34,7 +34,8 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
         await navigator.share(data);
         return;
       } catch {
-        // ignore
+        // Fallback cuando Web Share falla (p.ej. Chrome iOS / iframe)
+        setOpen(true);
       }
     } else {
       setOpen(true);
