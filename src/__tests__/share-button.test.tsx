@@ -27,18 +27,14 @@ describe("ShareButton", () => {
       button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     });
 
-    const url = window.location.origin;
+    const url = window.location.href;
     const message =
-      'Hice el Quiz de Libros y me salió "Test". Revisa qué libro te sale en quelibrodel.club';
+      'Completé el Quiz y obtuve el libro "Test"! :D';
     const whatsapp = `https://wa.me/?text=${encodeURIComponent(message)}`;
-    const twitter = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
-    const facebook = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-      url
-    )}&quote=${encodeURIComponent(message)}`;
+    const instagram = `instagram://story-camera`;
 
     expect(document.querySelector(`a[href="${whatsapp}"]`)).toBeTruthy();
-    expect(document.querySelector(`a[href="${twitter}"]`)).toBeTruthy();
-    expect(document.querySelector(`a[href="${facebook}"]`)).toBeTruthy();
+    expect(document.querySelector(`a[href="${instagram}"]`)).toBeTruthy();
 
     root.unmount();
     container.remove();

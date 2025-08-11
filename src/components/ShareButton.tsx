@@ -15,12 +15,11 @@ interface ShareButtonProps {
 export function ShareButton({ bookTitle }: ShareButtonProps) {
   const [open, setOpen] = useState(false);
 
-  const url = window.location.origin;
-  const message = `Hice el Quiz de Libros y me salió "${bookTitle}". Revisa qué libro te sale en quelibrodel.club`;
+  const url = window.location.href;
+  const message = `Completé el Quiz y obtuve el libro "${bookTitle}"! :D`;
   const shareLinks = {
     whatsapp: `https://wa.me/?text=${encodeURIComponent(message)}`,
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(message)}`,
+    instagram: "instagram://story-camera",
   };
 
   const handleShare = async () => {
@@ -63,27 +62,29 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 autoFocus
+                aria-label="Compartir por WhatsApp"
               >
                 WhatsApp
               </a>
             </Button>
             <Button asChild variant="secondary">
               <a
-                href={shareLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={shareLinks.instagram}
+                aria-label="Abrir Instagram Stories"
               >
-                X/Twitter
+                Instagram Stories
               </a>
             </Button>
-            <Button asChild variant="secondary">
-              <a
-                href={shareLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
+            <Button
+              variant="secondary"
+              onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText(message)
+                } catch {}
+              }}
+              aria-label="Copiar texto"
+            >
+              Copiar texto
             </Button>
           </div>
         </DialogContent>
