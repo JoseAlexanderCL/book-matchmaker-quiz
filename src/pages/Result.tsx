@@ -117,11 +117,17 @@ export default function Result() {
       </Helmet>
 
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-6">
+        <div className="flex items-center justify-between mb-6">
+          <img 
+            src="/lovable-uploads/4f198d0a-3d6d-4649-aa26-df0774903e16.png" 
+            alt="Club de Lectura Santiago" 
+            className="w-24 h-auto opacity-80"
+          />
           <div className="inline-flex items-center gap-2 bg-amber-100/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
             <Sparkles className="w-5 h-5 text-amber-700" />
             <h1 className="text-xl font-bold text-amber-800">Tu libro del Club de Lectura es:</h1>
           </div>
+          <div className="w-24"></div> {/* Spacer for symmetry */}
         </div>
 
         <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
