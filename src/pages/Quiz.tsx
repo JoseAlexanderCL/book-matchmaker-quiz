@@ -102,6 +102,13 @@ export default function Quiz() {
                 </div>
               </CardContent>
             </Card>
+            <div className="flex justify-center mt-8">
+              <img 
+                src="/lovable-uploads/2b97ea4b-8d5e-49f2-9d8f-8e77130e03b0.png" 
+                alt="Club de Lectura Santiago" 
+                className="w-32 h-auto opacity-80"
+              />
+            </div>
           </div>
         </section>
         <div className="h-[20vh] bg-gradient-reflection" aria-hidden="true" />
