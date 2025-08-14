@@ -47,7 +47,7 @@ const Index = () => {
               <div className="mx-auto text-center max-w-full md:max-w-3xl py-16">
                 <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6">¿Qué libro del club eres?</h1>
                 <p className="text-lg sm:text-xl text-muted-foreground mb-8">En el Club de Lectura hemos leído ¡más de 78 libros distintos! Contesta las preguntas y descubre cuál es el libro que te representa. </p>
-                <div className="flex items-center justify-center">
+                <div className="flex flex-col items-center justify-center gap-6">
                   <Button
                     variant="hero"
                     className="px-8 py-6 text-base"
@@ -55,6 +55,11 @@ const Index = () => {
                   >
                     Comenzar
                   </Button>
+                  <img 
+                    src="/lovable-uploads/2b97ea4b-8d5e-49f2-9d8f-8e77130e03b0.png" 
+                    alt="Club de Lectura Santiago" 
+                    className="w-32 h-auto opacity-80"
+                  />
                 </div>
               </div>
             </section>
