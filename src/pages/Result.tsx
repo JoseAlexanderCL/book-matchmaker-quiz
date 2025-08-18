@@ -78,7 +78,7 @@ export default function Result() {
 
   if (!resumen) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 p-4">
+      <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 px-3 py-4 sm:p-4">
         <div className="flex min-h-screen items-center justify-center">
           <p className="text-muted-foreground">No hay resultado. Comienza el test.</p>
           <button
@@ -108,7 +108,7 @@ export default function Result() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 p-4">
+    <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 px-3 py-4 sm:p-4">
       <Helmet>
         <title>Resultado – {resumen.selected.titulo}</title>
         <meta name="description" content={`Tu libro recomendado: ${resumen.selected.titulo}.`} />
@@ -116,48 +116,58 @@ export default function Result() {
         <script type="application/ld+json">{JSON.stringify(bookLd)}</script>
       </Helmet>
 
-      <div className="max-w-3xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
+      <div className="max-w-5xl mx-auto px-3 sm:px-4">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
           <img 
             src="/lovable-uploads/4f198d0a-3d6d-4649-aa26-df0774903e16.png" 
             alt="Club de Lectura Santiago" 
-            className="w-24 h-auto opacity-80"
+            className="w-16 sm:w-20 lg:w-24 h-auto opacity-80"
           />
-          <div className="inline-flex items-center gap-2 bg-amber-100/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
-            <Sparkles className="w-5 h-5 text-amber-700" />
-            <h1 className="text-xl font-bold text-amber-800">Tu libro del Club de Lectura es:</h1>
+          <div className="inline-flex items-center gap-2 bg-amber-100/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-md">
+            <Sparkles className="w-4 sm:w-5 h-4 sm:h-5 text-amber-700" />
+            <h1 className="text-base sm:text-lg lg:text-xl font-bold text-amber-800">Tu libro del Club de Lectura es:</h1>
           </div>
-          <div className="w-24"></div> {/* Spacer for symmetry */}
+          <div className="w-16 sm:w-20 lg:w-24"></div> {/* Spacer for symmetry */}
         </div>
 
         <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
-          <div className="p-5">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
+          <div className="p-4 sm:p-5 lg:p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+              <div className="space-y-3 lg:space-y-2 order-2 lg:order-1">
                 <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
-                  <h2 className="text-lg font-bold text-amber-50">{resumen.selected.titulo}</h2>
+                  <h2 className="text-xl sm:text-2xl lg:text-lg font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
                 </div>
 
                 <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
-                  <span className="text-amber-50 font-medium">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
+                  <span className="text-amber-50 font-medium text-base lg:text-sm">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
                 </div>
 
-                <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center flex-1">
+                <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center flex-1 lg:hidden">
                   <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
                     <img
                       src={coverSrc}
                       alt={`Portada de ${resumen.selected.titulo}`}
-                      className="w-32 h-48 object-cover rounded-md"
+                      className="w-40 h-60 sm:w-48 sm:h-72 object-cover rounded-md mx-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="hidden lg:block bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex-1">
+                  <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
+                    <img
+                      src={coverSrc}
+                      alt={`Portada de ${resumen.selected.titulo}`}
+                      className="w-32 h-48 object-cover rounded-md mx-auto"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
+              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 order-1 lg:order-2">
                 <div className="h-full flex flex-col">
-                  <h3 className="text-amber-50 font-semibold text-center mb-4">Sinopsis</h3>
+                  <h3 className="text-amber-50 font-semibold text-center mb-4 text-lg lg:text-base">Sinopsis</h3>
                   {resumen.selected.sinopsis && (
-                    <p className="text-amber-50/90 text-sm leading-relaxed text-center flex-1 flex items-center">
+                    <p className="text-amber-50/90 text-base lg:text-sm leading-relaxed text-center flex-1 flex items-center">
                       {resumen.selected.sinopsis}
                     </p>
                   )}
@@ -166,43 +176,43 @@ export default function Result() {
             </div>
 
             {resumen.selected.datoCurioso && (
-              <div className="mt-5 bg-gradient-to-r from-stone-200 to-amber-100 rounded-xl p-4 border-l-4 border-stone-500">
-                <h3 className="font-semibold text-gray-700 text-sm mb-2 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-stone-600" />
+              <div className="mt-4 lg:mt-5 bg-gradient-to-r from-stone-200 to-amber-100 rounded-xl p-4 border-l-4 border-stone-500">
+                <h3 className="font-semibold text-gray-700 text-base lg:text-sm mb-2 flex items-center gap-2">
+                  <Sparkles className="w-5 lg:w-4 h-5 lg:h-4 text-stone-600" />
                   ¿Sabías que...?
                 </h3>
-                <p className="text-gray-600 text-sm italic">{resumen.selected.datoCurioso}</p>
+                <p className="text-gray-600 text-base lg:text-sm italic leading-relaxed">{resumen.selected.datoCurioso}</p>
               </div>
             )}
 
-            <div className="mt-5 bg-blue-50 rounded-xl p-4">
-              <h3 className="font-semibold text-gray-700 text-sm mb-3 flex items-center gap-2">
-                <div className="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center">
-                  <span className="text-blue-700 font-bold text-xs">
+            <div className="mt-4 lg:mt-5 bg-blue-50 rounded-xl p-4">
+              <h3 className="font-semibold text-gray-700 text-base lg:text-sm mb-3 flex items-center gap-2">
+                <div className="w-7 lg:w-6 h-7 lg:h-6 bg-blue-200 rounded-full flex items-center justify-center">
+                  <span className="text-blue-700 font-bold text-sm lg:text-xs">
                     {mbtiEmojiMap[resumen.mbti] || "☕"}
                   </span>
                 </div>
                 Tu perfil lector
               </h3>
-              <p className="text-gray-700 text-sm leading-relaxed">{frase}</p>
+              <p className="text-gray-700 text-base lg:text-sm leading-relaxed">{frase}</p>
             </div>
 
-            <div className="flex flex-col gap-3 mt-6">
+            <div className="flex flex-col gap-4 mt-6">
               <ShareButton bookTitle={resumen.selected.titulo} />
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <button
-                  className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
+                  className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-base lg:text-sm min-h-[48px] lg:min-h-[auto]"
                   onClick={() => navigate("/preguntas")}
                 >
-                  <RefreshCw className="w-4 h-4" />
+                  <RefreshCw className="w-5 lg:w-4 h-5 lg:h-4" />
                   Volver a responder
                 </button>
 
                 <button
-                  className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-4 rounded-xl shadow-md border border-amber-200 transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
+                  className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md border border-amber-200 transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-base lg:text-sm min-h-[48px] lg:min-h-[auto]"
                   onClick={() => navigate("/")}
                 >
-                  <ArrowLeft className="w-4 h-4" />
+                  <ArrowLeft className="w-5 lg:w-4 h-5 lg:h-4" />
                   Volver al inicio
                 </button>
               </div>
