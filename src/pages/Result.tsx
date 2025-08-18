@@ -132,47 +132,37 @@ export default function Result() {
 
         <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
           <div className="p-4 sm:p-5 lg:p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-              <div className="space-y-3 lg:space-y-2 order-2 lg:order-1">
-                <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
-                  <h2 className="text-xl sm:text-2xl lg:text-lg font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
-                </div>
+            <div className="space-y-4">
+              {/* Título */}
+              <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
+              </div>
 
-                <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
-                  <span className="text-amber-50 font-medium text-base lg:text-sm">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
-                </div>
+              {/* Autor */}
+              <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
+                <span className="text-amber-50 font-medium text-base lg:text-lg">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
+              </div>
 
-                <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center flex-1 lg:hidden">
-                  <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
-                    <img
-                      src={coverSrc}
-                      alt={`Portada de ${resumen.selected.titulo}`}
-                      className="w-40 h-60 sm:w-48 sm:h-72 object-cover rounded-md mx-auto"
-                    />
-                  </div>
-                </div>
-
-                <div className="hidden lg:block bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex-1">
-                  <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
-                    <img
-                      src={coverSrc}
-                      alt={`Portada de ${resumen.selected.titulo}`}
-                      className="w-32 h-48 object-cover rounded-md mx-auto"
-                    />
-                  </div>
+              {/* Imagen */}
+              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center">
+                <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
+                  <img
+                    src={coverSrc}
+                    alt={`Portada de ${resumen.selected.titulo}`}
+                    className="w-40 h-60 sm:w-48 sm:h-72 lg:w-56 lg:h-80 object-cover rounded-md mx-auto"
+                  />
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 order-1 lg:order-2">
-                <div className="h-full flex flex-col">
-                  <h3 className="text-amber-50 font-semibold text-center mb-4 text-lg lg:text-base">Sinopsis</h3>
-                  {resumen.selected.sinopsis && (
-                    <p className="text-amber-50/90 text-base lg:text-sm leading-relaxed text-center flex-1 flex items-center">
-                      {resumen.selected.sinopsis}
-                    </p>
-                  )}
+              {/* Sinopsis */}
+              {resumen.selected.sinopsis && (
+                <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
+                  <h3 className="text-amber-50 font-semibold text-center mb-4 text-lg lg:text-xl">Sinopsis</h3>
+                  <p className="text-amber-50/90 text-base lg:text-lg leading-relaxed text-center">
+                    {resumen.selected.sinopsis}
+                  </p>
                 </div>
-              </div>
+              )}
             </div>
 
             {resumen.selected.datoCurioso && (
