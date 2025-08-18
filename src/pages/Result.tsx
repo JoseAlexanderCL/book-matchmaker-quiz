@@ -167,7 +167,7 @@ export default function Result() {
     // Calculate profile content first to get proper height
     const emoji = mbtiEmojiMap[resumen.mbti] || "☕";
     ctx.font = '24px Arial, sans-serif'; // Use the larger font size for calculation
-    const profileLines = wrapText(ctx, frase, contentWidth - (profileMargin * 2) - 60);
+    const profileLines = wrapText(ctx, frase, contentWidth - (profileMargin * 2));
     const profileHeight = 120 + (profileLines.length * 30) + 40; // Adjusted for larger text and spacing
     
     // Profile background - covers entire section
@@ -190,8 +190,8 @@ export default function Result() {
     ctx.font = '24px Arial, sans-serif'; // Increased from 20px
     ctx.fillStyle = '#4b5563'; // gray-600
     let profileTextY = profileY + 140;
-    const textMargin = profileMargin + 30; // Slightly more margin for centering
-    const textWidth = contentWidth - (profileMargin * 2) - 60; // Adjusted for better centering
+    const textMargin = profileMargin; // Use consistent margin
+    const textWidth = contentWidth - (profileMargin * 2); // Simplified calculation
     
     profileLines.forEach((line, index) => {
       // Center the text block by calculating proper starting position
