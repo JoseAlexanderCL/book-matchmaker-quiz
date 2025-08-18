@@ -135,8 +135,8 @@ export default function Result() {
       });
 
       currentY += 60;
-      const bookWidth = 240;
-      const bookHeight = 360;
+      const bookWidth = 280; // Increased from 240
+      const bookHeight = 420; // Increased from 360
       const bookX = (canvas.width - bookWidth) / 2;
       
       // Add shadow for book
@@ -157,7 +157,7 @@ export default function Result() {
 
     } catch (error) {
       console.error('Error loading book cover:', error);
-      currentY += 400; // Skip space for book
+      currentY += 480; // Adjusted for larger book space
     }
 
     // Add reader profile section
@@ -166,9 +166,9 @@ export default function Result() {
     
     // Calculate profile content first to get proper height
     const emoji = mbtiEmojiMap[resumen.mbti] || "☕";
-    ctx.font = '20px Arial, sans-serif';
-    const profileLines = wrapText(ctx, frase, contentWidth - (profileMargin * 2) - 40);
-    const profileHeight = 80 + (profileLines.length * 25) + 40; // emoji + title + text + padding
+    ctx.font = '24px Arial, sans-serif'; // Use the larger font size for calculation
+    const profileLines = wrapText(ctx, frase, contentWidth - (profileMargin * 2) - 60);
+    const profileHeight = 120 + (profileLines.length * 30) + 40; // Adjusted for larger text and spacing
     
     // Profile background - covers entire section
     ctx.fillStyle = '#dbeafe'; // blue-100
@@ -177,24 +177,26 @@ export default function Result() {
     ctx.fill();
 
     // Profile emoji
-    ctx.font = '40px Arial, sans-serif';
+    ctx.font = '50px Arial, sans-serif'; // Increased from 40px
     ctx.textAlign = 'center';
-    ctx.fillText(emoji, canvas.width / 2, profileY + 50);
+    ctx.fillText(emoji, canvas.width / 2, profileY + 55);
 
     // Profile title
-    ctx.font = 'bold 24px Arial, sans-serif';
+    ctx.font = 'bold 32px Arial, sans-serif'; // Increased from 24px
     ctx.fillStyle = '#374151'; // gray-700
-    ctx.fillText('Tu perfil lector', canvas.width / 2, profileY + 90);
+    ctx.fillText('Tu perfil lector', canvas.width / 2, profileY + 105);
 
-    // Profile text - justified
-    ctx.font = '20px Arial, sans-serif';
+    // Profile text - centered and justified
+    ctx.font = '24px Arial, sans-serif'; // Increased from 20px
     ctx.fillStyle = '#4b5563'; // gray-600
-    ctx.textAlign = 'left';
-    let profileTextY = profileY + 120;
-    const textMargin = profileMargin + 20;
-    const textWidth = contentWidth - (profileMargin * 2) - 40;
+    let profileTextY = profileY + 140;
+    const textMargin = profileMargin + 30; // Slightly more margin for centering
+    const textWidth = contentWidth - (profileMargin * 2) - 60; // Adjusted for better centering
     
     profileLines.forEach((line, index) => {
+      // Center the text block by calculating proper starting position
+      ctx.textAlign = 'left';
+      
       // For justified text (except last line), distribute spaces evenly
       if (index < profileLines.length - 1 && line.split(' ').length > 1) {
         const words = line.split(' ');
@@ -207,10 +209,11 @@ export default function Result() {
           x += ctx.measureText(word).width + (wordIndex < words.length - 1 ? spaceWidth : 0);
         });
       } else {
-        // Last line or single word - left aligned
-        ctx.fillText(line, textMargin, profileTextY);
+        // Last line - center aligned
+        ctx.textAlign = 'center';
+        ctx.fillText(line, canvas.width / 2, profileTextY);
       }
-      profileTextY += 25;
+      profileTextY += 30; // Increased spacing for larger text
     });
 
     // Download the image
