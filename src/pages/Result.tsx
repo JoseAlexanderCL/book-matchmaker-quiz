@@ -163,6 +163,7 @@ export default function Result() {
     // Add reader profile section
     const profileMargin = 60;
     const profileY = currentY;
+    const profileX = margin + profileMargin;
     
     // Calculate profile content first to get proper height
     const emoji = mbtiEmojiMap[resumen.mbti] || "☕";
@@ -173,7 +174,7 @@ export default function Result() {
     // Profile background - covers entire section
     ctx.fillStyle = '#dbeafe'; // blue-100
     ctx.beginPath();
-    ctx.roundRect(profileMargin, profileY, contentWidth - (profileMargin * 2), profileHeight, 15);
+    ctx.roundRect(profileX, profileY, contentWidth - profileMargin * 2, profileHeight, 15);
     ctx.fill();
 
     // Profile emoji
@@ -190,7 +191,7 @@ export default function Result() {
     ctx.font = '24px Arial, sans-serif'; // Increased from 20px
     ctx.fillStyle = '#4b5563'; // gray-600
     let profileTextY = profileY + 140;
-    const textMargin = profileMargin; // Use consistent margin
+    const textMargin = profileX; // Use consistent margin
     const textWidth = contentWidth - (profileMargin * 2); // Simplified calculation
     
     profileLines.forEach((line, index) => {
