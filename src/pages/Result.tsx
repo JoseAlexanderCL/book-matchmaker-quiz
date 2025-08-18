@@ -163,16 +163,20 @@ export default function Result() {
     // Add reader profile section
     const profileMargin = 60;
     const profileY = currentY;
-    const profileHeight = 200;
     
-    // Profile background
+    // Calculate profile content first to get proper height
+    const emoji = mbtiEmojiMap[resumen.mbti] || "☕";
+    ctx.font = '20px Arial, sans-serif';
+    const profileLines = wrapText(ctx, frase, contentWidth - (profileMargin * 2) - 40);
+    const profileHeight = 80 + (profileLines.length * 25) + 40; // emoji + title + text + padding
+    
+    // Profile background - covers entire section
     ctx.fillStyle = '#dbeafe'; // blue-100
     ctx.beginPath();
     ctx.roundRect(profileMargin, profileY, contentWidth - (profileMargin * 2), profileHeight, 15);
     ctx.fill();
 
     // Profile emoji
-    const emoji = mbtiEmojiMap[resumen.mbti] || "☕";
     ctx.font = '40px Arial, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(emoji, canvas.width / 2, profileY + 50);
@@ -182,13 +186,30 @@ export default function Result() {
     ctx.fillStyle = '#374151'; // gray-700
     ctx.fillText('Tu perfil lector', canvas.width / 2, profileY + 90);
 
-    // Profile text
+    // Profile text - justified
     ctx.font = '20px Arial, sans-serif';
     ctx.fillStyle = '#4b5563'; // gray-600
-    const profileLines = wrapText(ctx, frase, contentWidth - (profileMargin * 2) - 40);
+    ctx.textAlign = 'left';
     let profileTextY = profileY + 120;
-    profileLines.forEach(line => {
-      ctx.fillText(line, canvas.width / 2, profileTextY);
+    const textMargin = profileMargin + 20;
+    const textWidth = contentWidth - (profileMargin * 2) - 40;
+    
+    profileLines.forEach((line, index) => {
+      // For justified text (except last line), distribute spaces evenly
+      if (index < profileLines.length - 1 && line.split(' ').length > 1) {
+        const words = line.split(' ');
+        const totalTextWidth = words.reduce((acc, word) => acc + ctx.measureText(word).width, 0);
+        const spaceWidth = (textWidth - totalTextWidth) / (words.length - 1);
+        
+        let x = textMargin;
+        words.forEach((word, wordIndex) => {
+          ctx.fillText(word, x, profileTextY);
+          x += ctx.measureText(word).width + (wordIndex < words.length - 1 ? spaceWidth : 0);
+        });
+      } else {
+        // Last line or single word - left aligned
+        ctx.fillText(line, textMargin, profileTextY);
+      }
       profileTextY += 25;
     });
 
