@@ -136,7 +136,7 @@ export default function Result() {
           <div className="w-16 sm:w-20 lg:w-24"></div> {/* Spacer for symmetry */}
         </div>
 
-        <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
+        <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50 max-w-4xl mx-auto">
           <div className="p-4 sm:p-5 lg:p-6 max-w-3xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {/* Portada */}
