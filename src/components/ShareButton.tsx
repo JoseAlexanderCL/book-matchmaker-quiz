@@ -7,6 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { shareAsImage } from "@/lib/shareAsImage";
 
 interface ShareButtonProps {
   bookTitle: string;
@@ -14,8 +15,6 @@ interface ShareButtonProps {
 
 export function ShareButton({ bookTitle }: ShareButtonProps) {
   const [open, setOpen] = useState(false);
-
-  const url = window.location.href;
   const message = `Completé el Quiz y obtuve el libro "${bookTitle}"! :D`;
   const shareLinks = {
     whatsapp: `https://wa.me/?text=${encodeURIComponent(message)}`,
@@ -23,23 +22,18 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
   };
 
   const handleShare = async () => {
-    const data = {
-      title: "Book Matchmaker",
-      text: message,
-      url,
-    };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(data);
-        return;
-      } catch {
-        // Fallback cuando Web Share falla (p.ej. Chrome iOS / iframe)
-        setOpen(true);
+    try {
+      if (navigator.canShare) {
+        const testFile = new File([""], "test.png", { type: "image/png" });
+        if (navigator.canShare({ files: [testFile] })) {
+          await shareAsImage(bookTitle);
+          return;
+        }
       }
-    } else {
-      setOpen(true);
+    } catch {
+      // ignore and show fallback
     }
+    setOpen(true);
   };
 
   return (
@@ -49,7 +43,7 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
       >
         <Share2 className="w-4 h-4" />
-        Compartir
+        Compartir imagen
       </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-md">
@@ -81,7 +75,9 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
               onClick={async () => {
                 try {
                   await navigator.clipboard.writeText(message)
-                } catch {}
+                } catch {
+                  // ignore
+                }
               }}
               aria-label="Copiar texto"
             >
