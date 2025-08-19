@@ -38,13 +38,6 @@ export function ShareButton({ bookTitle }: ShareButtonProps) {
 
   return (
     <>
-      <button
-        onClick={handleShare}
-        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm"
-      >
-        <Share2 className="w-4 h-4" />
-        Compartir imagen
-      </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
