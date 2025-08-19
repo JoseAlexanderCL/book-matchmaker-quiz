@@ -138,36 +138,36 @@ export default function Result() {
 
         <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
           <div className="p-4 sm:p-5 lg:p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {/* Portada */}
-              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center max-w-sm mx-auto">
                 <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
                   <img
                     src={coverSrc}
                     alt={`Portada de ${resumen.selected.titulo}`}
-                    className="w-48 h-72 sm:w-56 sm:h-84 lg:w-64 lg:h-96 object-cover rounded-md mx-auto"
+                    className="w-40 h-60 sm:w-44 sm:h-66 lg:w-48 lg:h-72 object-cover rounded-md mx-auto"
                     crossOrigin={isExternalCover ? "anonymous" : undefined}
                   />
                 </div>
               </div>
 
               {/* Información del libro */}
-              <div className="space-y-4">
+              <div className="space-y-4 max-w-md mx-auto">
                 {/* Título */}
                 <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
+                  <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
                 </div>
 
                 {/* Autor */}
                 <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
-                  <span className="text-amber-50 font-medium text-base lg:text-lg">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
+                  <span className="text-amber-50 font-medium text-sm lg:text-base">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
                 </div>
 
                 {/* Sinopsis */}
                 {resumen.selected.sinopsis && (
                   <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
-                    <h3 className="text-amber-50 font-semibold text-center mb-4 text-lg lg:text-xl">Sinopsis</h3>
-                    <p className="text-amber-50/90 text-base lg:text-lg leading-relaxed text-center">
+                    <h3 className="text-amber-50 font-semibold text-center mb-4 text-base lg:text-lg">Sinopsis</h3>
+                    <p className="text-amber-50/90 text-sm lg:text-base leading-relaxed text-center">
                       {resumen.selected.sinopsis}
                     </p>
                   </div>
