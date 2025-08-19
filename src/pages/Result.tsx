@@ -138,38 +138,41 @@ export default function Result() {
 
         <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
           <div className="p-4 sm:p-5 lg:p-6">
-            <div className="space-y-4">
-              {/* Título */}
-              <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
-              </div>
-
-              {/* Autor */}
-              <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
-                <span className="text-amber-50 font-medium text-base lg:text-lg">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
-              </div>
-
-              {/* Imagen */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {/* Portada */}
               <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center">
                 <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
                   <img
                     src={coverSrc}
                     alt={`Portada de ${resumen.selected.titulo}`}
-                    className="w-40 h-60 sm:w-48 sm:h-72 lg:w-56 lg:h-80 object-cover rounded-md mx-auto"
+                    className="w-48 h-72 sm:w-56 sm:h-84 lg:w-64 lg:h-96 object-cover rounded-md mx-auto"
                     crossOrigin={isExternalCover ? "anonymous" : undefined}
                   />
                 </div>
               </div>
 
-              {/* Sinopsis */}
-              {resumen.selected.sinopsis && (
-                <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
-                  <h3 className="text-amber-50 font-semibold text-center mb-4 text-lg lg:text-xl">Sinopsis</h3>
-                  <p className="text-amber-50/90 text-base lg:text-lg leading-relaxed text-center">
-                    {resumen.selected.sinopsis}
-                  </p>
+              {/* Información del libro */}
+              <div className="space-y-4">
+                {/* Título */}
+                <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
                 </div>
-              )}
+
+                {/* Autor */}
+                <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
+                  <span className="text-amber-50 font-medium text-base lg:text-lg">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
+                </div>
+
+                {/* Sinopsis */}
+                {resumen.selected.sinopsis && (
+                  <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
+                    <h3 className="text-amber-50 font-semibold text-center mb-4 text-lg lg:text-xl">Sinopsis</h3>
+                    <p className="text-amber-50/90 text-base lg:text-lg leading-relaxed text-center">
+                      {resumen.selected.sinopsis}
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
 
             {resumen.selected.datoCurioso && (
