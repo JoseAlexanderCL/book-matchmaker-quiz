@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { Sparkles, RefreshCw, ArrowLeft, Download } from "lucide-react";
@@ -51,6 +51,7 @@ interface Stored {
 export default function Result() {
   const navigate = useNavigate();
   const [data, setData] = useState<Stored | null>(null);
+  const recommendationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("quizResult");
@@ -69,8 +70,10 @@ export default function Result() {
 
   const coverSrc = useMemo(() => {
     if (!resumen) return "";
-    return getCoverPlaceholder(resumen.selected.titulo);
+    return resumen.selected.portada || getCoverPlaceholder(resumen.selected.titulo);
   }, [resumen]);
+
+  const isExternalCover = useMemo(() => /^https?:\/\//.test(coverSrc), [coverSrc]);
 
   const frase = useMemo(() => {
     if (!resumen) return "";
@@ -79,7 +82,7 @@ export default function Result() {
 
   const generateDownloadImage = async () => {
     if (!resumen) return;
-    const element = document.getElementById("result-card");
+    const element = recommendationRef.current;
     if (!element) return;
     const canvas = await html2canvas(element, { useCORS: true, backgroundColor: "#ffffff" });
     const link = document.createElement("a");
@@ -129,7 +132,11 @@ export default function Result() {
         <script type="application/ld+json">{JSON.stringify(bookLd)}</script>
       </Helmet>
 
-      <div className="max-w-5xl mx-auto px-3 sm:px-4">
+      <div
+        id="book-recommendation"
+        ref={recommendationRef}
+        className="max-w-5xl mx-auto px-3 sm:px-4"
+      >
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <img 
             src="/lovable-uploads/4f198d0a-3d6d-4649-aa26-df0774903e16.png" 
@@ -143,7 +150,7 @@ export default function Result() {
           <div className="w-16 sm:w-20 lg:w-24"></div> {/* Spacer for symmetry */}
         </div>
 
-        <div id="result-card" className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
+        <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
           <div className="p-4 sm:p-5 lg:p-6">
             <div className="space-y-4">
               {/* Título */}
@@ -163,6 +170,7 @@ export default function Result() {
                     src={coverSrc}
                     alt={`Portada de ${resumen.selected.titulo}`}
                     className="w-40 h-60 sm:w-48 sm:h-72 lg:w-56 lg:h-80 object-cover rounded-md mx-auto"
+                    crossOrigin={isExternalCover ? "anonymous" : undefined}
                   />
                 </div>
               </div>
