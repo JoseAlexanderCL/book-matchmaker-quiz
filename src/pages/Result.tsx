@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import { Sparkles, RefreshCw, ArrowLeft, Download } from "lucide-react";
+import { Sparkles, RefreshCw, ArrowLeft, Share2 } from "lucide-react";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
 import { ShareButton } from "@/components/ShareButton";
-import html2canvas from "html2canvas";
+import { shareAsImage } from "@/lib/shareAsImage";
 
 function getCoverPlaceholder(title: string) {
   const index = placeholderMap[title as keyof typeof placeholderMap];
@@ -51,7 +51,6 @@ interface Stored {
 export default function Result() {
   const navigate = useNavigate();
   const [data, setData] = useState<Stored | null>(null);
-  const recommendationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("quizResult");
@@ -79,18 +78,6 @@ export default function Result() {
     if (!resumen) return "";
     return resumen.texto;
   }, [resumen]);
-
-  const generateDownloadImage = async () => {
-    if (!resumen) return;
-    const element = recommendationRef.current;
-    if (!element) return;
-    const canvas = await html2canvas(element, { useCORS: true, backgroundColor: "#ffffff" });
-    const link = document.createElement("a");
-    link.download = `mi-libro-recomendado-${resumen.selected.titulo.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  };
-
 
   if (!resumen) {
     return (
@@ -134,7 +121,6 @@ export default function Result() {
 
       <div
         id="book-recommendation"
-        ref={recommendationRef}
         className="max-w-5xl mx-auto px-3 sm:px-4"
       >
         <div className="flex items-center justify-between mb-4 sm:mb-6">
@@ -211,10 +197,10 @@ export default function Result() {
             <div className="flex flex-col gap-4 mt-6">
               <button
                 className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-base lg:text-sm min-h-[48px] lg:min-h-[auto]"
-                onClick={generateDownloadImage}
+                onClick={() => shareAsImage(resumen.selected.titulo)}
               >
-                <Download className="w-5 lg:w-4 h-5 lg:h-4" />
-                Descargar imagen
+                <Share2 className="w-5 lg:w-4 h-5 lg:h-4" />
+                Compartir imagen
               </button>
               <ShareButton bookTitle={resumen.selected.titulo} />
               <div className="flex flex-col sm:flex-row gap-3">
