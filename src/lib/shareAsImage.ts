@@ -8,31 +8,122 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     const element = document.getElementById("book-recommendation");
     if (!element) return;
 
-    clone = element.cloneNode(true) as HTMLElement;
+    // Crear un nuevo elemento con la estructura simplificada
+    clone = document.createElement('div');
     clone.id = "book-recommendation-share";
-    clone.style.width = "900px";
-    clone.style.maxWidth = "900px";
     clone.style.position = "absolute";
     clone.style.left = "-9999px";
     clone.style.top = "0";
+    
+    // Obtener los datos del elemento original
+    const originalImg = element.querySelector('img[alt*="Portada"]') as HTMLImageElement;
+    const title = element.querySelector('h2')?.textContent || '';
+    const author = element.querySelector('.author-container span')?.textContent || '';
+    const synopsis = element.querySelector('.synopsis-container p')?.textContent || '';
+    const logoSrc = element.querySelector('img[alt="Club de Lectura Santiago"]')?.getAttribute('src') || '';
+    
+    // Crear la estructura HTML
+    clone.innerHTML = `
+      <div class="header">
+        <img src="${logoSrc}" alt="Club de Lectura Santiago" class="logo">
+        <div class="header-badge">
+          <svg class="sparkle" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <h1>Tu libro del Club de Lectura es:</h1>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="book-layout">
+          <div class="book-cover-container">
+            <div class="book-cover-inner">
+              <img src="${originalImg?.src || ''}" alt="${title}" crossorigin="anonymous">
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="title-container">
+              <h2>${title}</h2>
+            </div>
+            <div class="author-container">
+              <span>${author}</span>
+            </div>
+            ${synopsis ? `
+            <div class="synopsis-container">
+              <h3>Sinopsis</h3>
+              <p>${synopsis}</p>
+            </div>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+    `;
 
     styleTag = document.createElement("style");
     styleTag.textContent = `
       #book-recommendation-share {
-        background: linear-gradient(135deg, rgb(251 245 231 / 0.9), rgb(254 243 199 / 0.9));
+        background: #fef3c7;
         border-radius: 1rem;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(251 191 36 / 0.5);
-        padding: 1.5rem;
+        padding: 2rem;
         font-family: system-ui, -apple-system, sans-serif;
+        width: 900px;
+        position: relative;
       }
       
-      #book-recommendation-share .grid {
+      #book-recommendation-share .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+      
+      #book-recommendation-share .logo {
+        position: absolute;
+        left: 0;
+        width: 80px;
+        height: auto;
+        opacity: 0.8;
+      }
+      
+      #book-recommendation-share .header-badge {
+        background: rgba(251, 191, 36, 0.3);
+        backdrop-filter: blur(8px);
+        border-radius: 9999px;
+        padding: 0.75rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      
+      #book-recommendation-share .header-badge .sparkle {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: #b45309;
+      }
+      
+      #book-recommendation-share .header-badge h1 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #b45309;
+        margin: 0;
+      }
+      
+      #book-recommendation-share .main-content {
+        background: rgba(251, 245, 231, 0.9);
+        backdrop-filter: blur(8px);
+        border-radius: 1rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(251, 191, 36, 0.5);
+        padding: 2rem;
+      }
+      
+      #book-recommendation-share .book-layout {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        max-width: 64rem;
-        margin: 0 auto;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        max-width: none;
+        margin: 0;
       }
       
       #book-recommendation-share .book-cover-container {
@@ -42,8 +133,6 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 21rem;
-        margin: 0 auto;
       }
       
       #book-recommendation-share .book-cover-inner {
@@ -54,8 +143,8 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
       
       #book-recommendation-share .book-cover-inner img {
-        width: 12rem;
-        height: 18rem;
+        width: 200px;
+        height: 300px;
         object-fit: cover;
         border-radius: 0.375rem;
         margin: 0 auto;
@@ -66,42 +155,40 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        max-width: 28rem;
-        margin: 0 auto;
       }
       
       #book-recommendation-share .title-container {
         background: linear-gradient(to right, #d97706, #b45309, #ea580c);
         border-radius: 0.75rem;
-        padding: 1rem;
+        padding: 1.5rem;
         text-align: center;
       }
       
       #book-recommendation-share .title-container h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: bold;
         color: rgb(251 245 231);
-        line-height: 1.25;
+        line-height: 1.2;
         margin: 0;
       }
       
       #book-recommendation-share .author-container {
         background: linear-gradient(to right, #d97706, #b45309, #ea580c);
         border-radius: 0.75rem;
-        padding: 0.75rem;
+        padding: 1rem;
         text-align: center;
       }
       
       #book-recommendation-share .author-container span {
         color: rgb(251 245 231);
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 1.125rem;
       }
       
       #book-recommendation-share .synopsis-container {
         background: linear-gradient(135deg, #d97706, #b45309, #ea580c);
         border-radius: 0.75rem;
-        padding: 1rem;
+        padding: 1.5rem;
       }
       
       #book-recommendation-share .synopsis-container h3 {
@@ -109,82 +196,15 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         font-weight: 600;
         text-align: center;
         margin-bottom: 1rem;
-        font-size: 1.125rem;
+        font-size: 1.25rem;
         margin-top: 0;
       }
       
       #book-recommendation-share .synopsis-container p {
         color: rgba(251, 245, 231, 0.9);
-        font-size: 0.875rem;
-        line-height: 1.625;
+        font-size: 1rem;
+        line-height: 1.5;
         text-align: center;
-        margin: 0;
-      }
-      
-      #book-recommendation-share .curious-fact {
-        margin-top: 1rem;
-        background: linear-gradient(to right, rgb(231 229 228), rgb(251 245 231));
-        border-radius: 0.75rem;
-        padding: 1rem;
-        border-left: 4px solid rgb(120 113 108);
-        grid-column: span 2;
-      }
-      
-      #book-recommendation-share .curious-fact h3 {
-        font-weight: 600;
-        color: rgb(55 65 81);
-        font-size: 0.875rem;
-        margin-bottom: 0.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 0;
-      }
-      
-      #book-recommendation-share .curious-fact p {
-        color: rgb(75 85 99);
-        font-size: 0.875rem;
-        font-style: italic;
-        line-height: 1.625;
-        margin: 0;
-      }
-      
-      #book-recommendation-share .reader-profile {
-        margin-top: 1rem;
-        background: rgb(239 246 255);
-        border-radius: 0.75rem;
-        padding: 1rem;
-        grid-column: span 2;
-      }
-      
-      #book-recommendation-share .reader-profile h3 {
-        font-weight: 600;
-        color: rgb(55 65 81);
-        font-size: 0.875rem;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 0;
-      }
-      
-      #book-recommendation-share .reader-profile .emoji-badge {
-        width: 1.5rem;
-        height: 1.5rem;
-        background: rgb(191 219 254);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.75rem;
-        font-weight: bold;
-        color: rgb(29 78 216);
-      }
-      
-      #book-recommendation-share .reader-profile p {
-        color: rgb(55 65 81);
-        font-size: 0.875rem;
-        line-height: 1.625;
         margin: 0;
       }
     `;
@@ -250,3 +270,4 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     if (styleTag) styleTag.remove();
   }
 }
+
