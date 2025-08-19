@@ -5,6 +5,7 @@ import { Sparkles, RefreshCw, ArrowLeft, Download } from "lucide-react";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
 import { ShareButton } from "@/components/ShareButton";
+import html2canvas from "html2canvas";
 
 function getCoverPlaceholder(title: string) {
   const index = placeholderMap[title as keyof typeof placeholderMap];
@@ -78,171 +79,15 @@ export default function Result() {
 
   const generateDownloadImage = async () => {
     if (!resumen) return;
-
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    // Set canvas dimensions for vertical layout
-    canvas.width = 800;
-    canvas.height = 1200;
-
-    // Create gradient background
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(0, '#fef3c7'); // amber-100
-    gradient.addColorStop(0.5, '#fef3c7'); // amber-100
-    gradient.addColorStop(1, '#fed7aa'); // orange-200
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Add rounded rectangle for main content
-    const margin = 40;
-    const contentWidth = canvas.width - (margin * 2);
-    const contentHeight = canvas.height - (margin * 2);
-    
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-    ctx.beginPath();
-    ctx.roundRect(margin, margin, contentWidth, contentHeight, 20);
-    ctx.fill();
-
-    let currentY = margin + 60;
-
-    // Add title
-    ctx.fillStyle = '#92400e'; // amber-800
-    ctx.font = 'bold 42px Arial, sans-serif';
-    ctx.textAlign = 'center';
-    
-    const titleLines = wrapText(ctx, resumen.selected.titulo, contentWidth - 80);
-    titleLines.forEach(line => {
-      ctx.fillText(line, canvas.width / 2, currentY);
-      currentY += 50;
-    });
-
-    // Add author
-    currentY += 20;
-    ctx.font = '28px Arial, sans-serif';
-    ctx.fillStyle = '#a16207'; // amber-700
-    ctx.fillText(`${resumen.selected.autor} (${resumen.selected.anio})`, canvas.width / 2, currentY);
-
-    // Load and draw book cover
-    try {
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      await new Promise((resolve, reject) => {
-        img.onload = resolve;
-        img.onerror = reject;
-        img.src = coverSrc;
-      });
-
-      currentY += 60;
-      const bookWidth = 280; // Increased from 240
-      const bookHeight = 420; // Increased from 360
-      const bookX = (canvas.width - bookWidth) / 2;
-      
-      // Add shadow for book
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
-      ctx.shadowBlur = 15;
-      ctx.shadowOffsetX = 5;
-      ctx.shadowOffsetY = 5;
-      
-      ctx.drawImage(img, bookX, currentY, bookWidth, bookHeight);
-      
-      // Reset shadow
-      ctx.shadowColor = 'transparent';
-      ctx.shadowBlur = 0;
-      ctx.shadowOffsetX = 0;
-      ctx.shadowOffsetY = 0;
-
-      currentY += bookHeight + 60;
-
-    } catch (error) {
-      console.error('Error loading book cover:', error);
-      currentY += 480; // Adjusted for larger book space
-    }
-
-    // Add reader profile section
-    const profileMargin = 60;
-    const profileWidth = contentWidth - profileMargin * 2;
-    const profileY = currentY;
-    const profileX = (canvas.width - profileWidth) / 2;
-
-    // Calculate profile content first to get proper height
-    const emoji = mbtiEmojiMap[resumen.mbti] || "☕";
-    ctx.font = '24px Arial, sans-serif'; // Use the larger font size for calculation
-    const profileLines = wrapText(ctx, frase, profileWidth);
-    const profileHeight = 120 + (profileLines.length * 30) + 40; // Adjusted for larger text and spacing
-
-    // Profile background - covers entire section
-    ctx.fillStyle = '#dbeafe'; // blue-100
-    ctx.beginPath();
-    ctx.roundRect(profileX, profileY, profileWidth, profileHeight, 15);
-    ctx.fill();
-
-    // Profile emoji
-    ctx.font = '50px Arial, sans-serif'; // Increased from 40px
-    ctx.textAlign = 'center';
-    ctx.fillText(emoji, canvas.width / 2, profileY + 55);
-
-    // Profile title
-    ctx.font = 'bold 32px Arial, sans-serif'; // Increased from 24px
-    ctx.fillStyle = '#374151'; // gray-700
-    ctx.fillText('Tu perfil lector', canvas.width / 2, profileY + 105);
-
-    // Profile text - centered and justified
-    ctx.font = '24px Arial, sans-serif'; // Increased from 20px
-    ctx.fillStyle = '#4b5563'; // gray-600
-    let profileTextY = profileY + 140;
-    const textMargin = profileX; // Use consistent margin
-    const textWidth = profileWidth; // Simplified calculation
-    
-    profileLines.forEach((line, index) => {
-      // Center the text block by calculating proper starting position
-      ctx.textAlign = 'left';
-      
-      // For justified text (except last line), distribute spaces evenly
-      if (index < profileLines.length - 1 && line.split(' ').length > 1) {
-        const words = line.split(' ');
-        const totalTextWidth = words.reduce((acc, word) => acc + ctx.measureText(word).width, 0);
-        const spaceWidth = (textWidth - totalTextWidth) / (words.length - 1);
-        
-        let x = textMargin;
-        words.forEach((word, wordIndex) => {
-          ctx.fillText(word, x, profileTextY);
-          x += ctx.measureText(word).width + (wordIndex < words.length - 1 ? spaceWidth : 0);
-        });
-      } else {
-        // Last line - center aligned
-        ctx.textAlign = 'center';
-        ctx.fillText(line, canvas.width / 2, profileTextY);
-      }
-      profileTextY += 30; // Increased spacing for larger text
-    });
-
-    // Download the image
-    const link = document.createElement('a');
+    const element = document.getElementById("result-card");
+    if (!element) return;
+    const canvas = await html2canvas(element, { useCORS: true, backgroundColor: "#ffffff" });
+    const link = document.createElement("a");
     link.download = `mi-libro-recomendado-${resumen.selected.titulo.replace(/[^a-zA-Z0-9]/g, '-')}.png`;
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL("image/png");
     link.click();
   };
 
-  const wrapText = (ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] => {
-    const words = text.split(' ');
-    const lines: string[] = [];
-    let currentLine = words[0];
-
-    for (let i = 1; i < words.length; i++) {
-      const testLine = currentLine + ' ' + words[i];
-      const metrics = ctx.measureText(testLine);
-      if (metrics.width > maxWidth) {
-        lines.push(currentLine);
-        currentLine = words[i];
-      } else {
-        currentLine = testLine;
-      }
-    }
-    lines.push(currentLine);
-    return lines;
-  };
 
   if (!resumen) {
     return (
@@ -298,7 +143,7 @@ export default function Result() {
           <div className="w-16 sm:w-20 lg:w-24"></div> {/* Spacer for symmetry */}
         </div>
 
-        <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
+        <div id="result-card" className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50">
           <div className="p-4 sm:p-5 lg:p-6">
             <div className="space-y-4">
               {/* Título */}
