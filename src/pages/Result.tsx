@@ -176,16 +176,16 @@ export default function Result() {
 
             {resumen.selected.datoCurioso && (
               <div className="mt-4 lg:mt-5 bg-gradient-to-r from-stone-200 to-amber-100 rounded-xl p-4 border-l-4 border-stone-500">
-                <h3 className="font-semibold text-gray-700 text-base lg:text-sm mb-2 flex items-center gap-2">
+                <h3 className="font-semibold text-gray-700 text-sm lg:text-base mb-2 flex items-center gap-2">
                   <Sparkles className="w-5 lg:w-4 h-5 lg:h-4 text-stone-600" />
                   ¿Sabías que...?
                 </h3>
-                <p className="text-gray-600 text-base lg:text-sm italic leading-relaxed">{resumen.selected.datoCurioso}</p>
+                <p className="text-gray-600 text-sm lg:text-base italic leading-relaxed">{resumen.selected.datoCurioso}</p>
               </div>
             )}
 
             <div className="mt-4 lg:mt-5 bg-blue-50 rounded-xl p-4">
-              <h3 className="font-semibold text-gray-700 text-base lg:text-sm mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-gray-700 text-sm lg:text-base mb-3 flex items-center gap-2">
                 <div className="w-7 lg:w-6 h-7 lg:h-6 bg-blue-200 rounded-full flex items-center justify-center">
                   <span className="text-blue-700 font-bold text-sm lg:text-xs">
                     {mbtiEmojiMap[resumen.mbti] || "☕"}
@@ -193,12 +193,12 @@ export default function Result() {
                 </div>
                 Tu perfil lector
               </h3>
-              <p className="text-gray-700 text-base lg:text-sm leading-relaxed">{frase}</p>
+              <p className="text-gray-700 text-sm lg:text-base leading-relaxed">{frase}</p>
             </div>
 
             <div className="flex flex-col gap-4 mt-6">
               <button
-                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-base lg:text-sm min-h-[48px] lg:min-h-[auto]"
+                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm lg:text-base min-h-[48px] lg:min-h-[auto]"
                 onClick={() => shareAsImage(resumen.selected.titulo)}
               >
                 <Share2 className="w-5 lg:w-4 h-5 lg:h-4" />
@@ -207,7 +207,7 @@ export default function Result() {
               <ShareButton bookTitle={resumen.selected.titulo} />
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
-                  className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-base lg:text-sm min-h-[48px] lg:min-h-[auto]"
+                  className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm lg:text-base min-h-[48px] lg:min-h-[auto]"
                   onClick={() => navigate("/preguntas")}
                 >
                   <RefreshCw className="w-5 lg:w-4 h-5 lg:h-4" />
@@ -215,7 +215,7 @@ export default function Result() {
                 </button>
 
                 <button
-                  className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md border border-amber-200 transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-base lg:text-sm min-h-[48px] lg:min-h-[auto]"
+                  className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md border border-amber-200 transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm lg:text-base min-h-[48px] lg:min-h-[auto]"
                   onClick={() => navigate("/")}
                 >
                   <ArrowLeft className="w-5 lg:w-4 h-5 lg:h-4" />
