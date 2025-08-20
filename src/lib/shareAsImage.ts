@@ -30,35 +30,32 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         <header class="header">
           <img src="${logoSrc}" alt="Club de Lectura Santiago" class="logo" />
           <div class="ribbon">
-            <span class="ribbon-star" aria-hidden="true">✦</span>
+            <span class="ribbon-star">✦</span>
             <h1 class="ribbon-title">Tu libro del Club de Lectura es:</h1>
           </div>
         </header>
 
-        <section class="cover">
+        <section class="cover-section">
           <div class="cover-frame">
             <img src="${originalImg?.src || ''}" alt="${title}" class="cover-img" crossorigin="anonymous" />
           </div>
         </section>
 
-        <section class="title">
+        <section class="title-section">
           <h2 class="book-title">${title}</h2>
-        </section>
-
-        <section class="author">
           <span class="book-author">${author}</span>
         </section>
 
         ${synopsis ? `
-        <section class="card synopsis">
+        <section class="card synopsis-card">
           <h3 class="card-title">Sinopsis</h3>
-          <p class="card-text clamp-7">${synopsis}</p>
+          <p class="card-text">${synopsis}</p>
         </section>` : ''}
 
         ${perfilLector ? `
-        <section class="card profile">
+        <section class="card profile-card">
           <h3 class="card-title">Tu perfil lector</h3>
-          <p class="card-text clamp-7">${perfilLector}</p>
+          <p class="card-text">${perfilLector}</p>
         </section>` : ''}
 
         <footer class="watermark">Club de Lectura Santiago</footer>
@@ -67,163 +64,200 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
     styleTag = document.createElement("style");
     styleTag.textContent = `
-      /* Tipos y tokens (usa Google Fonts si cargan; fallback seguro) */
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
-
+      /* Colores otoñales elegantes */
       :root {
-        --bg: #F7F1E8;
-        --paper: #FFFBF2;
-        --ink: #2E2723;
-        --muted: #564B45;
-        --gold: #C6A15B;
-        --gold-2: #8E7748;
-        --forest: #2C4A3F;
-        --shadow-1: 0 10px 30px rgba(0,0,0,.12);
-        --shadow-2: 0 18px 48px rgba(0,0,0,.18);
-        --radius-card: 28px;
-        --radius-pill: 999px;
+        --cream: #FDF8F0;
+        --warm-white: #FAF6ED;
+        --soft-gold: #D4AF37;
+        --deep-gold: #B8860B;
+        --burnt-orange: #CC7722;
+        --warm-brown: #8B4513;
+        --dark-brown: #654321;
+        --text-primary: #2C1810;
+        --text-secondary: #5D4E3A;
+        --text-muted: #8B7355;
       }
 
       #book-recommendation-share {
         width: 1080px;
         height: 1920px;
-        background: radial-gradient(1200px 1200px at 20% 10%, rgba(198,161,91,.10), transparent 50%),
-                    radial-gradient(900px 900px at 80% 90%, rgba(142,119,72,.08), transparent 55%),
-                    linear-gradient(180deg, var(--paper), var(--bg));
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: var(--ink);
+        background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
+        font-family: 'Georgia', 'Times New Roman', serif;
+        color: var(--text-primary);
         overflow: hidden;
         position: relative;
+        box-sizing: border-box;
       }
 
       .story-container {
         width: 100%;
         height: 100%;
-        padding: 72px 96px;
-        display: grid;
-        grid-template-rows: auto auto auto auto auto 1fr auto;
-        row-gap: 36px;
+        padding: 80px 90px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
         position: relative;
-        isolation: isolate;
       }
 
-      /* esquinas decorativas muy sutiles */
-      #book-recommendation-share::before,
-      #book-recommendation-share::after {
-        content: "";
-        position: absolute;
-        width: 160px; height: 160px;
-        opacity: .25;
-        pointer-events: none;
-        background: conic-gradient(from 0deg, transparent 0 70%, rgba(198,161,91,.4) 70% 100%);
-        border-radius: 24px;
-        filter: blur(0.2px);
+      /* Header simplificado */
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
       }
-      #book-recommendation-share::before { top: 36px; left: 36px; }
-      #book-recommendation-share::after  { bottom: 36px; right: 36px; transform: rotate(180deg); }
 
-      /* Header */
-      .header { display:flex; flex-direction:column; align-items:center; gap:28px; }
-      .logo { width:132px; height:auto; opacity:.9; filter: sepia(8%) saturate(90%); }
+      .logo {
+        width: 120px;
+        height: auto;
+        opacity: 0.9;
+      }
 
       .ribbon {
-        display:flex; align-items:center; gap:14px;
-        padding:18px 28px;
-        border-radius: var(--radius-pill);
-        border:1px solid rgba(198,161,91,.45);
-        background: linear-gradient(180deg, rgba(198,161,91,.18), rgba(198,161,91,.10));
-        box-shadow: var(--shadow-1);
-      }
-      .ribbon-star { font-size:20px; color: var(--gold-2); line-height:1; }
-      .ribbon-title {
-        margin:0; line-height:1.25; text-align:center;
-        font: 600 28px/1.25 "Playfair Display", Georgia, serif;
-        letter-spacing:.2px; color:#5A493E;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 35px;
+        background: var(--soft-gold);
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(180, 134, 11, 0.3);
       }
 
-      /* Portada */
-      .cover { display:flex; justify-content:center; }
+      .ribbon-star {
+        font-size: 22px;
+        color: var(--warm-white);
+        line-height: 1;
+      }
+
+      .ribbon-title {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: var(--warm-white);
+        text-align: center;
+        letter-spacing: 0.5px;
+      }
+
+      /* Portada elegante */
+      .cover-section {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
       .cover-frame {
-        padding:26px;
-        border-radius: 22px;
-        background: linear-gradient(135deg, #D9C39A 0%, #BFA170 100%);
-        box-shadow: var(--shadow-2);
-        position:relative;
+        padding: 20px;
+        background: var(--deep-gold);
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(139, 69, 19, 0.25);
       }
-      .cover-frame::after{
-        content:""; position:absolute; inset:10px;
-        border-radius: 14px;
-        border:1px solid rgba(255,255,255,.55);
-        pointer-events:none;
-      }
-      .cover-img{
-        width: 340px; height: 510px; object-fit: cover;
-        border-radius: 18px; display:block;
-        box-shadow: 0 12px 28px rgba(0,0,0,.25);
-        background: #EEE;
+
+      .cover-img {
+        width: 320px;
+        height: 480px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        background: #f0f0f0;
       }
 
       /* Título y autor */
-      .title { text-align:center; }
-      .book-title{
-        margin:0;
-        font: 700 48px/1.2 "Playfair Display", Georgia, serif;
-        color:#3E2F27; letter-spacing:.3px;
+      .title-section {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .book-title {
+        margin: 0 0 15px 0;
+        font-family: 'Georgia', serif;
+        font-size: 44px;
+        font-weight: bold;
+        color: var(--text-primary);
+        line-height: 1.2;
         text-wrap: balance;
       }
-      .author { text-align:center; }
-      .book-author{
-        font: 500 30px/1.3 "Playfair Display", Georgia, serif;
-        color:#6E5B4F; opacity:.95;
+
+      .book-author {
+        font-family: 'Georgia', serif;
+        font-size: 26px;
+        font-style: italic;
+        color: var(--text-secondary);
+        font-weight: normal;
       }
 
-      /* Cards */
-      .card{
-        border-radius: var(--radius-card);
-        padding: 32px 34px;
-        background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.70));
-        border: 1px solid rgba(198,161,91,.35);
-        box-shadow: var(--shadow-1);
-        position:relative;
-      }
-      .card-title{
-        margin:0 0 14px 0;
-        font: 600 30px/1.2 "Playfair Display", Georgia, serif;
-        color:#4A3A31; text-align:center;
-      }
-      .card-text{
-        margin:0; font: 400 24px/1.55 Inter, system-ui, sans-serif;
-        color:#4E4038;
-        text-align:center;
+      /* Cards simplificadas */
+      .card {
+        background: var(--warm-white);
+        border: 2px solid var(--soft-gold);
+        border-radius: 20px;
+        padding: 30px;
+        margin: 20px 0;
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
       }
 
-      /* variantes */
-      .synopsis { background: linear-gradient(180deg, rgba(255,253,247,.9), rgba(255,251,242,.78)); }
-      .synopsis::before, .synopsis::after{
-        content:"""; position:absolute; font:700 84px/1 Georgia, serif;
-        color:rgba(110,91,79,.18); pointer-events:none;
-      }
-      .synopsis::before{ top:12px; left:18px; }
-      .synopsis::after { content:"""; bottom:8px; right:18px; }
-
-      .profile{
-        background: linear-gradient(180deg, rgba(62,47,39,.95), rgba(62,47,39,.88));
-        border-color: rgba(198,161,91,.45);
-      }
-      .profile .card-title{ color:#F2ECE3; }
-      .profile .card-text{ color:#F7F1E8; opacity:.96; }
-
-      /* Clamps para evitar overflow */
-      .clamp-7{
-        display:-webkit-box; -webkit-line-clamp:7; -webkit-box-orient:vertical;
-        overflow:hidden;
+      .card-title {
+        margin: 0 0 20px 0;
+        font-family: 'Georgia', serif;
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--warm-brown);
+        text-align: center;
       }
 
-      .watermark{
-        text-align:center; margin-top:12px;
-        font: 500 18px/1.2 Inter, system-ui, sans-serif;
-        color: rgba(46,39,35,.6);
-        letter-spacing:.4px;
+      .card-text {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        font-size: 22px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Variantes de cards */
+      .synopsis-card {
+        background: linear-gradient(145deg, var(--warm-white) 0%, var(--cream) 100%);
+        border-color: var(--burnt-orange);
+      }
+
+      .synopsis-card .card-title {
+        color: var(--burnt-orange);
+      }
+
+      .profile-card {
+        background: var(--dark-brown);
+        border-color: var(--soft-gold);
+      }
+
+      .profile-card .card-title {
+        color: var(--soft-gold);
+      }
+
+      .profile-card .card-text {
+        color: var(--cream);
+      }
+
+      /* Footer */
+      .watermark {
+        text-align: center;
+        margin-top: auto;
+        font-family: 'Georgia', serif;
+        font-size: 18px;
+        color: var(--text-muted);
+        font-style: italic;
+        letter-spacing: 1px;
+      }
+
+      /* Responsive text ajustments */
+      @media (max-width: 1080px) {
+        .book-title { font-size: 40px; }
+        .book-author { font-size: 24px; }
+        .card-text { font-size: 20px; }
+        .ribbon-title { font-size: 24px; }
       }
     `;
 
@@ -242,14 +276,16 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       ),
     );
 
-    // Generar el canvas con las dimensiones exactas
+    // Generar el canvas con configuración optimizada
     const canvas = await html2canvas(clone, {
       width: 1080,
       height: 1920,
-      backgroundColor: "#F7F1E8",
+      backgroundColor: "#FDF8F0",
       scale: 1,
       useCORS: true,
       allowTaint: false,
+      removeContainer: true,
+      foreignObjectRendering: false,
       onclone: (doc) => {
         const imgs = doc.querySelectorAll("#book-recommendation-share img");
         imgs.forEach((img) => {
@@ -262,7 +298,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     });
 
     const blob = await new Promise<Blob | null>((resolve) => 
-      canvas.toBlob(resolve, 'image/png', 1.0)
+      canvas.toBlob(resolve, 'image/png', 0.95)
     );
     if (!blob) return;
 
@@ -271,7 +307,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       type: "image/png",
     });
 
-    const message = `Completé el Quiz y obtuve el libro "${bookTitle}"! :D`;
+    const message = `Completé el Quiz y obtuve el libro "${bookTitle}"! 📚✨`;
 
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       await navigator.share({
