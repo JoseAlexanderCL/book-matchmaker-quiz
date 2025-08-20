@@ -123,7 +123,7 @@ export default function Result() {
         id="book-recommendation"
         className="max-w-3xl mx-auto px-3 sm:px-4"
       >
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 mb-4 sm:mb-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 sm:mb-6">
           <img
             src="/lovable-uploads/4f198d0a-3d6d-4649-aa26-df0774903e16.png"
             alt="Club de Lectura Santiago"
