@@ -63,13 +63,6 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         </div>
         ` : ''}
 
-        <!-- Dato curioso -->
-        ${datoCurioso ? `
-        <div class="curious-fact-section">
-          <h3>¿Sabías que...?</h3>
-          <p>${datoCurioso}</p>
-        </div>
-        ` : ''}
 
         <!-- Perfil lector -->
         ${perfilLector ? `
@@ -353,44 +346,6 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         letter-spacing: 0.2px;
       }
       
-      /* Dato curioso */
-      .curious-fact-section {
-        background: linear-gradient(135deg, rgba(169, 130, 98, 0.8), rgba(139, 108, 85, 0.7));
-        border-radius: 30px;
-        padding: 35px;
-        border-left: 6px solid #deb887;
-        box-shadow: 0 10px 30px rgba(107, 78, 61, 0.2);
-        position: relative;
-      }
-      
-      .curious-fact-section::before {
-        content: '✦';
-        position: absolute;
-        top: 20px;
-        right: 25px;
-        font-size: 24px;
-        color: rgba(245, 241, 234, 0.4);
-      }
-      
-      .curious-fact-section h3 {
-        color: #f5f1ea;
-        font-weight: 600;
-        text-align: center;
-        margin: 0 0 25px 0;
-        font-size: 28px;
-        text-shadow: 1px 1px 3px rgba(74, 52, 41, 0.4);
-        font-style: italic;
-      }
-      
-      .curious-fact-section p {
-        color: rgba(245, 241, 234, 0.95);
-        font-size: 22px;
-        line-height: 1.5;
-        text-align: center;
-        margin: 0;
-        font-style: italic;
-        letter-spacing: 0.1px;
-      }
       
       /* Perfil lector */
       .reader-profile-section {
