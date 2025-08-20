@@ -102,38 +102,12 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .story-container {
         width: 100%;
         height: 100%;
-        padding: 70px 90px;
+        padding: 50px 90px;
         display: flex;
         flex-direction: column;
-        gap: 45px;
+        gap: 35px;
         position: relative;
         z-index: 1;
-      }
-      
-      /* Decorative corner elements */
-      .story-container::before {
-        content: '';
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        width: 120px;
-        height: 120px;
-        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 Q50,10 80,20 Q90,50 80,80 Q50,90 20,80 Q10,50 20,20 Z' fill='none' stroke='%23bc8f6b' stroke-width='1.5' opacity='0.3'/%3E%3C/svg%3E") no-repeat;
-        background-size: contain;
-        opacity: 0.4;
-      }
-      
-      .story-container::after {
-        content: '';
-        position: absolute;
-        bottom: 40px;
-        right: 40px;
-        width: 120px;
-        height: 120px;
-        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 Q50,10 80,20 Q90,50 80,80 Q50,90 20,80 Q10,50 20,20 Z' fill='none' stroke='%23bc8f6b' stroke-width='1.5' opacity='0.3'/%3E%3C/svg%3E") no-repeat;
-        background-size: contain;
-        opacity: 0.4;
-        transform: rotate(180deg);
       }
       
       /* Header */
@@ -240,26 +214,11 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       
       /* Título */
       .book-title-section {
-        background: linear-gradient(135deg, rgba(222, 184, 135, 0.9), rgba(205, 154, 124, 0.8));
-        border-radius: 35px;
-        padding: 40px 35px;
+        background: linear-gradient(135deg, rgba(222, 184, 135, 0.8), rgba(205, 154, 124, 0.7));
+        border-radius: 25px;
+        padding: 35px;
         text-align: center;
-        box-shadow: 0 12px 30px rgba(139, 108, 85, 0.2);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .book-title-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M30,5 L35,20 L50,20 L38,30 L42,45 L30,37 L18,45 L22,30 L10,20 L25,20 Z' fill='%23ffffff' opacity='0.05'/%3E%3C/svg%3E") repeat;
-        opacity: 0.1;
-        pointer-events: none;
+        box-shadow: 0 8px 20px rgba(139, 108, 85, 0.15);
       }
       
       .book-title-section h2 {
@@ -269,20 +228,17 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         line-height: 1.2;
         margin: 0;
         text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
-        position: relative;
-        z-index: 1;
         font-style: italic;
         letter-spacing: 0.5px;
       }
       
       /* Autor */
       .book-author-section {
-        background: linear-gradient(135deg, rgba(188, 143, 107, 0.8), rgba(169, 130, 98, 0.7));
+        background: linear-gradient(135deg, rgba(188, 143, 107, 0.7), rgba(169, 130, 98, 0.6));
         border-radius: 25px;
         padding: 28px;
         text-align: center;
-        box-shadow: 0 8px 25px rgba(107, 78, 61, 0.15);
-        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 6px 20px rgba(107, 78, 61, 0.12);
       }
       
       .book-author-section span {
@@ -296,34 +252,10 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       
       /* Sinopsis */
       .synopsis-section {
-        background: linear-gradient(135deg, rgba(222, 184, 135, 0.7), rgba(205, 154, 124, 0.6));
-        border-radius: 30px;
+        background: linear-gradient(135deg, rgba(222, 184, 135, 0.6), rgba(205, 154, 124, 0.5));
+        border-radius: 25px;
         padding: 35px;
-        box-shadow: 0 10px 30px rgba(139, 108, 85, 0.15);
-        border: 2px solid rgba(255, 255, 255, 0.25);
-        position: relative;
-      }
-      
-      .synopsis-section::before {
-        content: '"';
-        position: absolute;
-        top: 15px;
-        left: 25px;
-        font-size: 80px;
-        color: rgba(107, 78, 61, 0.2);
-        font-family: Georgia, serif;
-        line-height: 1;
-      }
-      
-      .synopsis-section::after {
-        content: '"';
-        position: absolute;
-        bottom: 15px;
-        right: 25px;
-        font-size: 80px;
-        color: rgba(107, 78, 61, 0.2);
-        font-family: Georgia, serif;
-        line-height: 1;
+        box-shadow: 0 8px 20px rgba(139, 108, 85, 0.12);
       }
       
       .synopsis-section h3 {
@@ -346,24 +278,12 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         letter-spacing: 0.2px;
       }
       
-      
       /* Perfil lector */
       .reader-profile-section {
-        background: linear-gradient(135deg, rgba(107, 78, 61, 0.9), rgba(93, 64, 55, 0.8));
-        border-radius: 30px;
+        background: linear-gradient(135deg, rgba(107, 78, 61, 0.8), rgba(93, 64, 55, 0.7));
+        border-radius: 25px;
         padding: 35px;
-        box-shadow: 0 12px 35px rgba(74, 52, 41, 0.25);
-        border: 2px solid rgba(222, 184, 135, 0.3);
-        position: relative;
-      }
-      
-      .reader-profile-section::before {
-        content: '📚';
-        position: absolute;
-        top: 20px;
-        left: 25px;
-        font-size: 32px;
-        opacity: 0.6;
+        box-shadow: 0 8px 20px rgba(74, 52, 41, 0.15);
       }
       
       .reader-profile-section h3 {
