@@ -139,12 +139,12 @@ export default function Result() {
           <div className="p-4 sm:p-5 lg:p-6 max-w-3xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {/* Portada */}
-              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center max-w-sm mx-auto">
+              <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 flex items-center justify-center max-w-full mx-auto">
                 <div className="bg-amber-50 p-2 rounded-lg shadow-lg">
                   <img
                     src={coverSrc}
                     alt={`Portada de ${resumen.selected.titulo}`}
-                    className="w-40 h-60 sm:w-44 sm:h-66 lg:w-48 lg:h-72 object-cover rounded-md mx-auto"
+                    className="w-full max-w-[12rem] sm:max-w-[16rem] aspect-[2/3] object-cover rounded-md mx-auto"
                     crossOrigin={isExternalCover ? "anonymous" : undefined}
                   />
                 </div>
