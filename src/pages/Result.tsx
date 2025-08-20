@@ -165,7 +165,7 @@ export default function Result() {
                 {/* Sinopsis */}
                 {resumen.selected.sinopsis && (
                   <div className="synopsis-container bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
-                    <h3 className="text-amber-50 font-semibold text-center mb-4 text-base lg:text-lg">Sinopsis</h3>
+                    <h3 className="text-amber-50 font-semibold text-center mb-4 text-sm lg:text-base">Sinopsis</h3>
                     <p className="text-amber-50/90 text-sm lg:text-base leading-relaxed text-center">
                       {resumen.selected.sinopsis}
                     </p>
