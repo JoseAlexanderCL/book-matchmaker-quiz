@@ -5,7 +5,7 @@ import { Sparkles, RefreshCw, ArrowLeft, Share2 } from "lucide-react";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
 import { ShareButton } from "@/components/ShareButton";
-import { shareAsImage } from "@/lib/shareAsImage";
+import { shareAsImage } from "@/lib/ShareAsImage";
 
 function getCoverPlaceholder(title: string) {
   const index = placeholderMap[title as keyof typeof placeholderMap];

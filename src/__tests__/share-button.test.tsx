@@ -51,7 +51,7 @@ describe("ShareButton", () => {
   it("usa shareAsImage cuando navigator.canShare soporta archivos", async () => {
     vi.resetModules();
     const shareAsImageMock = vi.fn().mockResolvedValue(undefined);
-    vi.doMock("@/lib/shareAsImage", () => ({ shareAsImage: shareAsImageMock }));
+    vi.doMock("@/lib/ShareAsImage", () => ({ shareAsImage: shareAsImageMock }));
 
     const canShareMock = vi.fn(() => true);
     Object.defineProperty(navigator, "canShare", {
