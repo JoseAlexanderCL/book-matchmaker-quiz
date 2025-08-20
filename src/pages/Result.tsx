@@ -154,7 +154,7 @@ export default function Result() {
               <div className="space-y-4 max-w-md mx-auto">
                 {/* Título */}
                 <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4 text-center">
-                  <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
+                  <h2 className="text-base sm:text-lg lg:text-xl font-bold text-amber-50 leading-tight">{resumen.selected.titulo}</h2>
                 </div>
 
                 {/* Autor */}
