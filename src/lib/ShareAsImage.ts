@@ -116,7 +116,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       .header-text {
         color: white;
-        font-size: 28px;
+        font-size: 32px;
         font-weight: bold;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
       }
@@ -170,7 +170,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .detail-label {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: bold;
         text-align: center;
         margin-bottom: 10px;
@@ -180,7 +180,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .detail-content {
-        font-size: 20px;
+        font-size: 22px;
         text-align: center;
         line-height: 1.4;
         overflow: hidden;
@@ -191,7 +191,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       .title-card .detail-content {
         font-weight: bold;
-        font-size: 22px;
+        font-size: 26px;
       }
 
       /* Full Width Synopsis */
@@ -204,7 +204,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       .synopsis-extended {
         color: white;
-        font-size: 22px;
+        font-size: 24px;
         line-height: 1.6;
         text-align: center;
         display: -webkit-box;
@@ -227,7 +227,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .profile-content {
-        font-size: 24px;
+        font-size: 26px;
         line-height: 1.6;
         text-align: center;
         font-style: italic;
@@ -240,7 +240,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .profile-content::before {
         content: "✨ Tu perfil lector";
         display: block;
-        font-size: 26px;
+        font-size: 28px;
         font-weight: bold;
         margin-bottom: 20px;
         color: #fbbf24;
@@ -268,10 +268,10 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       /* Responsive adjustments */
       @media (max-width: 1080px) {
-        .detail-content { font-size: 18px; }
-        .synopsis-extended { font-size: 20px; }
-        .profile-content { font-size: 22px; }
-        .header-text { font-size: 26px; }
+        .detail-content { font-size: 20px; }
+        .synopsis-extended { font-size: 22px; }
+        .profile-content { font-size: 24px; }
+        .header-text { font-size: 30px; }
       }
 
       /* Special styling to match image 1 aesthetic */
