@@ -123,17 +123,16 @@ export default function Result() {
         id="book-recommendation"
         className="max-w-3xl mx-auto px-3 sm:px-4"
       >
-        <div className="flex items-center justify-between mb-4 sm:mb-6">
-          <img 
-            src="/lovable-uploads/4f198d0a-3d6d-4649-aa26-df0774903e16.png" 
-            alt="Club de Lectura Santiago" 
+        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 mb-4 sm:mb-6">
+          <img
+            src="/lovable-uploads/4f198d0a-3d6d-4649-aa26-df0774903e16.png"
+            alt="Club de Lectura Santiago"
             className="w-16 sm:w-20 lg:w-24 h-auto opacity-80"
           />
           <div className="inline-flex items-center gap-2 bg-amber-100/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-md">
             <Sparkles className="w-4 sm:w-5 h-4 sm:h-5 text-amber-700" />
             <h1 className="text-base sm:text-lg lg:text-xl font-bold text-amber-800">Tu libro del Club de Lectura es:</h1>
           </div>
-          <div className="w-16 sm:w-20 lg:w-24"></div> {/* Spacer for symmetry */}
         </div>
 
         <div className="bg-amber-50/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-amber-200/50 max-w-4xl mx-auto">
