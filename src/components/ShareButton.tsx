@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { shareAsImage } from "@/lib/shareAsImage";
+import { shareAsImage } from "@/lib/ShareAsImage";
 
 interface ShareButtonProps {
   bookTitle: string;
