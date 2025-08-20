@@ -32,49 +32,53 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     const logoElement = element.querySelector('img[alt="Club de Lectura Santiago"]');
     const logoSrc = logoElement?.getAttribute('src') || '';
 
-    // Crear estructura HTML SIMPLE Y CONFIABLE
+    // Crear estructura HTML siguiendo el layout de la imagen 2 con colores de imagen 1
     clone.innerHTML = `
       <div class="container">
         <!-- Header -->
         <div class="header">
-          <img src="${logoSrc}" alt="Club de Lectura Santiago" class="logo" />
-          <div class="badge">
-            ✦ Tu libro del Club de Lectura es:
-          </div>
+          <div class="header-text">Tu libro del Club de Lectura es:</div>
         </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-          <!-- Cover -->
+        <!-- Main Layout Grid -->
+        <div class="main-grid">
+          <!-- Left side - Book Cover -->
           <div class="cover-section">
             <img src="${originalImg?.src || ''}" alt="${title}" class="cover" crossorigin="anonymous" />
           </div>
 
-          <!-- Book Info -->
-          <div class="book-info">
-            <h1 class="title">${title}</h1>
-            <p class="author">${author}</p>
+          <!-- Right side - Book Details -->
+          <div class="book-details">
+            <div class="detail-card title-card">
+              <div class="detail-label">Título</div>
+              <div class="detail-content">${title}</div>
+            </div>
+            
+            <div class="detail-card author-card">
+              <div class="detail-label">Autor Año</div>
+              <div class="detail-content">${author}</div>
+            </div>
+
+            <div class="detail-card synopsis-card">
+              <div class="detail-label">Sinopsis</div>
+              <div class="detail-content">${synopsis}</div>
+            </div>
           </div>
         </div>
 
-        <!-- Cards -->
-        <div class="cards">
-          ${synopsis ? `
-          <div class="card">
-            <h3 class="card-title">📚 Sinopsis</h3>
-            <p class="card-text">${synopsis}</p>
-          </div>` : ''}
-
-          ${perfilLector ? `
-          <div class="card dark">
-            <h3 class="card-title">✨ Tu perfil lector</h3>
-            <p class="card-text">${perfilLector}</p>
-          </div>` : ''}
+        <!-- Full width Synopsis (extended) -->
+        <div class="full-synopsis">
+          <div class="synopsis-extended">${synopsis}</div>
         </div>
 
-        <!-- Footer -->
+        <!-- Reader Profile -->
+        <div class="profile-section">
+          <div class="profile-content">${perfilLector}</div>
+        </div>
+
+        <!-- Footer Logo -->
         <div class="footer">
-          Club de Lectura Santiago
+          <img src="${logoSrc}" alt="Club de Lectura Santiago" class="footer-logo" />
         </div>
       </div>
     `;
@@ -84,9 +88,9 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       #book-recommendation-share {
         width: 1080px;
         height: 1920px;
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 30%, #f59e0b 70%, #d97706 100%);
         font-family: 'Georgia', 'Times New Roman', serif;
-        color: white;
+        color: #92400e;
         box-sizing: border-box;
         position: relative;
         overflow: hidden;
@@ -95,122 +99,113 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .container {
         width: 100%;
         height: 100%;
-        padding: 60px;
+        padding: 40px;
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 35px;
       }
 
       /* Header */
       .header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-      }
-
-      .logo {
-        width: 120px;
-        height: auto;
-        opacity: 0.9;
-      }
-
-      .badge {
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-        color: white;
-        padding: 18px 35px;
-        border-radius: 25px;
-        font-size: 24px;
-        font-weight: bold;
+        background: #d97706;
+        border-radius: 15px;
+        padding: 25px;
         text-align: center;
-        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
       }
 
-      /* Main Content */
-      .main-content {
+      .header-text {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Main Grid Layout */
+      .main-grid {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        gap: 30px;
+        height: 450px;
       }
 
+      /* Cover Section */
       .cover-section {
+        flex: 1;
+        background: #f59e0b;
+        border-radius: 15px;
+        padding: 25px;
         display: flex;
+        align-items: center;
         justify-content: center;
-        padding: 30px;
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
       }
 
       .cover {
-        width: 350px;
-        height: 525px;
+        width: 280px;
+        height: 400px;
         object-fit: cover;
         border-radius: 12px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        background: #333;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        background: #8b4513;
       }
 
-      .book-info {
-        text-align: center;
-        max-width: 800px;
+      /* Book Details */
+      .book-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
       }
 
-      .title {
-        font-size: 52px;
+      .detail-card {
+        background: #f59e0b;
+        border-radius: 12px;
+        padding: 20px;
+        color: white;
+        box-shadow: 0 6px 15px rgba(245, 158, 11, 0.3);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .detail-label {
+        font-size: 18px;
         font-weight: bold;
-        color: #fbbf24;
-        margin: 0 0 20px 0;
-        line-height: 1.2;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .author {
-        font-size: 28px;
-        color: #e5e7eb;
-        margin: 0;
-        font-style: italic;
+        text-align: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         opacity: 0.9;
       }
 
-      /* Cards */
-      .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        flex: 1;
-      }
-
-      .card {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 20px;
-        padding: 35px;
-        color: #1f2937;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      }
-
-      .card.dark {
-        background: linear-gradient(135deg, #374151, #1f2937);
-        color: white;
-      }
-
-      .card-title {
-        font-size: 30px;
-        font-weight: bold;
-        margin: 0 0 20px 0;
+      .detail-content {
+        font-size: 20px;
         text-align: center;
-        color: #92400e;
+        line-height: 1.4;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
       }
 
-      .card.dark .card-title {
-        color: #fbbf24;
+      .title-card .detail-content {
+        font-weight: bold;
+        font-size: 22px;
       }
 
-      .card-text {
+      /* Full Width Synopsis */
+      .full-synopsis {
+        background: #f59e0b;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+      }
+
+      .synopsis-extended {
+        color: white;
         font-size: 22px;
         line-height: 1.6;
-        margin: 0;
         text-align: center;
         display: -webkit-box;
         -webkit-line-clamp: 6;
@@ -218,22 +213,93 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         overflow: hidden;
       }
 
+      /* Reader Profile */
+      .profile-section {
+        background: #92400e;
+        border-radius: 15px;
+        padding: 35px;
+        color: #fef3c7;
+        box-shadow: 0 8px 20px rgba(146, 64, 14, 0.4);
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .profile-content {
+        font-size: 24px;
+        line-height: 1.6;
+        text-align: center;
+        font-style: italic;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .profile-content::before {
+        content: "✨ Tu perfil lector";
+        display: block;
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #fbbf24;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
       /* Footer */
       .footer {
+        background: #d97706;
+        border-radius: 15px;
+        padding: 20px;
         text-align: center;
-        font-size: 18px;
-        color: #9ca3af;
-        font-style: italic;
-        letter-spacing: 1px;
+        box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
         margin-top: auto;
       }
 
-      /* Responsive adjustments para mejor legibilidad */
+      .footer-logo {
+        width: 100px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+      }
+
+      /* Responsive adjustments */
       @media (max-width: 1080px) {
-        .title { font-size: 46px; }
-        .author { font-size: 26px; }
-        .card-text { font-size: 20px; }
-        .badge { font-size: 22px; }
+        .detail-content { font-size: 18px; }
+        .synopsis-extended { font-size: 20px; }
+        .profile-content { font-size: 22px; }
+        .header-text { font-size: 26px; }
+      }
+
+      /* Special styling to match image 1 aesthetic */
+      .detail-card, .full-synopsis, .profile-section, .header, .footer {
+        border: 2px solid rgba(146, 64, 14, 0.2);
+      }
+
+      .cover-section {
+        border: 3px solid #d97706;
+      }
+
+      /* Add subtle texture effect */
+      .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                          radial-gradient(circle at 75% 75%, rgba(146, 64, 14, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .container > * {
+        position: relative;
+        z-index: 2;
       }
     `;
 
@@ -259,7 +325,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     const canvas = await html2canvas(clone, {
       width: 1080,
       height: 1920,
-      backgroundColor: "#0f172a",
+      backgroundColor: "#fef3c7",
       scale: 1,
       useCORS: true,
       allowTaint: false,
