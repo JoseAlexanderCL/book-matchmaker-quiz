@@ -121,7 +121,7 @@ export default function Result() {
 
       <div
         id="book-recommendation"
-        className="max-w-3xl mx-auto px-3 sm:px-4"
+        className="max-w-4xl mx-auto px-3 sm:px-4"
       >
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 sm:mb-6">
           <img
