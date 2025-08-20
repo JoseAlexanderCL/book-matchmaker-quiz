@@ -27,283 +27,203 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     // Crear la estructura HTML optimizada para formato vertical
     clone.innerHTML = `
       <div class="story-container">
-        <!-- Header con logo y título -->
-        <div class="header-section">
-          <img src="${logoSrc}" alt="Club de Lectura Santiago" class="logo">
-          <div class="header-badge">
-            <svg class="sparkle" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <h1>Tu libro del Club de Lectura es:</h1>
+        <header class="header">
+          <img src="${logoSrc}" alt="Club de Lectura Santiago" class="logo" />
+          <div class="ribbon">
+            <span class="ribbon-star" aria-hidden="true">✦</span>
+            <h1 class="ribbon-title">Tu libro del Club de Lectura es:</h1>
           </div>
-        </div>
+        </header>
 
-        <!-- Portada del libro -->
-        <div class="book-cover-section">
-          <div class="book-cover-frame">
-            <img src="${originalImg?.src || ''}" alt="${title}" crossorigin="anonymous">
+        <section class="cover">
+          <div class="cover-frame">
+            <img src="${originalImg?.src || ''}" alt="${title}" class="cover-img" crossorigin="anonymous" />
           </div>
-        </div>
+        </section>
 
-        <!-- Título del libro -->
-        <div class="book-title-section">
-          <h2>${title}</h2>
-        </div>
+        <section class="title">
+          <h2 class="book-title">${title}</h2>
+        </section>
 
-        <!-- Autor y año -->
-        <div class="book-author-section">
-          <span>${author}</span>
-        </div>
+        <section class="author">
+          <span class="book-author">${author}</span>
+        </section>
 
-        <!-- Sinopsis -->
         ${synopsis ? `
-        <div class="synopsis-section">
-          <h3>Sinopsis</h3>
-          <p>${synopsis}</p>
-        </div>
-        ` : ''}
+        <section class="card synopsis">
+          <h3 class="card-title">Sinopsis</h3>
+          <p class="card-text clamp-7">${synopsis}</p>
+        </section>` : ''}
 
-
-        <!-- Perfil lector -->
         ${perfilLector ? `
-        <div class="reader-profile-section">
-          <h3>Tu perfil lector</h3>
-          <p>${perfilLector}</p>
-        </div>
-        ` : ''}
+        <section class="card profile">
+          <h3 class="card-title">Tu perfil lector</h3>
+          <p class="card-text clamp-7">${perfilLector}</p>
+        </section>` : ''}
+
+        <footer class="watermark">Club de Lectura Santiago</footer>
       </div>
     `;
 
     styleTag = document.createElement("style");
     styleTag.textContent = `
+      /* Tipos y tokens (usa Google Fonts si cargan; fallback seguro) */
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+      :root {
+        --bg: #F7F1E8;
+        --paper: #FFFBF2;
+        --ink: #2E2723;
+        --muted: #564B45;
+        --gold: #C6A15B;
+        --gold-2: #8E7748;
+        --forest: #2C4A3F;
+        --shadow-1: 0 10px 30px rgba(0,0,0,.12);
+        --shadow-2: 0 18px 48px rgba(0,0,0,.18);
+        --radius-card: 28px;
+        --radius-pill: 999px;
+      }
+
       #book-recommendation-share {
         width: 1080px;
         height: 1920px;
-        background: linear-gradient(135deg, #faf8f5 0%, #f5f1ea 30%, #ede7db 70%, #e6ddd1 100%);
-        font-family: Georgia, 'Times New Roman', serif;
+        background: radial-gradient(1200px 1200px at 20% 10%, rgba(198,161,91,.10), transparent 50%),
+                    radial-gradient(900px 900px at 80% 90%, rgba(142,119,72,.08), transparent 55%),
+                    linear-gradient(180deg, var(--paper), var(--bg));
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: var(--ink);
         overflow: hidden;
         position: relative;
       }
-      
-      #book-recommendation-share::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-          radial-gradient(circle at 20% 20%, rgba(222, 184, 135, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(205, 164, 124, 0.06) 0%, transparent 50%),
-          radial-gradient(circle at 40% 70%, rgba(188, 143, 107, 0.04) 0%, transparent 50%);
-        pointer-events: none;
-      }
-      
+
       .story-container {
         width: 100%;
         height: 100%;
-        padding: 50px 90px;
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
+        padding: 72px 96px;
+        display: grid;
+        grid-template-rows: auto auto auto auto auto 1fr auto;
+        row-gap: 36px;
         position: relative;
-        z-index: 1;
+        isolation: isolate;
       }
-      
+
+      /* esquinas decorativas muy sutiles */
+      #book-recommendation-share::before,
+      #book-recommendation-share::after {
+        content: "";
+        position: absolute;
+        width: 160px; height: 160px;
+        opacity: .25;
+        pointer-events: none;
+        background: conic-gradient(from 0deg, transparent 0 70%, rgba(198,161,91,.4) 70% 100%);
+        border-radius: 24px;
+        filter: blur(0.2px);
+      }
+      #book-recommendation-share::before { top: 36px; left: 36px; }
+      #book-recommendation-share::after  { bottom: 36px; right: 36px; transform: rotate(180deg); }
+
       /* Header */
-      .header-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 35px;
+      .header { display:flex; flex-direction:column; align-items:center; gap:28px; }
+      .logo { width:132px; height:auto; opacity:.9; filter: sepia(8%) saturate(90%); }
+
+      .ribbon {
+        display:flex; align-items:center; gap:14px;
+        padding:18px 28px;
+        border-radius: var(--radius-pill);
+        border:1px solid rgba(198,161,91,.45);
+        background: linear-gradient(180deg, rgba(198,161,91,.18), rgba(198,161,91,.10));
+        box-shadow: var(--shadow-1);
       }
-      
-      .logo {
-        width: 130px;
-        height: auto;
-        opacity: 0.85;
-        filter: sepia(20%) saturate(80%) hue-rotate(20deg);
+      .ribbon-star { font-size:20px; color: var(--gold-2); line-height:1; }
+      .ribbon-title {
+        margin:0; line-height:1.25; text-align:center;
+        font: 600 28px/1.25 "Playfair Display", Georgia, serif;
+        letter-spacing:.2px; color:#5A493E;
       }
-      
-      .header-badge {
-        background: rgba(222, 184, 135, 0.25);
-        backdrop-filter: blur(10px);
-        border-radius: 40px;
-        padding: 25px 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 18px;
-        box-shadow: 0 10px 30px rgba(139, 108, 85, 0.15);
-        border: 2px solid rgba(222, 184, 135, 0.4);
-        position: relative;
-      }
-      
-      .header-badge::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: linear-gradient(45deg, #deb887, #cd9a7c, #bc8f6b);
-        border-radius: 42px;
-        z-index: -1;
-        opacity: 0.3;
-      }
-      
-      .header-badge .sparkle {
-        width: 32px;
-        height: 32px;
-        color: #8b6c55;
-      }
-      
-      .header-badge h1 {
-        font-size: 34px;
-        font-weight: 600;
-        color: #6b4e3d;
-        margin: 0;
-        text-align: center;
-        line-height: 1.3;
-        letter-spacing: 0.5px;
-        font-style: italic;
-      }
-      
+
       /* Portada */
-      .book-cover-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 20px 0;
+      .cover { display:flex; justify-content:center; }
+      .cover-frame {
+        padding:26px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #D9C39A 0%, #BFA170 100%);
+        box-shadow: var(--shadow-2);
+        position:relative;
       }
-      
-      .book-cover-frame {
-        background: linear-gradient(135deg, #deb887 0%, #cd9a7c 50%, #bc8f6b 100%);
-        border-radius: 30px;
-        padding: 30px;
-        box-shadow: 
-          0 25px 50px rgba(107, 78, 61, 0.25),
-          0 10px 20px rgba(139, 108, 85, 0.15),
-          inset 0 1px 3px rgba(255, 255, 255, 0.2);
-        transform: rotate(-1.5deg);
-        position: relative;
+      .cover-frame::after{
+        content:""; position:absolute; inset:10px;
+        border-radius: 14px;
+        border:1px solid rgba(255,255,255,.55);
+        pointer-events:none;
       }
-      
-      .book-cover-frame::before {
-        content: '';
-        position: absolute;
-        top: -8px;
-        left: -8px;
-        right: -8px;
-        bottom: -8px;
-        background: linear-gradient(135deg, rgba(222, 184, 135, 0.3), rgba(205, 154, 124, 0.2));
-        border-radius: 38px;
-        z-index: -1;
+      .cover-img{
+        width: 340px; height: 510px; object-fit: cover;
+        border-radius: 18px; display:block;
+        box-shadow: 0 12px 28px rgba(0,0,0,.25);
+        background: #EEE;
       }
-      
-      .book-cover-frame img {
-        width: 320px;
-        height: 480px;
-        object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 
-          0 15px 35px rgba(0, 0, 0, 0.3),
-          0 5px 15px rgba(0, 0, 0, 0.2);
-        border: 3px solid rgba(255, 255, 255, 0.8);
+
+      /* Título y autor */
+      .title { text-align:center; }
+      .book-title{
+        margin:0;
+        font: 700 48px/1.2 "Playfair Display", Georgia, serif;
+        color:#3E2F27; letter-spacing:.3px;
+        text-wrap: balance;
       }
-      
-      /* Título */
-      .book-title-section {
-        background: linear-gradient(135deg, rgba(222, 184, 135, 0.8), rgba(205, 154, 124, 0.7));
-        border-radius: 25px;
-        padding: 35px;
-        text-align: center;
-        box-shadow: 0 8px 20px rgba(139, 108, 85, 0.15);
+      .author { text-align:center; }
+      .book-author{
+        font: 500 30px/1.3 "Playfair Display", Georgia, serif;
+        color:#6E5B4F; opacity:.95;
       }
-      
-      .book-title-section h2 {
-        font-size: 45px;
-        font-weight: 700;
-        color: #4a3429;
-        line-height: 1.2;
-        margin: 0;
-        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
-        font-style: italic;
-        letter-spacing: 0.5px;
+
+      /* Cards */
+      .card{
+        border-radius: var(--radius-card);
+        padding: 32px 34px;
+        background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.70));
+        border: 1px solid rgba(198,161,91,.35);
+        box-shadow: var(--shadow-1);
+        position:relative;
       }
-      
-      /* Autor */
-      .book-author-section {
-        background: linear-gradient(135deg, rgba(188, 143, 107, 0.7), rgba(169, 130, 98, 0.6));
-        border-radius: 25px;
-        padding: 28px;
-        text-align: center;
-        box-shadow: 0 6px 20px rgba(107, 78, 61, 0.12);
+      .card-title{
+        margin:0 0 14px 0;
+        font: 600 30px/1.2 "Playfair Display", Georgia, serif;
+        color:#4A3A31; text-align:center;
       }
-      
-      .book-author-section span {
-        color: #f5f1ea;
-        font-weight: 500;
-        font-size: 30px;
-        text-shadow: 1px 1px 3px rgba(74, 52, 41, 0.4);
-        font-style: italic;
-        letter-spacing: 0.3px;
+      .card-text{
+        margin:0; font: 400 24px/1.55 Inter, system-ui, sans-serif;
+        color:#4E4038;
+        text-align:center;
       }
-      
-      /* Sinopsis */
-      .synopsis-section {
-        background: linear-gradient(135deg, rgba(222, 184, 135, 0.6), rgba(205, 154, 124, 0.5));
-        border-radius: 25px;
-        padding: 35px;
-        box-shadow: 0 8px 20px rgba(139, 108, 85, 0.12);
+
+      /* variantes */
+      .synopsis { background: linear-gradient(180deg, rgba(255,253,247,.9), rgba(255,251,242,.78)); }
+      .synopsis::before, .synopsis::after{
+        content:"""; position:absolute; font:700 84px/1 Georgia, serif;
+        color:rgba(110,91,79,.18); pointer-events:none;
       }
-      
-      .synopsis-section h3 {
-        color: #4a3429;
-        font-weight: 600;
-        text-align: center;
-        margin: 0 0 25px 0;
-        font-size: 30px;
-        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
-        font-style: italic;
+      .synopsis::before{ top:12px; left:18px; }
+      .synopsis::after { content:"""; bottom:8px; right:18px; }
+
+      .profile{
+        background: linear-gradient(180deg, rgba(62,47,39,.95), rgba(62,47,39,.88));
+        border-color: rgba(198,161,91,.45);
       }
-      
-      .synopsis-section p {
-        color: #5d4037;
-        font-size: 24px;
-        line-height: 1.5;
-        text-align: center;
-        margin: 0;
-        font-style: italic;
-        letter-spacing: 0.2px;
+      .profile .card-title{ color:#F2ECE3; }
+      .profile .card-text{ color:#F7F1E8; opacity:.96; }
+
+      /* Clamps para evitar overflow */
+      .clamp-7{
+        display:-webkit-box; -webkit-line-clamp:7; -webkit-box-orient:vertical;
+        overflow:hidden;
       }
-      
-      /* Perfil lector */
-      .reader-profile-section {
-        background: linear-gradient(135deg, rgba(107, 78, 61, 0.8), rgba(93, 64, 55, 0.7));
-        border-radius: 25px;
-        padding: 35px;
-        box-shadow: 0 8px 20px rgba(74, 52, 41, 0.15);
-      }
-      
-      .reader-profile-section h3 {
-        color: #f5f1ea;
-        font-weight: 600;
-        text-align: center;
-        margin: 0 0 25px 0;
-        font-size: 28px;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        font-style: italic;
-      }
-      
-      .reader-profile-section p {
-        color: rgba(245, 241, 234, 0.95);
-        font-size: 22px;
-        line-height: 1.5;
-        text-align: center;
-        margin: 0;
-        font-style: italic;
-        letter-spacing: 0.1px;
+
+      .watermark{
+        text-align:center; margin-top:12px;
+        font: 500 18px/1.2 Inter, system-ui, sans-serif;
+        color: rgba(46,39,35,.6);
+        letter-spacing:.4px;
       }
     `;
 
@@ -326,7 +246,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     const canvas = await html2canvas(clone, {
       width: 1080,
       height: 1920,
-      backgroundColor: "#fef3c7",
+      backgroundColor: "#F7F1E8",
       scale: 1,
       useCORS: true,
       allowTaint: false,
