@@ -158,13 +158,13 @@ export default function Result() {
                 </div>
 
                 {/* Autor */}
-                <div className="bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
+                <div className="author-container bg-gradient-to-r from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-3 text-center">
                   <span className="text-amber-50 font-medium text-sm lg:text-base">{`${resumen.selected.autor} (${resumen.selected.anio})`}</span>
                 </div>
 
                 {/* Sinopsis */}
                 {resumen.selected.sinopsis && (
-                  <div className="bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
+                  <div className="synopsis-container bg-gradient-to-br from-amber-600 via-yellow-700 to-orange-700 rounded-xl p-4">
                     <h3 className="text-amber-50 font-semibold text-center mb-4 text-base lg:text-lg">Sinopsis</h3>
                     <p className="text-amber-50/90 text-sm lg:text-base leading-relaxed text-center">
                       {resumen.selected.sinopsis}
