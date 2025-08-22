@@ -88,7 +88,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       #book-recommendation-share {
         width: 1080px;
         height: 1920px;
-        background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 30%, #f59e0b 70%, #d97706 100%);
+        background: linear-gradient(299deg, #fffcec 0%, #fffced 19%, #e4e4be 100%);
         font-family: 'Georgia', 'Times New Roman', serif;
         color: #92400e;
         box-sizing: border-box;
@@ -325,7 +325,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
     const canvas = await html2canvas(clone, {
       width: 1080,
       height: 1920,
-      backgroundColor: "#fef3c7",
+      backgroundColor: "#fffcec",
       scale: 1,
       useCORS: true,
       allowTaint: false,
