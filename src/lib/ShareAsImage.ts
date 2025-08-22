@@ -159,10 +159,22 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         padding: 20px;
         color: white;
         box-shadow: 0 6px 15px rgba(245, 158, 11, 0.3);
-        flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+      }
+
+      .title-card {
+        height: 140px;
+      }
+
+      .author-card {
+        height: 120px;
+      }
+
+      .synopsis-card {
+        height: 350px;
+        padding: 15px;
       }
 
       .detail-label {
@@ -188,6 +200,12 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .title-card .detail-content {
         font-weight: bold;
         font-size: 26px;
+      }
+
+      .synopsis-card .detail-content {
+        -webkit-line-clamp: 12;
+        font-size: 20px;
+        line-height: 1.3;
       }
 
       /* Reader Profile */
