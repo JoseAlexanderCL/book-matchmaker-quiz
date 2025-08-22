@@ -66,10 +66,6 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
           </div>
         </div>
 
-        <!-- Full width Synopsis (extended) -->
-        <div class="full-synopsis">
-          <div class="synopsis-extended">${synopsis}</div>
-        </div>
 
         <!-- Reader Profile -->
         <div class="profile-section">
@@ -125,7 +121,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .main-grid {
         display: flex;
         gap: 30px;
-        height: 450px;
+        height: 650px;
       }
 
       /* Cover Section */
@@ -194,25 +190,6 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         font-size: 26px;
       }
 
-      /* Full Width Synopsis */
-      .full-synopsis {
-        background: #f59e0b;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
-      }
-
-      .synopsis-extended {
-        color: white;
-        font-size: 24px;
-        line-height: 1.6;
-        text-align: center;
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-
       /* Reader Profile */
       .profile-section {
         background: #92400e;
@@ -269,13 +246,12 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       /* Responsive adjustments */
       @media (max-width: 1080px) {
         .detail-content { font-size: 20px; }
-        .synopsis-extended { font-size: 22px; }
         .profile-content { font-size: 24px; }
         .header-text { font-size: 30px; }
       }
 
       /* Special styling to match image 1 aesthetic */
-      .detail-card, .full-synopsis, .profile-section, .header, .footer {
+      .detail-card, .profile-section, .header, .footer {
         border: 2px solid rgba(146, 64, 14, 0.2);
       }
 
