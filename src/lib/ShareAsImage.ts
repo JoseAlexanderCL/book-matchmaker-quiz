@@ -156,7 +156,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .detail-card {
         background: #f59e0b;
         border-radius: 12px;
-        padding: 20px;
+        padding: 15px;
         color: white;
         box-shadow: 0 6px 15px rgba(245, 158, 11, 0.3);
         display: flex;
@@ -165,16 +165,15 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .title-card {
-        height: 140px;
+        height: 160px;
       }
 
       .author-card {
-        height: 120px;
+        height: 140px;
       }
 
       .synopsis-card {
         height: 350px;
-        padding: 15px;
       }
 
       .detail-label {
@@ -188,18 +187,23 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .detail-content {
-        font-size: 22px;
+        font-size: 20px;
         text-align: center;
-        line-height: 1.4;
+        line-height: 1.3;
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
       }
 
       .title-card .detail-content {
         font-weight: bold;
-        font-size: 26px;
+        font-size: 24px;
+        -webkit-line-clamp: 3;
+      }
+
+      .author-card .detail-content {
+        -webkit-line-clamp: 3;
       }
 
       .synopsis-card .detail-content {
