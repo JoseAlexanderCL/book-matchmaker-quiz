@@ -120,8 +120,8 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       /* Main Grid Layout */
       .main-grid {
         display: flex;
-        gap: 30px;
-        height: 650px;
+        gap: 25px;
+        height: 800px;
       }
 
       /* Cover Section */
