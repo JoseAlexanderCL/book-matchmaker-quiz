@@ -240,7 +240,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .profile-content::before {
         content: "✨ Tu perfil lector";
         display: block;
-        font-size: 40px;
+        font-size: 50px;
         font-weight: bold;
         margin-bottom: 20px;
         color: #fbbf24;
