@@ -105,7 +105,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
       .header {
         background: linear-gradient(135deg,#0f2742 0%,#1f4f83 55%,#c64b5f 100%);
         border-radius: 18px;
-        padding: 30px 25px;
+        padding: 15px 25px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -240,7 +240,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
       .profile-content::before {
         content: "✨ Tu perfil lector";
         display: block;
-        font-size: 50px;
+        font-size: 34px;
         font-weight: bold;
         margin-bottom: 20px;
         color: #fbbf24;

@@ -105,7 +105,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .header {
         background: linear-gradient(135deg, #f4a261 0%, #d97706 100%);
         border-radius: 18px;
-        padding: 30px 25px;
+        padding: 15px 25px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -215,7 +215,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       /* Reader Profile */
       .profile-section {
-        background: radial-gradient(ellipse farthest-corner at 64% 100%, #ab5f03 0%, #98440c 70%);
+        background: #92400e;
         border-radius: 18px;
         padding: 20px 35px 35px 35px;
         color: #fef3c7;
@@ -240,7 +240,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .profile-content::before {
         content: "✨ Tu perfil lector";
         display: block;
-        font-size: 50px;
+        font-size: 34px;
         font-weight: bold;
         margin-bottom: 20px;
         color: #fbbf24;
