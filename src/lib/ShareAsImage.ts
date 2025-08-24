@@ -137,8 +137,8 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .cover {
-        width: 320px;
-        height: 450px;
+        width: 380px;
+        height: 540px;
         object-fit: cover;
         border-radius: 12px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
