@@ -187,7 +187,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .detail-content {
-        font-size: 20px;
+        font-size: 24px;
         text-align: center;
         line-height: 1.5;
         overflow: visible;
@@ -198,7 +198,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       .title-card .detail-content {
         font-weight: bold;
-        font-size: 24px;
+        font-size: 28px;
         -webkit-line-clamp: 3;
       }
 
@@ -208,7 +208,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       .synopsis-card .detail-content {
         -webkit-line-clamp: 18;
-        font-size: 20px;
+        font-size: 24px;
         line-height: 1.5;
       }
 
@@ -226,7 +226,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .profile-content {
-        font-size: 26px;
+        font-size: 30px;
         line-height: 1.6;
         text-align: center;
         font-style: italic;
