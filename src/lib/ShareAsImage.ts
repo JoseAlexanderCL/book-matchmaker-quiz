@@ -134,7 +134,6 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
       }
 
       .cover {
@@ -160,7 +159,6 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         border-radius: 12px;
         padding: 15px;
         color: #fffbeb;
-        box-shadow: 0 6px 15px rgba(217, 119, 6, 0.3);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -276,12 +274,8 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       /* Special styling to match image 1 aesthetic */
-      .detail-card, .profile-section, .header {
+      .profile-section, .header {
         border: 2px solid rgba(146, 64, 14, 0.2);
-      }
-
-      .cover-section {
-        border: 3px solid #d97706;
       }
 
       /* Add subtle texture effect */
