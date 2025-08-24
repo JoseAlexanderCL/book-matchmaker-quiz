@@ -104,7 +104,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       /* Header */
       .header {
         background: linear-gradient(135deg, #f4a261 0%, #d97706 100%);
-        border-radius: 15px;
+        border-radius: 18px;
         padding: 25px;
         display: flex;
         align-items: center;
@@ -129,7 +129,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .cover-section {
         flex: 1;
         background: linear-gradient(to bottom right, #d97706 0%, #a16207 50%, #c2410c 100%);
-        border-radius: 15px;
+        border-radius: 18px;
         padding: 5px;
         display: flex;
         align-items: center;
@@ -140,7 +140,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         width: 420px;
         height: 594px;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: 18px;
         border: 15px solid white;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         background: #8b4513;
@@ -156,7 +156,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       .detail-card {
         background: linear-gradient(to bottom right, #d97706 0%, #a16207 50%, #c2410c 100%);
-        border-radius: 12px;
+        border-radius: 18px;
         padding: 15px;
         color: #fffbeb;
         display: flex;
@@ -216,7 +216,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       /* Reader Profile */
       .profile-section {
         background: #92400e;
-        border-radius: 15px;
+        border-radius: 18px;
         padding: 20px 35px 35px 35px;
         color: #fef3c7;
         box-shadow: 0 8px 20px rgba(146, 64, 14, 0.4);
@@ -251,7 +251,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       /* Footer */
       .footer {
-        border-radius: 15px;
+        border-radius: 18px;
         padding: 20px;
         text-align: center;
         margin-top: auto;
