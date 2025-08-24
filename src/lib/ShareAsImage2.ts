@@ -219,7 +219,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
         border-radius: 18px;
         padding: 20px 35px 35px 35px;
         color: #fef3c7;
-        color: #fef3c7;
+        color: #ffffff;
         flex: 1;
         display: flex;
         align-items: flex-start;
