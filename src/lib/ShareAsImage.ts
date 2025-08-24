@@ -173,7 +173,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .synopsis-card {
-        height: 350px;
+        height: 460px;
       }
 
       .detail-label {
