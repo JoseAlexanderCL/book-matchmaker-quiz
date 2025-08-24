@@ -6,6 +6,7 @@ import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
 import { ShareButton } from "@/components/ShareButton";
 import { shareAsImage } from "@/lib/ShareAsImage";
+import { shareAsImage2 } from "@/lib/ShareAsImage2";
 
 function getCoverPlaceholder(title: string) {
   const index = placeholderMap[title as keyof typeof placeholderMap];
@@ -202,7 +203,14 @@ export default function Result() {
                 onClick={() => shareAsImage(resumen.selected.titulo)}
               >
                 <Share2 className="w-5 lg:w-4 h-5 lg:h-4" />
-                Compartir imagen
+                Compartir Imagen Clásico
+              </button>
+              <button
+                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm lg:text-base min-h-[48px] lg:min-h-[auto]"
+                onClick={() => shareAsImage2(resumen.selected.titulo)}
+              >
+                <Share2 className="w-5 lg:w-4 h-5 lg:h-4" />
+                Compartir Imagen Nuevo Estilo
               </button>
               <ShareButton bookTitle={resumen.selected.titulo} />
               <div className="flex flex-col sm:flex-row gap-3">
