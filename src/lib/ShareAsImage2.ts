@@ -215,7 +215,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
 
       /* Reader Profile */
       .profile-section {
-        background: #92400e;
+        background: linear-gradient(135deg,#112032 0%,#27445e 45%,#6e8aa0 100%);
         border-radius: 18px;
         padding: 20px 35px 35px 35px;
         color: #fef3c7;
