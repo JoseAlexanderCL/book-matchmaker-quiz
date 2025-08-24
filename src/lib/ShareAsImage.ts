@@ -250,11 +250,9 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       /* Footer */
       .footer {
-        background: #d97706;
         border-radius: 15px;
         padding: 20px;
         text-align: center;
-        box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
         margin-top: auto;
       }
 
@@ -262,7 +260,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         width: 100px;
         height: auto;
         filter: brightness(0) invert(1);
-        opacity: 0.9;
+        opacity: 1;
       }
 
       /* Responsive adjustments */
@@ -273,7 +271,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       /* Special styling to match image 1 aesthetic */
-      .detail-card, .profile-section, .header, .footer {
+      .detail-card, .profile-section, .header {
         border: 2px solid rgba(146, 64, 14, 0.2);
       }
 
