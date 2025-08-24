@@ -159,7 +159,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         background: #f59e0b;
         border-radius: 12px;
         padding: 15px;
-        color: white;
+        color: #fffbeb;
         box-shadow: 0 6px 15px rgba(245, 158, 11, 0.3);
         display: flex;
         flex-direction: column;
