@@ -222,8 +222,8 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
         color: #ffffff;
         flex: 1;
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        align-items: stretch;
+        justify-content: space-between;
       }
 
       .profile-content {
@@ -232,7 +232,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
         text-align: center;
         font-style: italic;
         display: -webkit-box;
-        -webkit-line-clamp: 8;
+        -webkit-line-clamp: 20;
         -webkit-box-orient: vertical;
         overflow: visible;
       }
