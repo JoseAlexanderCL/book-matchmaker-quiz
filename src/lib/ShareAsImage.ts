@@ -227,7 +227,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .profile-content {
-        font-size: 42px;
+        font-size: 28px;
         line-height: 1.6;
         text-align: center;
         font-style: italic;
