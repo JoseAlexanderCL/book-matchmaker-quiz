@@ -106,8 +106,10 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         background: #d97706;
         border-radius: 15px;
         padding: 25px;
-        text-align: center;
         box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .header-text {
