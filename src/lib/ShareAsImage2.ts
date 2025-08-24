@@ -219,7 +219,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
         border-radius: 18px;
         padding: 20px 35px 35px 35px;
         color: #fef3c7;
-        box-shadow: 0 8px 20px rgba(146, 64, 14, 0.4);
+        color: #fef3c7;
         flex: 1;
         display: flex;
         align-items: flex-start;
@@ -274,7 +274,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
       }
 
       /* Special styling to match image 1 aesthetic */
-      .profile-section, .header {
+      .header {
         border: 2px solid rgba(146, 64, 14, 0.2);
       }
 
