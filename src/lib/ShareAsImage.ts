@@ -129,7 +129,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         flex: 1;
         background: #f59e0b;
         border-radius: 15px;
-        padding: 15px;
+        padding: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -137,8 +137,8 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .cover {
-        width: 380px;
-        height: 540px;
+        width: 420px;
+        height: 594px;
         object-fit: cover;
         border-radius: 12px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
