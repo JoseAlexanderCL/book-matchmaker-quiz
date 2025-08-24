@@ -207,7 +207,7 @@ export const defaultCatalog: Catalog = {
           datoCurioso: "Katzenbach, periodista de tribunales, se inspiró en su experiencia reportando crímenes para crear sus novelas; ‘El psicoanalista’ es uno de sus mayores éxitos."
         }
       ],
-      texto: "Tomas decisiones con la cabeza fría y no soportas las incoherencias. Como ESTJ racional, disfrutas de desafíos intelectuales en los que el orden y la estrategia son cruciales para superar la adversidad. {titulo} te enganchará porque es un juego psicológico en el que el protagonista debe pensar como un ajedrecista para sobrevivir. Cada movimiento, cada deducción apelará a tu fortaleza de planificar y ejecutar con precisión, demostrando que la lógica puede ser la mejor defensa."
+      texto: "Tomas decisiones con la cabeza fría y no soportas las incoherencias. Como lector racional, disfrutas de desafíos intelectuales en los que el orden y la estrategia son cruciales para superar la adversidad. {titulo} te enganchará porque es un juego psicológico en el que el protagonista debe pensar como un ajedrecista para sobrevivir. Cada movimiento, cada deducción apelará a tu fortaleza de planificar y ejecutar con precisión, demostrando que la lógica puede ser la mejor defensa."
     },
     JP: {
       libros: [
