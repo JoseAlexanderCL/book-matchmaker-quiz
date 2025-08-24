@@ -128,7 +128,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
       /* Cover Section */
       .cover-section {
         flex: 1;
-        background: linear-gradient(to bottom right, #d97706 0%, #a16207 50%, #c2410c 100%);
+        background: linear-gradient(135deg,#f7efe2 0%,#d9d0c1 48%,#9fb3c6 100%);
         border-radius: 18px;
         padding: 5px;
         display: flex;
@@ -155,10 +155,10 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
       }
 
       .detail-card {
-        background: linear-gradient(to bottom right, #d97706 0%, #a16207 50%, #c2410c 100%);
+        background: linear-gradient(135deg,#f7efe2 0%,#d9d0c1 48%,#9fb3c6 100%);
         border-radius: 18px;
         padding: 15px;
-        color: #fffbeb;
+        color: #000000;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
