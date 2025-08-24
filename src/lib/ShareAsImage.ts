@@ -207,7 +207,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .synopsis-card .detail-content {
-        -webkit-line-clamp: 12;
+        -webkit-line-clamp: 18;
         font-size: 20px;
         line-height: 1.3;
       }
