@@ -141,7 +141,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         height: 594px;
         object-fit: cover;
         border-radius: 12px;
-        border: 5px solid white;
+        border: 15px solid white;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         background: #8b4513;
       }
