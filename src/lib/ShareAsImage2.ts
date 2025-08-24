@@ -128,7 +128,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
       /* Cover Section */
       .cover-section {
         flex: 1;
-        background: linear-gradient(135deg,#f7efe2 0%,#d9d0c1 48%,#9fb3c6 100%);
+        background: linear-gradient(277deg, #f7efe2 0%, #d9d0c1 24%, #9fb3c6 100%);
         border-radius: 18px;
         padding: 5px;
         display: flex;
