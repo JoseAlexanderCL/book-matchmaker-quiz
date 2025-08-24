@@ -198,17 +198,18 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       .title-card .detail-content {
         font-weight: bold;
-        font-size: 28px;
+        font-size: 32px;
         -webkit-line-clamp: 3;
       }
 
       .author-card .detail-content {
         -webkit-line-clamp: 3;
+        font-size: 28px;
       }
 
       .synopsis-card .detail-content {
         -webkit-line-clamp: 18;
-        font-size: 24px;
+        font-size: 28px;
         line-height: 1.5;
       }
 
