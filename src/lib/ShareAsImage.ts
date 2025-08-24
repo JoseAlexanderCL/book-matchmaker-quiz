@@ -103,7 +103,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
 
       /* Header */
       .header {
-        background: #d97706;
+        background: linear-gradient(135deg, #f4a261 0%, #d97706 100%);
         border-radius: 15px;
         padding: 25px;
         box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
