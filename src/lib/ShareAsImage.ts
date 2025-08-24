@@ -217,21 +217,22 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .profile-section {
         background: #92400e;
         border-radius: 18px;
-        padding: 15px 20px 20px 20px;
+        padding: 20px 35px 35px 35px;
         color: #fef3c7;
         box-shadow: 0 8px 20px rgba(146, 64, 14, 0.4);
         flex: 1;
         display: flex;
-        align-items: stretch;
-        justify-content: space-between;
+        align-items: flex-start;
+        justify-content: center;
       }
 
       .profile-content {
-        font-size: 28px;
+        font-size: 34px;
         line-height: 1.6;
         text-align: center;
         font-style: italic;
         display: -webkit-box;
+        -webkit-line-clamp: 8;
         -webkit-box-orient: vertical;
         overflow: visible;
       }

@@ -128,7 +128,7 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
       /* Cover Section */
       .cover-section {
         flex: 1;
-        background: linear-gradient(277deg, #f7efe2 0%, #d9d0c1 24%, #9fb3c6 100%);
+        background: linear-gradient(135deg,#f7efe2 0%,#d9d0c1 48%,#9fb3c6 100%);
         border-radius: 18px;
         padding: 5px;
         display: flex;
@@ -219,20 +219,20 @@ export async function shareAsImage2(bookTitle: string): Promise<void> {
         border-radius: 18px;
         padding: 20px 35px 35px 35px;
         color: #fef3c7;
-        color: #ffffff;
+        color: #fef3c7;
         flex: 1;
         display: flex;
-        align-items: stretch;
-        justify-content: space-between;
+        align-items: flex-start;
+        justify-content: center;
       }
 
       .profile-content {
-        font-size: 42px;
+        font-size: 34px;
         line-height: 1.6;
         text-align: center;
         font-style: italic;
         display: -webkit-box;
-        -webkit-line-clamp: 20;
+        -webkit-line-clamp: 8;
         -webkit-box-orient: vertical;
         overflow: visible;
       }
