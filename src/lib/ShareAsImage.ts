@@ -189,8 +189,8 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .detail-content {
         font-size: 20px;
         text-align: center;
-        line-height: 1.3;
-        overflow: hidden;
+        line-height: 1.5;
+        overflow: visible;
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
@@ -209,7 +209,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       .synopsis-card .detail-content {
         -webkit-line-clamp: 18;
         font-size: 20px;
-        line-height: 1.3;
+        line-height: 1.5;
       }
 
       /* Reader Profile */
@@ -233,7 +233,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
         display: -webkit-box;
         -webkit-line-clamp: 8;
         -webkit-box-orient: vertical;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .profile-content::before {
