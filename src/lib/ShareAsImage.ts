@@ -37,7 +37,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       <div class="container">
         <!-- Header -->
         <div class="header">
-          <div class="header-text">Tu libro del Club de Lectura es:</div>
+          <div class="header-text">Tu libro del Club de Lectura Santiago es:</div>
         </div>
 
         <!-- Main Layout Grid -->
