@@ -257,7 +257,7 @@ export async function shareAsImage(bookTitle: string): Promise<void> {
       }
 
       .footer-logo {
-        width: 150px;
+        width: 220px;
         height: auto;
         filter: brightness(0) invert(1);
         opacity: 1;
