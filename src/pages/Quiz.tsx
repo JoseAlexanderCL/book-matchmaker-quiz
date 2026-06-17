@@ -9,6 +9,8 @@ import { getCatalog } from "@/hooks/use-catalog";
 import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Stairs";
 import { useSession } from "@/hooks/use-session";
+import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Quiz() {
   const [current, setCurrent] = useState(0);
@@ -72,25 +74,42 @@ export default function Quiz() {
           <div className="max-w-full md:max-w-3xl mx-auto">
             <Card className="shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl">Pregunta {current + 1} de {questions.length}</CardTitle>
-                <Progress value={progress} />
+                <div className="flex items-center justify-between mb-1">
+                  <CardTitle className="text-xl sm:text-2xl">
+                    Pregunta <span className="text-accent">{current + 1}</span>
+                    <span className="text-card-foreground/50 text-base font-normal"> / {questions.length}</span>
+                  </CardTitle>
+                  <span className="text-sm font-semibold text-card-foreground/60 bg-card-foreground/8 px-2.5 py-0.5 rounded-full tabular-nums">
+                    {progress}%
+                  </span>
+                </div>
+                <Progress value={progress} className="h-2" />
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-lg sm:text-xl font-medium">{q.text}</p>
                 <div className="grid gap-3">
-                  {q.options.map((o) => (
-                    <Button
+                  {q.options.map((o) => {
+                    const isSelected = answers[q.id] === o.key;
+                    return (
+                    <button
                       key={o.key}
-                      variant={answers[q.id] === o.key ? "secondary" : "outline"}
-                      className="justify-start h-auto py-5 text-lg sm:text-xl"
+                      className={cn(
+                        "justify-start h-auto py-4 px-5 text-lg sm:text-xl text-left w-full rounded-lg border transition-all duration-150 font-medium flex items-center gap-2",
+                        isSelected
+                          ? "bg-accent text-accent-foreground border-[hsl(29_70%_35%)] shadow-md"
+                          : "bg-[hsl(35_72%_94%)] text-[hsl(284_11%_19%)] border-[hsl(35_55%_80%)] hover:bg-[hsl(35_72%_87%)] hover:border-accent/60 hover:shadow-sm"
+                      )}
                       onClick={() => onSelect(o.key)}
-                      aria-pressed={answers[q.id] === o.key}
-                      style={{ backgroundColor: "#ffeccb" }}
+                      aria-pressed={isSelected}
                     >
-                      <span className="font-semibold mr-2">{o.key})</span>
-                      {o.label}
-                    </Button>
-                  ))}
+                      {isSelected
+                        ? <Check className="w-4 h-4 shrink-0" />
+                        : <span className="w-5 h-5 shrink-0 inline-flex items-center justify-center border border-current/40 rounded text-xs font-bold">{o.key}</span>
+                      }
+                      <span>{o.label}</span>
+                    </button>
+                    );
+                  })}
                 </div>
                 <div className="flex items-center justify-between pt-2">
                   <Button variant="ghost" onClick={goPrev} disabled={!canPrev}>Anterior</Button>

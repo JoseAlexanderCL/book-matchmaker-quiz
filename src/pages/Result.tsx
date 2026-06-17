@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import { Sparkles, RefreshCw, ArrowLeft, Share2 } from "lucide-react";
+import { Sparkles, RefreshCw, ArrowLeft, Image, Wand2 } from "lucide-react";
 import type { ComputedResult, FinalSelection } from "@/lib/quiz/scoring";
 import { placeholderMap } from "@/lib/results/coverPlaceholders";
 import { ShareButton } from "@/components/ShareButton";
@@ -198,20 +198,25 @@ export default function Result() {
             </div>
 
             <div className="flex flex-col gap-4 mt-6">
-              <button
-                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm lg:text-base min-h-[48px] lg:min-h-[auto]"
-                onClick={() => shareAsImage(resumen.selected.titulo)}
-              >
-                <Share2 className="w-5 lg:w-4 h-5 lg:h-4" />
-                Compartir Imagen Clásico
-              </button>
-              <button
-                className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-4 lg:py-3 px-4 rounded-xl shadow-md transform transition-all hover:scale-105 flex items-center justify-center gap-2 text-sm lg:text-base min-h-[48px] lg:min-h-[auto]"
-                onClick={() => shareAsImage2(resumen.selected.titulo)}
-              >
-                <Share2 className="w-5 lg:w-4 h-5 lg:h-4" />
-                Compartir Imagen Nuevo Estilo
-              </button>
+              <div>
+                <p className="text-center text-xs font-semibold text-amber-600 uppercase tracking-widest mb-3">Compartir mi resultado</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    className="bg-gradient-to-br from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-medium py-3 px-3 rounded-xl shadow-md transition-all hover:scale-105 flex flex-col items-center justify-center gap-1.5 text-sm min-h-[64px]"
+                    onClick={() => shareAsImage(resumen.selected.titulo)}
+                  >
+                    <Image className="w-5 h-5" />
+                    <span>Imagen clásica</span>
+                  </button>
+                  <button
+                    className="bg-gradient-to-br from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-medium py-3 px-3 rounded-xl shadow-md transition-all hover:scale-105 flex flex-col items-center justify-center gap-1.5 text-sm min-h-[64px]"
+                    onClick={() => shareAsImage2(resumen.selected.titulo)}
+                  >
+                    <Wand2 className="w-5 h-5" />
+                    <span>Imagen nueva</span>
+                  </button>
+                </div>
+              </div>
               <ShareButton bookTitle={resumen.selected.titulo} />
               <div className="flex flex-col sm:flex-row gap-3">
                 <button

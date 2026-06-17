@@ -6,6 +6,7 @@ import Layout from "@/components/Stairs";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useSession } from "@/hooks/use-session";
+import { BookMarked } from "lucide-react";
 
 const Index = () => {
   useParallax();
@@ -42,11 +43,16 @@ const Index = () => {
                 data-speed-x="0.05"
                 className="w-full h-full object-cover object-center"
               />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#4F5872] to-transparent pointer-events-none" aria-hidden="true" />
             </section>
             <section className="container flex items-center">
-              <div className="mx-auto text-center max-w-full md:max-w-3xl py-16">
+              <div className="mx-auto text-center max-w-full md:max-w-3xl py-12">
+                <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/25 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-5 tracking-wide">
+                  <BookMarked className="w-3.5 h-3.5" />
+                  78+ libros en el catálogo
+                </div>
                 <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6">¿Qué libro del club eres?</h1>
-                <p className="text-lg sm:text-xl text-muted-foreground mb-8">En el Club de Lectura hemos leído ¡más de 78 libros distintos! Contesta las preguntas y descubre cuál es el libro que te representa. </p>
+                <p className="text-lg sm:text-xl text-foreground/70 mb-8">En el Club de Lectura hemos leído ¡más de 78 libros distintos! Contesta las preguntas y descubre cuál es el libro que te representa.</p>
                 <div className="flex flex-col items-center justify-center gap-6">
                   <Button
                     variant="hero"
