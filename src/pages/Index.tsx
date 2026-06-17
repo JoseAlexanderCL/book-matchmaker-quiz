@@ -61,11 +61,12 @@ const Index = () => {
                   >
                     Comenzar
                   </Button>
-                  <img 
-                    src="/lovable-uploads/2b97ea4b-8d5e-49f2-9d8f-8e77130e03b0.png" 
-                    alt="Club de Lectura Santiago" 
+                  <img
+                    src="/lovable-uploads/2b97ea4b-8d5e-49f2-9d8f-8e77130e03b0.png"
+                    alt="Club de Lectura Santiago"
                     className="w-32 h-auto opacity-80"
                   />
+                  <p className="text-xs text-foreground/40">hecho por Alex</p>
                 </div>
               </div>
             </section>
